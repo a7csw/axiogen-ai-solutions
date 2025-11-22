@@ -13,9 +13,9 @@ interface CaseStudyCardProps {
 const CaseStudyCard = ({ title, description, tag, slug }: CaseStudyCardProps) => {
   return (
     <Link to={`/case-studies/${slug}`}>
-      <Card className="group hover:shadow-lg transition-all duration-300 cursor-pointer h-full border-border">
+      <Card className="group hover-lift cursor-pointer h-full border-2 border-border">
         <CardHeader>
-          <Badge className="w-fit mb-3 bg-primary/10 text-primary hover:bg-primary/20">
+          <Badge className="w-fit mb-3 bg-primary/10 text-primary group-hover:bg-primary/20 transition-colors">
             {tag}
           </Badge>
           <CardTitle className="text-xl mb-2 group-hover:text-primary transition-colors">

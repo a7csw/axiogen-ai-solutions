@@ -2,49 +2,46 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import ServiceCard from "@/components/ServiceCard";
 import CaseStudyCard from "@/components/CaseStudyCard";
+import TrustLogos from "@/components/TrustLogos";
+import StatsSection from "@/components/StatsSection";
+import CTABlock from "@/components/CTABlock";
 import { MessageSquare, Calendar, Bell, TrendingUp, Clock, Users } from "lucide-react";
+import heroDashboard from "@/assets/hero-dashboard.jpg";
+import clinicStaff from "@/assets/clinic-staff-tablet.jpg";
 
 const Home = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="pt-32 pb-20 px-6 lg:px-8 bg-gradient-to-b from-background to-muted">
-        <div className="container mx-auto max-w-6xl text-center">
-          <div className="animate-fade-in-up">
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-foreground mb-6 leading-tight">
-              AI Automation Systems for Medical Clinics
-            </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground mb-10 max-w-3xl mx-auto">
-              Axiogen builds intelligent workflows that reduce admin time, increase bookings, 
-              and improve patient experience.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="text-lg px-8" asChild>
-                <Link to="/contact">Book A Demo</Link>
-              </Button>
-              <Button size="lg" variant="outline" className="text-lg px-8" asChild>
-                <Link to="/case-studies">View Case Studies</Link>
-              </Button>
+      <section className="pt-32 pb-20 px-6 lg:px-8 bg-gradient-to-b from-background via-muted/30 to-background">
+        <div className="container mx-auto max-w-7xl">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="animate-fade-in-up">
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-foreground mb-6 leading-tight">
+                AI Automation for Medical Clinics
+              </h1>
+              <p className="text-xl md:text-2xl text-muted-foreground mb-10">
+                Intelligent workflows that eliminate manual work, increase patient bookings by 45%, 
+                and streamline your entire practice—automatically.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Button size="lg" className="text-lg px-8 hover-scale" asChild>
+                  <Link to="/contact">Book A Demo</Link>
+                </Button>
+                <Button size="lg" variant="outline" className="text-lg px-8 hover-scale" asChild>
+                  <Link to="/case-studies">View Case Studies</Link>
+                </Button>
+              </div>
+            </div>
+            <div className="animate-fade-in hover-image-zoom rounded-2xl overflow-hidden shadow-2xl">
+              <img src={heroDashboard} alt="Axiogen medical automation dashboard" className="w-full h-auto rounded-2xl" />
             </div>
           </div>
         </div>
       </section>
 
-      {/* Trust Logos */}
-      <section className="py-16 px-6 lg:px-8 border-b border-border">
-        <div className="container mx-auto max-w-6xl">
-          <p className="text-center text-sm font-medium text-muted-foreground mb-8 uppercase tracking-wider">
-            Trusted by leading medical clinics
-          </p>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center opacity-50">
-            {[1, 2, 3, 4, 5, 6].map((i) => (
-              <div key={i} className="h-12 bg-muted rounded-lg flex items-center justify-center">
-                <span className="text-xs text-muted-foreground">Clinic {i}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <TrustLogos />
+      <StatsSection />
 
       {/* Services Preview */}
       <section className="py-24 px-6 lg:px-8">
@@ -119,58 +116,56 @@ const Home = () => {
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-              Why Clinics Choose Axiogen
+              Why Leading Clinics Choose Axiogen
             </h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-            <div className="text-center">
-              <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-6">
-                <Clock className="w-8 h-8 text-primary" />
-              </div>
-              <h3 className="text-2xl font-semibold mb-4">Reduce Manual Work</h3>
-              <p className="text-muted-foreground text-lg">
-                Automate repetitive administrative tasks and free up your team to focus on patient care. 
-                Our systems handle routine queries, scheduling, and follow-ups automatically.
-              </p>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+            <div className="hover-image-zoom rounded-2xl overflow-hidden shadow-xl">
+              <img src={clinicStaff} alt="Medical professional using tablet" className="w-full h-auto rounded-2xl" />
             </div>
-            <div className="text-center">
-              <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-6">
-                <TrendingUp className="w-8 h-8 text-primary" />
+            <div className="space-y-8">
+              <div className="flex gap-6">
+                <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                  <Clock className="w-8 h-8 text-primary" />
+                </div>
+                <div>
+                  <h3 className="text-2xl font-semibold mb-3">Eliminate Manual Work</h3>
+                  <p className="text-muted-foreground text-lg">
+                    Automate repetitive administrative tasks so your team can focus entirely on patient care. 
+                    Our AI handles routine queries, scheduling, and follow-ups—24/7.
+                  </p>
+                </div>
               </div>
-              <h3 className="text-2xl font-semibold mb-4">Increase Patient Bookings</h3>
-              <p className="text-muted-foreground text-lg">
-                Never miss an opportunity with 24/7 availability. Our AI systems can handle bookings at any time, 
-                converting more inquiries into confirmed appointments.
-              </p>
-            </div>
-            <div className="text-center">
-              <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-6">
-                <Users className="w-8 h-8 text-primary" />
+              <div className="flex gap-6">
+                <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                  <TrendingUp className="w-8 h-8 text-primary" />
+                </div>
+                <div>
+                  <h3 className="text-2xl font-semibold mb-3">Increase Revenue</h3>
+                  <p className="text-muted-foreground text-lg">
+                    Never miss a booking opportunity. Our 24/7 AI systems capture every inquiry, 
+                    converting more leads into confirmed appointments.
+                  </p>
+                </div>
               </div>
-              <h3 className="text-2xl font-semibold mb-4">Improve Clinic Workflow</h3>
-              <p className="text-muted-foreground text-lg">
-                Streamline operations with integrated systems that work seamlessly with your existing tools. 
-                Reduce errors and improve efficiency across your entire practice.
-              </p>
+              <div className="flex gap-6">
+                <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                  <Users className="w-8 h-8 text-primary" />
+                </div>
+                <div>
+                  <h3 className="text-2xl font-semibold mb-3">Seamless Integration</h3>
+                  <p className="text-muted-foreground text-lg">
+                    Works perfectly with your existing tools. Integrates with Google Calendar, 
+                    WhatsApp, clinic management systems—no disruption to your workflow.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-24 px-6 lg:px-8 bg-gradient-to-br from-primary to-accent text-white">
-        <div className="container mx-auto max-w-4xl text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Discover how AI can automate 80% of your clinic's admin work
-          </h2>
-          <p className="text-xl mb-10 opacity-90">
-            Join leading clinics that have transformed their operations with intelligent automation
-          </p>
-          <Button size="lg" variant="secondary" className="text-lg px-10" asChild>
-            <Link to="/contact">Book A Demo</Link>
-          </Button>
-        </div>
-      </section>
+      <CTABlock />
     </div>
   );
 };
