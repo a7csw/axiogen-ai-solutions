@@ -1,21 +1,29 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link } from "react-router-dom";
+import CTABlock from "@/components/CTABlock";
 import { MessageSquare, Calendar, Bell, FileText, BarChart3, Check } from "lucide-react";
+import whatsappMockup from "@/assets/whatsapp-ai-mockup.jpg";
+import bookingMockup from "@/assets/booking-system-mockup.jpg";
+import followUpSystem from "@/assets/follow-up-system.jpg";
+import patientIntake from "@/assets/patient-intake-mockup.jpg";
+import analyticsDashboard from "@/assets/analytics-dashboard.jpg";
 
 const Services = () => {
   const services = [
     {
       icon: MessageSquare,
       title: "AI WhatsApp Receptionist",
-      description: "Transform patient communication with an intelligent 24/7 WhatsApp receptionist that handles inquiries, provides information, and routes urgent matters to your team.",
+      description: "Deploy a 24/7 intelligent receptionist that handles patient communication through WhatsApp with human-like natural language understanding.",
       features: [
-        "24/7 automated responses to common questions",
-        "Natural language understanding for patient queries",
-        "Intelligent routing for urgent matters",
-        "Multi-language support",
-        "Integration with your clinic management system"
-      ]
+        "Instant automated responses to common inquiries",
+        "Natural language processing for complex questions",
+        "Smart routing for urgent matters to your team",
+        "Multi-language support for diverse patient base",
+        "Complete integration with your clinic system"
+      ],
+      image: whatsappMockup,
+      imageAlt: "WhatsApp AI receptionist interface"
     },
     {
       icon: Calendar,
@@ -121,20 +129,7 @@ const Services = () => {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-20 px-6 lg:px-8 bg-navy text-white">
-        <div className="container mx-auto max-w-4xl text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Ready to transform your clinic?
-          </h2>
-          <p className="text-xl mb-10 opacity-90">
-            Let's discuss how our automation solutions can be customized for your practice
-          </p>
-          <Button size="lg" variant="secondary" className="text-lg px-10" asChild>
-            <Link to="/contact">Schedule a Consultation</Link>
-          </Button>
-        </div>
-      </section>
+      <CTABlock title="Ready to Transform Your Clinic?" description="Let's discuss how our automation solutions can be customized for your practice" />
     </div>
   );
 };

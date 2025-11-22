@@ -11,26 +11,24 @@ interface ServiceCardProps {
 }
 
 const ServiceCard = ({ icon: Icon, title, description, link }: ServiceCardProps) => {
-  return (
-    <Card className="group hover:shadow-lg transition-all duration-300 border-border h-full">
+  const content = (
+    <Card className="group hover-lift cursor-pointer h-full border-2 border-border">
       <CardHeader>
-        <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
-          <Icon className="w-6 h-6 text-primary" />
+        <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/20 group-hover:scale-110 transition-all duration-300">
+          <Icon className="w-8 h-8 text-primary" />
         </div>
-        <CardTitle className="text-xl mb-2">{title}</CardTitle>
+        <CardTitle className="text-2xl mb-3 group-hover:text-primary transition-colors">{title}</CardTitle>
         <CardDescription className="text-base">{description}</CardDescription>
       </CardHeader>
-      {link && (
-        <CardContent>
-          <Button variant="ghost" className="group-hover:text-primary" asChild>
-            <Link to={link}>
-              Learn more <span className="ml-1">→</span>
-            </Link>
-          </Button>
-        </CardContent>
-      )}
+      <CardContent>
+        <div className="flex items-center text-primary font-medium group-hover:translate-x-2 transition-transform">
+          Learn more <span className="ml-2">→</span>
+        </div>
+      </CardContent>
     </Card>
   );
+
+  return link ? <Link to={link}>{content}</Link> : content;
 };
 
 export default ServiceCard;
