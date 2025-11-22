@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Mail, Phone, Linkedin, Twitter } from "lucide-react";
+import logo from "../assets/axiogen.png";
 
 const Footer = () => {
   return (
@@ -9,12 +10,16 @@ const Footer = () => {
           {/* About */}
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center space-x-2 mb-4">
-              <div className="w-8 h-8 bg-gradient-to-br from-primary to-accent rounded-lg" />
-              <span className="text-2xl font-bold">Axiogen</span>
+              <img
+                src={logo}
+                alt="Axiogen"
+                className="h-16 w-auto object-contain" // Adjusted size for balance
+              />
             </div>
             <p className="text-gray-300 max-w-md">
-              We build intelligent AI automation systems that reduce admin time, increase bookings, 
-              and improve patient experience for medical clinics.
+              We build intelligent AI automation systems that reduce admin time,
+              increase bookings, and improve patient experience for medical
+              clinics.
             </p>
           </div>
 
@@ -23,27 +28,42 @@ const Footer = () => {
             <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2">
               <li>
-                <Link to="/" className="text-gray-300 hover:text-primary transition-colors">
+                <Link
+                  to="/"
+                  className="text-gray-300 hover:text-primary transition-colors"
+                >
                   Home
                 </Link>
               </li>
               <li>
-                <Link to="/services" className="text-gray-300 hover:text-primary transition-colors">
+                <Link
+                  to="/services"
+                  className="text-gray-300 hover:text-primary transition-colors"
+                >
                   Services
                 </Link>
               </li>
               <li>
-                <Link to="/case-studies" className="text-gray-300 hover:text-primary transition-colors">
+                <Link
+                  to="/case-studies"
+                  className="text-gray-300 hover:text-primary transition-colors"
+                >
                   Case Studies
                 </Link>
               </li>
               <li>
-                <Link to="/about" className="text-gray-300 hover:text-primary transition-colors">
+                <Link
+                  to="/about"
+                  className="text-gray-300 hover:text-primary transition-colors"
+                >
                   About
                 </Link>
               </li>
               <li>
-                <Link to="/contact" className="text-gray-300 hover:text-primary transition-colors">
+                <Link
+                  to="/contact"
+                  className="text-gray-300 hover:text-primary transition-colors"
+                >
                   Contact
                 </Link>
               </li>
@@ -60,17 +80,10 @@ const Footer = () => {
               </li>
               <li className="flex items-center space-x-2 text-gray-300">
                 <Phone className="w-4 h-4" />
-                <span>+1 (555) 123-4567</span>
+                <span>+90 535 329 6589</span>
               </li>
             </ul>
-            <div className="flex space-x-4 mt-6">
-              <a href="#" className="text-gray-300 hover:text-primary transition-colors">
-                <Linkedin className="w-5 h-5" />
-              </a>
-              <a href="#" className="text-gray-300 hover:text-primary transition-colors">
-                <Twitter className="w-5 h-5" />
-              </a>
-            </div>
+            <div className="flex space-x-4 mt-6"></div>
           </div>
         </div>
 

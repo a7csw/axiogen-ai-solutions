@@ -1,11 +1,21 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import logo from "../assets/axiogen.png";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
+
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+  }, [isOpen]);
 
   const navLinks = [
     { name: "Home", path: "/" },
@@ -18,69 +28,86 @@ const Navigation = () => {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
-      <div className="container mx-auto px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
-          {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-gradient-to-br from-primary to-accent rounded-lg" />
-            <span className="text-2xl font-bold text-foreground">Axiogen</span>
+    <header className="fixed top-0 left-0 right-0 z-50 w-full border-b border-border/40 bg-background/80 backdrop-blur-md supports-[backdrop-filter]:bg-background/60">
+      <div className="container mx-auto px-4 md:px-6 lg:px-8">
+        <div className="flex h-20 items-center justify-between">
+          {/* Logo Section */}
+          <Link
+            to="/"
+            className="flex items-center gap-2 transition-opacity hover:opacity-90"
+            onClick={() => setIsOpen(false)}
+          >
+            <img
+              src={logo}
+              alt="Axiogen"
+              className="h-16 w-auto object-contain" // Adjusted size for balance
+            />
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <nav className="hidden md:flex items-center gap-7">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
                 to={link.path}
                 className={`text-sm font-medium transition-colors hover:text-primary ${
-                  isActive(link.path) ? "text-primary" : "text-muted-foreground"
+                  isActive(link.path)
+                    ? "text-primary font-semibold"
+                    : "text-muted-foreground"
                 }`}
               >
                 {link.name}
               </Link>
             ))}
-            <Button asChild className="ml-4">
+            <Button asChild className="ml-2 font-semibold shadow-sm">
               <Link to="/contact">Book A Demo</Link>
             </Button>
-          </div>
+          </nav>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile Menu Toggle */}
           <button
-            className="md:hidden p-2"
+            className="md:hidden inline-flex items-center justify-center rounded-md p-2 text-muted-foreground hover:bg-accent hover:text-accent-foreground focus:outline-none"
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle menu"
           >
-            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
         </div>
+      </div>
 
-        {/* Mobile Menu */}
-        {isOpen && (
-          <div className="md:hidden py-4 animate-fade-in">
-            <div className="flex flex-col space-y-4">
+      {/* Mobile Menu Overlay */}
+      {/* This covers the whole screen instead of pushing content down */}
+      {isOpen && (
+        <div className="fixed inset-0 top-20 z-50 grid place-items-start bg-background p-6 animate-in slide-in-from-top-5 md:hidden h-[calc(100vh-5rem)] overflow-y-auto border-t">
+          <div className="flex w-full flex-col gap-6">
+            <div className="flex flex-col gap-2">
               {navLinks.map((link) => (
                 <Link
                   key={link.path}
                   to={link.path}
                   onClick={() => setIsOpen(false)}
-                  className={`text-sm font-medium transition-colors hover:text-primary ${
-                    isActive(link.path) ? "text-primary" : "text-muted-foreground"
+                  className={`block rounded-md px-4 py-3 text-lg font-medium transition-colors hover:bg-accent hover:text-accent-foreground ${
+                    isActive(link.path)
+                      ? "bg-accent/50 text-primary"
+                      : "text-foreground"
                   }`}
                 >
                   {link.name}
                 </Link>
               ))}
-              <Button asChild className="w-full">
+            </div>
+
+            <div className="mt-4 px-4">
+              <Button asChild className="w-full text-lg h-12">
                 <Link to="/contact" onClick={() => setIsOpen(false)}>
                   Book A Demo
                 </Link>
               </Button>
             </div>
           </div>
-        )}
-      </div>
-    </nav>
+        </div>
+      )}
+    </header>
   );
 };
 

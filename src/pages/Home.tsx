@@ -5,7 +5,14 @@ import CaseStudyCard from "@/components/CaseStudyCard";
 import TrustLogos from "@/components/TrustLogos";
 import StatsSection from "@/components/StatsSection";
 import CTABlock from "@/components/CTABlock";
-import { MessageSquare, Calendar, Bell, TrendingUp, Clock, Users } from "lucide-react";
+import {
+  MessageSquare,
+  Calendar,
+  Bell,
+  TrendingUp,
+  Clock,
+  Users,
+} from "lucide-react";
 import heroDashboard from "@/assets/hero-dashboard.jpg";
 import clinicStaff from "@/assets/clinic-staff-tablet.jpg";
 
@@ -21,26 +28,36 @@ const Home = () => {
                 AI Automation for Medical Clinics
               </h1>
               <p className="text-xl md:text-2xl text-muted-foreground mb-10">
-                Intelligent workflows that eliminate manual work, increase patient bookings by 45%, 
-                and streamline your entire practice—automatically.
+                Intelligent workflows that eliminate manual work, increase
+                patient bookings by 45%, and streamline your entire
+                practice—automatically.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button size="lg" className="text-lg px-8 hover-scale" asChild>
                   <Link to="/contact">Book A Demo</Link>
                 </Button>
-                <Button size="lg" variant="outline" className="text-lg px-8 hover-scale" asChild>
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="text-lg px-8 hover-scale"
+                  asChild
+                >
                   <Link to="/case-studies">View Case Studies</Link>
                 </Button>
               </div>
             </div>
             <div className="animate-fade-in hover-image-zoom rounded-2xl overflow-hidden shadow-2xl">
-              <img src={heroDashboard} alt="Axiogen medical automation dashboard" className="w-full h-auto rounded-2xl" />
+              <img
+                src={heroDashboard}
+                alt="Axiogen medical automation dashboard"
+                className="w-full h-auto rounded-2xl"
+              />
             </div>
           </div>
         </div>
       </section>
 
-      <TrustLogos />
+      {/* <TrustLogos />  YOU CAN ADD THIS LATER ON */}
       <StatsSection />
 
       {/* Services Preview */}
@@ -121,7 +138,11 @@ const Home = () => {
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
             <div className="hover-image-zoom rounded-2xl overflow-hidden shadow-xl">
-              <img src={clinicStaff} alt="Medical professional using tablet" className="w-full h-auto rounded-2xl" />
+              <img
+                src={clinicStaff}
+                alt="Medical professional using tablet"
+                className="w-full h-auto rounded-2xl"
+              />
             </div>
             <div className="space-y-8">
               <div className="flex gap-6">
@@ -129,10 +150,13 @@ const Home = () => {
                   <Clock className="w-8 h-8 text-primary" />
                 </div>
                 <div>
-                  <h3 className="text-2xl font-semibold mb-3">Eliminate Manual Work</h3>
+                  <h3 className="text-2xl font-semibold mb-3">
+                    Eliminate Manual Work
+                  </h3>
                   <p className="text-muted-foreground text-lg">
-                    Automate repetitive administrative tasks so your team can focus entirely on patient care. 
-                    Our AI handles routine queries, scheduling, and follow-ups—24/7.
+                    Automate repetitive administrative tasks so your team can
+                    focus entirely on patient care. Our AI handles routine
+                    queries, scheduling, and follow-ups—24/7.
                   </p>
                 </div>
               </div>
@@ -141,10 +165,13 @@ const Home = () => {
                   <TrendingUp className="w-8 h-8 text-primary" />
                 </div>
                 <div>
-                  <h3 className="text-2xl font-semibold mb-3">Increase Revenue</h3>
+                  <h3 className="text-2xl font-semibold mb-3">
+                    Increase Revenue
+                  </h3>
                   <p className="text-muted-foreground text-lg">
-                    Never miss a booking opportunity. Our 24/7 AI systems capture every inquiry, 
-                    converting more leads into confirmed appointments.
+                    Never miss a booking opportunity. Our 24/7 AI systems
+                    capture every inquiry, converting more leads into confirmed
+                    appointments.
                   </p>
                 </div>
               </div>
@@ -153,10 +180,13 @@ const Home = () => {
                   <Users className="w-8 h-8 text-primary" />
                 </div>
                 <div>
-                  <h3 className="text-2xl font-semibold mb-3">Seamless Integration</h3>
+                  <h3 className="text-2xl font-semibold mb-3">
+                    Seamless Integration
+                  </h3>
                   <p className="text-muted-foreground text-lg">
-                    Works perfectly with your existing tools. Integrates with Google Calendar, 
-                    WhatsApp, clinic management systems—no disruption to your workflow.
+                    Works perfectly with your existing tools. Integrates with
+                    Google Calendar, WhatsApp, clinic management systems—no
+                    disruption to your workflow.
                   </p>
                 </div>
               </div>

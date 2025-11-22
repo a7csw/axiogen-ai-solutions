@@ -7,7 +7,7 @@ const TrustLogos = () => {
     "Smile Clinic",
     "Health Plus",
     "Care Center",
-    "Wellness Clinic"
+    "Wellness Clinic",
   ];
 
   return (
@@ -18,12 +18,14 @@ const TrustLogos = () => {
         </p>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center">
           {logos.map((name, i) => (
-            <div 
-              key={i} 
+            <div
+              key={i}
               className="h-20 bg-card rounded-xl flex flex-col items-center justify-center border border-border hover-scale group transition-all"
             >
               <Building2 className="w-8 h-8 text-muted-foreground/40 group-hover:text-primary transition-colors mb-2" />
-              <span className="text-xs text-muted-foreground font-medium">{name}</span>
+              <span className="text-xs text-muted-foreground font-medium">
+                {name}
+              </span>
             </div>
           ))}
         </div>
