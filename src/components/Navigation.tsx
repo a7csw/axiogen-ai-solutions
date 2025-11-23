@@ -60,7 +60,7 @@ const Navigation = () => {
               </Link>
             ))}
             <Button asChild className="ml-2 font-semibold shadow-sm">
-              <Link to="/contact">Book A Demo</Link>
+              <Link to="/book-a-call">Book a Call</Link>
             </Button>
           </nav>
 
@@ -99,8 +99,8 @@ const Navigation = () => {
 
             <div className="mt-4 px-4">
               <Button asChild className="w-full text-lg h-12">
-                <Link to="/contact" onClick={() => setIsOpen(false)}>
-                  Book A Demo
+                <Link to="/book-a-call" onClick={() => setIsOpen(false)}>
+                  Book a Call
                 </Link>
               </Button>
             </div>

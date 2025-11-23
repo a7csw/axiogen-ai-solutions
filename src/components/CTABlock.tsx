@@ -9,8 +9,8 @@ interface CTABlockProps {
 }
 
 const CTABlock = ({ 
-  title = "Ready to Transform Your Clinic?",
-  description = "Join leading medical practices that have automated their workflows with Axiogen",
+  title = "Ready to Modernize Your Healthcare Operations?",
+  description = "Partner with Axiogen to design custom healthcare SaaS solutions and intelligent automations — built for hospitals, clinics, universities, and medical institutions.",
   showWhatsApp = true
 }: CTABlockProps) => {
   return (
@@ -29,9 +29,9 @@ const CTABlock = ({
             className="text-lg px-10 hover-scale" 
             asChild
           >
-            <Link to="/contact">
+            <Link to="/book-a-call">
               <Calendar className="mr-2 w-5 h-5" />
-              Book A Demo
+              Book a Call
             </Link>
           </Button>
           {showWhatsApp && (
@@ -43,7 +43,7 @@ const CTABlock = ({
             >
               <a href="https://wa.me/yourphonenumber" target="_blank" rel="noopener noreferrer">
                 <MessageSquare className="mr-2 w-5 h-5" />
-                Chat on WhatsApp
+                Contact Us on WhatsApp
               </a>
             </Button>
           )}

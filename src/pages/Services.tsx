@@ -129,7 +129,10 @@ const Services = () => {
         </div>
       </section>
 
-      <CTABlock title="Ready to Transform Your Clinic?" description="Let's discuss how our automation solutions can be customized for your practice" />
+      <CTABlock 
+        title="Ready to Modernize Your Healthcare Operations?"
+        description="Partner with Axiogen to design custom healthcare SaaS platforms and intelligent automations — built for hospitals, clinics, universities, and medical institutions."
+      />
     </div>
   );
 };

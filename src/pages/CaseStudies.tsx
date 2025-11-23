@@ -5,21 +5,33 @@ const CaseStudies = () => {
   const caseStudies = [
     {
       title: "Automated Patient Intake for Dental Clinic",
-      description: "How Axiogen automated patient intake, reducing form completion time by 60% and eliminating data entry errors for a busy dental practice.",
+      description: "Reduced intake time by 60% with intelligent form automation.",
       tag: "Dental",
-      slug: "dental-intake-automation"
+      slug: "patient-intake-automation"
     },
     {
       title: "WhatsApp Booking System Implementation",
-      description: "Implementing a 24/7 AI receptionist that increased appointment bookings by 45% and reduced front desk phone call volume by 70%.",
+      description: "Increased bookings by 45% with AI-powered 24/7 scheduling.",
       tag: "Medical",
-      slug: "whatsapp-booking-system"
+      slug: "whatsapp-booking-automation"
     },
     {
-      title: "Follow-Up Automation Success Story",
-      description: "Automated follow-up system that improved patient retention by 35% and reduced no-show rates from 18% to just 7%.",
+      title: "Follow-Up Automation Success",
+      description: "Improved patient retention by 35% with automated reminders.",
       tag: "Dental",
       slug: "follow-up-automation"
+    },
+    {
+      title: "AI-Powered Patient Analytics System",
+      description: "Reduced clinician admin time by 50% through smart analytics dashboards.",
+      tag: "Clinic Ops",
+      slug: "patient-analytics"
+    },
+    {
+      title: "Clinic Management SaaS Prototype",
+      description: "End-to-end system for managing patient records, bookings, and operations.",
+      tag: "SaaS",
+      slug: "clinic-saas-prototype"
     }
   ];
 
@@ -50,8 +62,8 @@ const CaseStudies = () => {
 
       {/* CTA */}
       <CTABlock 
-        title="Want Similar Results for Your Clinic?"
-        description="Book a demo to see how Axiogen can transform your practice"
+        title="Ready to Modernize Your Healthcare Operations?"
+        description="Partner with Axiogen to design custom healthcare SaaS platforms and intelligent automations — built for hospitals, clinics, universities, and medical institutions."
       />
     </div>
   );

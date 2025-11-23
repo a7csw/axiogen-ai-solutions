@@ -12,6 +12,9 @@ import {
   TrendingUp,
   Clock,
   Users,
+  FileText,
+  Zap,
+  Plug,
 } from "lucide-react";
 import heroDashboard from "@/assets/hero-dashboard.jpg";
 import clinicStaff from "@/assets/clinic-staff-tablet.jpg";
@@ -25,16 +28,14 @@ const Home = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="animate-fade-in-up">
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-foreground mb-6 leading-tight">
-                AI Automation for Medical Clinics
+              Intelligent Software Infrastructure for Healthcare Organizations
               </h1>
               <p className="text-xl md:text-2xl text-muted-foreground mb-10">
-                Intelligent workflows that eliminate manual work, increase
-                patient bookings by 45%, and streamline your entire
-                practice—automatically.
+              Axiogen designs secure, scalable SaaS systems and AI automations that improve efficiency across hospitals, clinics, universities, and medical institutions.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button size="lg" className="text-lg px-8 hover-scale" asChild>
-                  <Link to="/contact">Book A Demo</Link>
+                  <Link to="/book-a-call">Book a Call</Link>
                 </Button>
                 <Button
                   size="lg"
@@ -105,36 +106,51 @@ const Home = () => {
               See how we've helped clinics automate their workflows
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8">
             <CaseStudyCard
               title="Automated Patient Intake for Dental Clinic"
-              description="Reduced intake time by 60% with intelligent form automation"
+              description="Reduced intake time by 60% with intelligent form automation."
               tag="Dental"
-              slug="dental-intake-automation"
+              slug="patient-intake-automation"
             />
             <CaseStudyCard
               title="WhatsApp Booking System Implementation"
-              description="Increased bookings by 45% with 24/7 AI receptionist"
+              description="Increased bookings by 45% with AI-powered 24/7 scheduling."
               tag="Medical"
-              slug="whatsapp-booking-system"
+              slug="whatsapp-booking-automation"
             />
             <CaseStudyCard
               title="Follow-Up Automation Success"
-              description="Improved patient retention by 35% with automated reminders"
+              description="Improved patient retention by 35% with automated reminders."
               tag="Dental"
               slug="follow-up-automation"
+            />
+            <CaseStudyCard
+              title="AI-Powered Patient Analytics System"
+              description="Reduced clinician admin time by 50% through smart analytics dashboards."
+              tag="Clinic Ops"
+              slug="patient-analytics"
+            />
+            <CaseStudyCard
+              title="Clinic Management SaaS Prototype"
+              description="End-to-end system for managing patient records, bookings, and operations."
+              tag="SaaS"
+              slug="clinic-saas-prototype"
             />
           </div>
         </div>
       </section>
 
-      {/* Why Choose Us */}
+      {/* Why We Built Axiogen */}
       <section className="py-24 px-6 lg:px-8">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-              Why Leading Clinics Choose Axiogen
+              Why We Built Axiogen
             </h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Healthcare teams spend countless hours on manual work, outdated systems, and inefficient processes. We created Axiogen to bring modern SaaS infrastructure and intelligent automation to hospitals, clinics, universities, and medical institutions.
+            </p>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
             <div className="hover-image-zoom rounded-2xl overflow-hidden shadow-xl">
@@ -147,46 +163,40 @@ const Home = () => {
             <div className="space-y-8">
               <div className="flex gap-6">
                 <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center flex-shrink-0">
-                  <Clock className="w-8 h-8 text-primary" />
+                  <FileText className="w-8 h-8 text-primary" />
                 </div>
                 <div>
                   <h3 className="text-2xl font-semibold mb-3">
-                    Eliminate Manual Work
+                    Reduce Administrative Burden
                   </h3>
                   <p className="text-muted-foreground text-lg">
-                    Automate repetitive administrative tasks so your team can
-                    focus entirely on patient care. Our AI handles routine
-                    queries, scheduling, and follow-ups—24/7.
+                    Automate repetitive tasks so medical staff can focus on delivering better patient care.
                   </p>
                 </div>
               </div>
               <div className="flex gap-6">
                 <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center flex-shrink-0">
-                  <TrendingUp className="w-8 h-8 text-primary" />
+                  <Zap className="w-8 h-8 text-primary" />
                 </div>
                 <div>
                   <h3 className="text-2xl font-semibold mb-3">
-                    Increase Revenue
+                    Improve Operational Efficiency
                   </h3>
                   <p className="text-muted-foreground text-lg">
-                    Never miss a booking opportunity. Our 24/7 AI systems
-                    capture every inquiry, converting more leads into confirmed
-                    appointments.
+                    Smart workflows reduce errors, speed up processes, and unlock measurable improvements across your organization.
                   </p>
                 </div>
               </div>
               <div className="flex gap-6">
                 <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center flex-shrink-0">
-                  <Users className="w-8 h-8 text-primary" />
+                  <Plug className="w-8 h-8 text-primary" />
                 </div>
                 <div>
                   <h3 className="text-2xl font-semibold mb-3">
-                    Seamless Integration
+                    Integrate With Existing Tools
                   </h3>
                   <p className="text-muted-foreground text-lg">
-                    Works perfectly with your existing tools. Integrates with
-                    Google Calendar, WhatsApp, clinic management systems—no
-                    disruption to your workflow.
+                    Axiogen connects with EMR systems, calendars, messaging platforms, analytics dashboards, and internal tools — with no disruption.
                   </p>
                 </div>
               </div>

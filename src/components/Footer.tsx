@@ -17,9 +17,7 @@ const Footer = () => {
               />
             </div>
             <p className="text-gray-300 max-w-md">
-              We build intelligent AI automation systems that reduce admin time,
-              increase bookings, and improve patient experience for medical
-              clinics.
+              Axiogen builds secure, intelligent healthcare SaaS platforms and automation systems that streamline operations, improve clinical workflows, and enhance patient experience across hospitals, clinics, universities, and medical institutions.
             </p>
           </div>
 
@@ -76,7 +74,7 @@ const Footer = () => {
             <ul className="space-y-3">
               <li className="flex items-center space-x-2 text-gray-300">
                 <Mail className="w-4 h-4" />
-                <span>hello@axiogen.com</span>
+                <span>axiogen2@gmail.com</span>
               </li>
               <li className="flex items-center space-x-2 text-gray-300">
                 <Phone className="w-4 h-4" />

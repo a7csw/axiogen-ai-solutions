@@ -1,30 +1,30 @@
-import { TrendingUp, Clock, Users, Target } from "lucide-react";
+import { TrendingUp, ShieldCheck, Calendar, Target } from "lucide-react";
 
 const StatsSection = () => {
   const stats = [
     {
       icon: TrendingUp,
-      value: "70%",
-      label: "Faster Workflows",
-      description: "Average improvement in admin efficiency"
+      value: "65%",
+      label: "Faster Administrative Processes",
+      description: "Average improvement after modernizing manual workflows with integrated digital systems."
     },
     {
-      icon: Clock,
-      value: "35%",
-      label: "Fewer Admin Hours",
-      description: "Time saved on repetitive tasks"
+      icon: ShieldCheck,
+      value: "90%",
+      label: "Reduction in Data Errors",
+      description: "Smart validation tools ensure clean, accurate patient records and safer clinical operations."
     },
     {
-      icon: Users,
+      icon: Calendar,
       value: "45%",
-      label: "More Bookings",
-      description: "Increase in confirmed appointments"
+      label: "Increase in Confirmed Appointments",
+      description: "Smarter scheduling systems reduce no-shows and optimize patient flow."
     },
     {
       icon: Target,
       value: "92%",
       label: "Patient Satisfaction",
-      description: "Average rating from clinic patients"
+      description: "Better booking experiences and faster turnaround times improve patient outcomes."
     }
   ];
 
@@ -33,10 +33,10 @@ const StatsSection = () => {
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-            Results That Speak for Themselves
+            Results That Healthcare Teams Feel Immediately
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Real data from clinics using Axiogen automation systems
+            Real improvements delivered through Axiogen-built SaaS platforms and AI-powered healthcare systems.
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
