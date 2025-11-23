@@ -51,10 +51,11 @@ const BookACall = () => {
             </div>
           )}
           <div
-            id="cal-inline"
-            className="cal-inline-widget"
-            style={{ width: "100%", height: "700px", overflow: "hidden", borderRadius: "12px" }}
-            data-url="https://cal.com/team/leftclick/discovery?embed"
+            className="cal-embed"
+            style={{ width: "100%", height: "100vh" }}
+            data-cal-link="axiogen-8w3n8i/30min"
+            data-cal-namespace=""
+            data-cal-origin="https://cal.com"
           />
         </div>
       </section>
