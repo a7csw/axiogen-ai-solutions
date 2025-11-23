@@ -1,9 +1,14 @@
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { MessageCircle, Mail, Phone } from "lucide-react";
 
 const Contact = () => {
-
   return (
     <div className="min-h-screen pt-20">
       {/* Header */}
@@ -13,7 +18,8 @@ const Contact = () => {
             Let's Build Your Healthcare Solution
           </h1>
           <p className="text-xl text-muted-foreground">
-            Ready to modernize your healthcare operations? Get in touch with our team.
+            Ready to modernize your healthcare operations? Get in touch with our
+            team.
           </p>
         </div>
       </section>
@@ -24,14 +30,20 @@ const Contact = () => {
           <div className="space-y-8">
             <Card className="border-2 bg-gradient-to-br from-primary/5 to-accent/5">
               <CardHeader>
-                <CardTitle className="text-2xl">Chat With Us on WhatsApp</CardTitle>
+                <CardTitle className="text-2xl">
+                  Chat With Us on WhatsApp
+                </CardTitle>
                 <CardDescription className="text-base">
                   Get instant responses to your questions
                 </CardDescription>
               </CardHeader>
               <CardContent>
                 <Button size="lg" variant="default" className="w-full" asChild>
-                  <a href="https://wa.me/15551234567" target="_blank" rel="noopener noreferrer">
+                  <a
+                    href="https://wa.me/+905353296589"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <MessageCircle className="w-5 h-5 mr-2" />
                     Open WhatsApp
                   </a>
@@ -48,7 +60,9 @@ const Contact = () => {
                     </div>
                     <div>
                       <h3 className="font-semibold text-lg mb-2">Email Us</h3>
-                      <p className="text-muted-foreground">axiogen2@gmail.com</p>
+                      <p className="text-muted-foreground">
+                        axiogen2@gmail.com
+                      </p>
                     </div>
                   </div>
                 </CardContent>
