@@ -2,6 +2,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 interface CaseStudyCardProps {
   title: string;
@@ -11,6 +12,7 @@ interface CaseStudyCardProps {
 }
 
 const CaseStudyCard = ({ title, description, tag, slug }: CaseStudyCardProps) => {
+  const { t } = useTranslation();
   return (
     <Link to={`/case-studies/${slug}`}>
       <Card className="group hover-lift cursor-pointer h-full border-2 border-border">
@@ -24,8 +26,8 @@ const CaseStudyCard = ({ title, description, tag, slug }: CaseStudyCardProps) =>
           <CardDescription className="text-base">{description}</CardDescription>
         </CardHeader>
         <CardContent>
-          <div className="flex items-center text-primary font-medium group-hover:translate-x-2 transition-transform">
-            Read case study <ArrowRight className="ml-2 w-4 h-4" />
+          <div className="flex items-center text-primary font-medium group-hover:translate-x-2 rtl:group-hover:-translate-x-2 transition-transform">
+            {t("common.readCaseStudy")} <ArrowRight className="ml-2 rtl:ml-0 rtl:mr-2 rtl:rotate-180 w-4 h-4" />
           </div>
         </CardContent>
       </Card>

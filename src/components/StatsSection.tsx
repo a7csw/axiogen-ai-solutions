@@ -1,30 +1,32 @@
 import { TrendingUp, ShieldCheck, Calendar, Target } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const StatsSection = () => {
+  const { t } = useTranslation();
   const stats = [
     {
       icon: TrendingUp,
-      value: "65%",
-      label: "Faster Administrative Processes",
-      description: "Average improvement after modernizing manual workflows with integrated digital systems."
+      value: t("stats.faster.value"),
+      label: t("stats.faster.label"),
+      description: t("stats.faster.description")
     },
     {
       icon: ShieldCheck,
-      value: "90%",
-      label: "Reduction in Data Errors",
-      description: "Smart validation tools ensure clean, accurate patient records and safer clinical operations."
+      value: t("stats.errors.value"),
+      label: t("stats.errors.label"),
+      description: t("stats.errors.description")
     },
     {
       icon: Calendar,
-      value: "45%",
-      label: "Increase in Confirmed Appointments",
-      description: "Smarter scheduling systems reduce no-shows and optimize patient flow."
+      value: t("stats.appointments.value"),
+      label: t("stats.appointments.label"),
+      description: t("stats.appointments.description")
     },
     {
       icon: Target,
-      value: "92%",
-      label: "Patient Satisfaction",
-      description: "Better booking experiences and faster turnaround times improve patient outcomes."
+      value: t("stats.satisfaction.value"),
+      label: t("stats.satisfaction.label"),
+      description: t("stats.satisfaction.description")
     }
   ];
 
@@ -33,10 +35,10 @@ const StatsSection = () => {
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-            Results That Healthcare Teams Feel Immediately
+            {t("stats.title")}
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Real improvements delivered through Axiogen-built SaaS platforms and AI-powered healthcare systems.
+            {t("stats.subtitle")}
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">

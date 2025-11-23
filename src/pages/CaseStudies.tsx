@@ -1,36 +1,38 @@
 import CaseStudyCard from "@/components/CaseStudyCard";
 import CTABlock from "@/components/CTABlock";
+import { useTranslation } from "react-i18next";
 
 const CaseStudies = () => {
+  const { t } = useTranslation();
   const caseStudies = [
     {
-      title: "Automated Patient Intake for Dental Clinic",
-      description: "Reduced intake time by 60% with intelligent form automation.",
-      tag: "Dental",
+      title: t("home.caseStudies.patientIntake.title"),
+      description: t("home.caseStudies.patientIntake.description"),
+      tag: t("home.caseStudies.patientIntake.tag"),
       slug: "patient-intake-automation"
     },
     {
-      title: "WhatsApp Booking System Implementation",
-      description: "Increased bookings by 45% with AI-powered 24/7 scheduling.",
-      tag: "Medical",
+      title: t("home.caseStudies.whatsappBooking.title"),
+      description: t("home.caseStudies.whatsappBooking.description"),
+      tag: t("home.caseStudies.whatsappBooking.tag"),
       slug: "whatsapp-booking-automation"
     },
     {
-      title: "Follow-Up Automation Success",
-      description: "Improved patient retention by 35% with automated reminders.",
-      tag: "Dental",
+      title: t("home.caseStudies.followUpAuto.title"),
+      description: t("home.caseStudies.followUpAuto.description"),
+      tag: t("home.caseStudies.followUpAuto.tag"),
       slug: "follow-up-automation"
     },
     {
-      title: "AI-Powered Patient Analytics System",
-      description: "Reduced clinician admin time by 50% through smart analytics dashboards.",
-      tag: "Clinic Ops",
+      title: t("home.caseStudies.analytics.title"),
+      description: t("home.caseStudies.analytics.description"),
+      tag: t("home.caseStudies.analytics.tag"),
       slug: "patient-analytics"
     },
     {
-      title: "Clinic Management SaaS Prototype",
-      description: "End-to-end system for managing patient records, bookings, and operations.",
-      tag: "SaaS",
+      title: t("home.caseStudies.saas.title"),
+      description: t("home.caseStudies.saas.description"),
+      tag: t("home.caseStudies.saas.tag"),
       slug: "clinic-saas-prototype"
     }
   ];
@@ -41,10 +43,10 @@ const CaseStudies = () => {
       <section className="py-20 px-6 lg:px-8 bg-gradient-to-b from-background to-muted/50">
         <div className="container mx-auto max-w-4xl text-center">
           <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-6">
-            Proven Results from Real Clinics
+            {t("caseStudies.header.title")}
           </h1>
           <p className="text-xl text-muted-foreground">
-            Real automation systems delivering measurable improvements in efficiency, revenue, and patient satisfaction
+            {t("caseStudies.header.subtitle")}
           </p>
         </div>
       </section>
@@ -62,8 +64,8 @@ const CaseStudies = () => {
 
       {/* CTA */}
       <CTABlock 
-        title="Ready to Modernize Your Healthcare Operations?"
-        description="Partner with Axiogen to design custom healthcare SaaS platforms and intelligent automations — built for hospitals, clinics, universities, and medical institutions."
+        title={t("caseStudies.cta.title")}
+        description={t("caseStudies.cta.description")}
       />
     </div>
   );

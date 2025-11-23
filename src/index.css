@@ -152,6 +152,56 @@ All colors MUST be HSL.
   }
 }
 
+/* RTL Support */
+@layer base {
+  [dir="rtl"] {
+    direction: rtl;
+    text-align: right;
+  }
+  
+  [dir="ltr"] {
+    direction: ltr;
+    text-align: left;
+  }
+}
+
+@layer utilities {
+  /* RTL-aware spacing utilities */
+  [dir="rtl"] .rtl\:space-x-reverse > * + * {
+    margin-right: 0;
+    margin-left: var(--tw-space-x-reverse, 0);
+  }
+  
+  /* Ensure proper text alignment in RTL */
+  [dir="rtl"] {
+    text-align: right;
+  }
+  
+  [dir="rtl"] .text-left {
+    text-align: right;
+  }
+  
+  [dir="rtl"] .text-right {
+    text-align: left;
+  }
+  
+  /* RTL-aware flex direction */
+  [dir="rtl"] .flex-row {
+    flex-direction: row-reverse;
+  }
+  
+  /* RTL-aware margins and padding */
+  [dir="rtl"] .ml-auto {
+    margin-left: 0;
+    margin-right: auto;
+  }
+  
+  [dir="rtl"] .mr-auto {
+    margin-right: 0;
+    margin-left: auto;
+  }
+}
+
 @keyframes fade-in-up {
   from {
     opacity: 0;

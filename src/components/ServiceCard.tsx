@@ -2,6 +2,7 @@ import { LucideIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 interface ServiceCardProps {
   icon: LucideIcon;
@@ -11,6 +12,7 @@ interface ServiceCardProps {
 }
 
 const ServiceCard = ({ icon: Icon, title, description, link }: ServiceCardProps) => {
+  const { t } = useTranslation();
   const content = (
     <Card className="group hover-lift cursor-pointer h-full border-2 border-border">
       <CardHeader>
@@ -21,8 +23,8 @@ const ServiceCard = ({ icon: Icon, title, description, link }: ServiceCardProps)
         <CardDescription className="text-base">{description}</CardDescription>
       </CardHeader>
       <CardContent>
-        <div className="flex items-center text-primary font-medium group-hover:translate-x-2 transition-transform">
-          Learn more <span className="ml-2">→</span>
+        <div className="flex items-center text-primary font-medium group-hover:translate-x-2 rtl:group-hover:-translate-x-2 transition-transform">
+          {t("common.learnMore")} <span className="ml-2 rtl:ml-0 rtl:mr-2">→</span>
         </div>
       </CardContent>
     </Card>
