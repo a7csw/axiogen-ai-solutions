@@ -13,64 +13,64 @@ const Services = () => {
   const services = [
     {
       icon: MessageSquare,
-      title: "AI WhatsApp Receptionist",
-      description: "Deploy a 24/7 intelligent receptionist that handles patient communication through WhatsApp with human-like natural language understanding.",
+      title: "AI-Powered Patient Communication Platform",
+      description: "Custom-built patient engagement system with intelligent multi-channel communication capabilities, enabling 24/7 automated responses and seamless integration with your existing healthcare infrastructure.",
       features: [
-        "Instant automated responses to common inquiries",
-        "Natural language processing for complex questions",
-        "Smart routing for urgent matters to your team",
-        "Multi-language support for diverse patient base",
-        "Complete integration with your clinic system"
+        "Multi-channel patient communication (WhatsApp, SMS, Email)",
+        "Advanced NLP for medical query understanding",
+        "Intelligent triage and escalation workflows",
+        "HIPAA-compliant data handling and encryption",
+        "Integration with EHR/EMR and practice management systems"
       ],
       image: whatsappMockup,
       imageAlt: "WhatsApp AI receptionist interface"
     },
     {
       icon: Calendar,
-      title: "Appointment Booking Workflow",
-      description: "Seamless appointment management that allows patients to book, reschedule, or cancel appointments through WhatsApp or your website, with automatic calendar synchronization.",
+      title: "Healthcare Appointment Management System",
+      description: "Enterprise-grade scheduling platform designed for medical institutions, featuring real-time availability management, automated workflows, and seamless calendar synchronization across departments.",
       features: [
-        "Real-time availability checking",
-        "Automated confirmation and reminder messages",
-        "Easy rescheduling and cancellation",
-        "Google Calendar & Outlook integration",
-        "Waiting list management for cancellations"
+        "Multi-provider and multi-location scheduling",
+        "Real-time availability and resource management",
+        "Automated appointment confirmations and reminders",
+        "Bi-directional calendar sync (Google, Outlook, Apple)",
+        "Intelligent waitlist management and rebooking automation"
       ]
     },
     {
       icon: Bell,
-      title: "Follow-Up & Reminder System",
-      description: "Reduce no-shows and improve patient engagement with intelligent reminder sequences that adapt to patient preferences and appointment types.",
+      title: "Patient Engagement & Follow-Up Platform",
+      description: "Comprehensive engagement system that reduces no-shows, improves treatment adherence, and enhances patient satisfaction through intelligent, personalized communication sequences.",
       features: [
-        "Automated pre-appointment reminders",
-        "Post-treatment follow-up messages",
-        "Customizable reminder schedules",
-        "Two-way confirmation system",
-        "No-show reduction analytics"
+        "Customizable multi-touch reminder campaigns",
+        "Post-procedure follow-up automation",
+        "Patient satisfaction surveys and feedback collection",
+        "Two-way communication with confirmation tracking",
+        "Predictive analytics for no-show risk assessment"
       ]
     },
     {
       icon: FileText,
-      title: "Patient Intake Automation",
-      description: "Streamline your patient registration process with automated digital forms that integrate directly with your practice management system.",
+      title: "Digital Patient Intake & Registration System",
+      description: "Streamlined digital onboarding platform that modernizes patient registration, reduces administrative burden, and ensures accurate data capture with direct EHR integration.",
       features: [
-        "Digital patient registration forms",
-        "Medical history collection",
-        "Consent form management",
-        "Insurance information capture",
-        "Automatic record creation in your system"
+        "Customizable digital registration and intake forms",
+        "Automated medical history and symptom collection",
+        "E-signature for consent and HIPAA forms",
+        "Insurance verification and eligibility checks",
+        "Seamless integration with practice management systems"
       ]
     },
     {
       icon: BarChart3,
-      title: "Clinic Analytics Dashboard",
-      description: "Gain valuable insights into your clinic's operations with comprehensive analytics covering appointments, patient engagement, and workflow efficiency.",
+      title: "Healthcare Analytics & Reporting Dashboard",
+      description: "Custom-built analytics platform providing actionable insights into clinical operations, patient flow, revenue cycles, and operational efficiency across your healthcare organization.",
       features: [
-        "Real-time appointment metrics",
-        "Patient engagement tracking",
-        "No-show rate analysis",
-        "Revenue forecasting",
-        "Custom reporting capabilities"
+        "Real-time operational metrics and KPI tracking",
+        "Patient journey and engagement analytics",
+        "Revenue cycle and financial performance insights",
+        "Predictive modeling for capacity planning",
+        "Custom reporting with data visualization tools"
       ]
     }
   ];
@@ -81,10 +81,10 @@ const Services = () => {
       <section className="py-20 px-6 lg:px-8 bg-gradient-to-b from-background to-muted">
         <div className="container mx-auto max-w-4xl text-center">
           <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-6">
-            Our Automation Solutions for Clinics
+            Healthcare SaaS Solutions & Platform Development
           </h1>
           <p className="text-xl text-muted-foreground">
-            Comprehensive AI-powered systems designed specifically for medical and dental practices
+            Custom-built software platforms and intelligent automation for hospitals, clinics, universities, and medical institutions
           </p>
         </div>
       </section>
