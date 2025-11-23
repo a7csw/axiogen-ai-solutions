@@ -1,4 +1,5 @@
 import { useParams, Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -6,28 +7,39 @@ import { ArrowLeft, CheckCircle2 } from "lucide-react";
 
 const CaseStudyDetail = () => {
   const { slug } = useParams();
+  const { t, i18n } = useTranslation();
+  const isRTL = i18n.language === 'ar';
 
-  // Mock data - in a real app this would come from an API or CMS
-  const caseStudyData: Record<string, any> = {
-    "patient-intake-automation": {
-      title: "Automated Patient Intake for Dental Clinic",
-      tag: "Dental",
-      intro: "A comprehensive digital intake system that transforms patient onboarding and eliminates manual paperwork.",
-      problem: "A growing dental practice was spending 15-20 minutes per patient on manual intake forms, leading to long wait times and staff frustration. The paper-based system resulted in incomplete data and frequent errors that required follow-up calls.",
-      solution: "Axiogen implemented a comprehensive digital intake system that patients complete before arrival via WhatsApp or email. The system uses intelligent forms with conditional logic, automatic validation, and seamless integration with their practice management software. Key features include:\n\n• Pre-appointment form completion via multiple channels\n• Intelligent conditional logic that adapts questions based on patient responses\n• Automatic data validation and error prevention\n• Real-time sync with practice management systems\n• Secure patient data handling with HIPAA compliance",
+  // Get case study data from translations
+  const getCaseStudyData = (slug: string | undefined) => {
+    if (!slug) return null;
+    
+    const caseStudyMap: Record<string, { detailKey: string; listKey: string }> = {
+      "patient-intake-automation": { detailKey: "patientIntake", listKey: "dentalIntake" },
+      "whatsapp-booking-automation": { detailKey: "whatsappBooking", listKey: "whatsappBooking" },
+      "follow-up-automation": { detailKey: "followUp", listKey: "followUp" },
+      "patient-analytics": { detailKey: "patientAnalytics", listKey: "analytics" },
+      "clinic-saas-prototype": { detailKey: "clinicSaaS", listKey: "saas" }
+    };
+    
+    const mapping = caseStudyMap[slug];
+    if (!mapping) return null;
+    
+    const detailData = t(`caseStudies.detail.${mapping.detailKey}`, { returnObjects: true }) as any;
+    return {
+      title: t(`caseStudies.${mapping.listKey}.title`),
+      tag: t(`caseStudies.${mapping.listKey}.tag`),
+      intro: detailData.intro,
+      problem: detailData.problem,
+      solution: detailData.solution,
+      solutionBullets: detailData.solutionBullets,
       tools: ["Make.com", "WhatsApp Business API", "Supabase", "Typeform", "Practice Management API", "Custom React Dashboard"],
-      results: [
-        "65% faster administrative processes",
-        "95% form completion rate before appointments",
-        "90% reduction in data entry errors",
-        "Eliminated 4 hours of admin work per day"
-      ],
-      testimonial: {
-        text: "The automated intake system has been a game-changer for our practice. Patients love completing forms at their convenience, and our team can focus on providing excellent care instead of paperwork.",
-        author: "Dr. Sarah Mitchell",
-        role: "Practice Owner"
-      }
-    },
+      results: Object.values(detailData.results || {}),
+      testimonial: detailData.testimonial
+    };
+  };
+  
+  const caseStudy = getCaseStudyData(slug);
     "whatsapp-booking-automation": {
       title: "WhatsApp Booking System Implementation",
       tag: "Medical",
@@ -106,15 +118,13 @@ const CaseStudyDetail = () => {
     }
   };
 
-  const caseStudy = slug ? caseStudyData[slug] : null;
-
   if (!caseStudy) {
     return (
       <div className="min-h-screen pt-32 px-6 lg:px-8">
         <div className="container mx-auto max-w-4xl text-center">
-          <h1 className="text-4xl font-bold mb-4">Case Study Not Found</h1>
+          <h1 className="text-4xl font-bold mb-4">{t("caseStudies.detail.notFound")}</h1>
           <Button asChild>
-            <Link to="/case-studies">Back to Case Studies</Link>
+            <Link to="/case-studies">{t("caseStudies.detail.backToCaseStudies")}</Link>
           </Button>
         </div>
       </div>
@@ -128,8 +138,8 @@ const CaseStudyDetail = () => {
         <div className="container mx-auto max-w-4xl">
           <Button variant="ghost" asChild>
             <Link to="/case-studies">
-              <ArrowLeft className="w-4 h-4 mr-2" />
-              Back to Case Studies
+              <ArrowLeft className={`w-4 h-4 ${isRTL ? 'rtl-flip' : ''} ${isRTL ? 'ml-2' : 'mr-2'}`} />
+              {t("caseStudies.detail.backToCaseStudies")}
             </Link>
           </Button>
         </div>
@@ -158,7 +168,7 @@ const CaseStudyDetail = () => {
           {/* Problem */}
           <Card>
             <CardHeader>
-              <CardTitle className="text-2xl">The Challenge</CardTitle>
+              <CardTitle className="text-2xl">{t("caseStudies.detail.challenge")}</CardTitle>
             </CardHeader>
             <CardContent>
               <p className="text-lg text-muted-foreground leading-relaxed">
@@ -170,45 +180,21 @@ const CaseStudyDetail = () => {
           {/* Solution */}
           <Card>
             <CardHeader>
-              <CardTitle className="text-2xl">Our Solution</CardTitle>
+              <CardTitle className="text-2xl">{t("caseStudies.detail.solution")}</CardTitle>
             </CardHeader>
             <CardContent>
               <div className="text-lg text-muted-foreground leading-relaxed mb-6">
-                {caseStudy.solution.split('\n\n').map((paragraph: string, idx: number) => {
-                  const lines = paragraph.split('\n').filter(line => line.trim());
-                  const hasBullets = lines.some(line => line.trim().startsWith('•'));
-                  
-                  if (hasBullets) {
-                    // Separate regular text from bullet points
-                    const regularText = lines.filter(line => !line.trim().startsWith('•'));
-                    const bulletItems = lines.filter(line => line.trim().startsWith('•'));
-                    
-                    return (
-                      <div key={idx} className="mb-4">
-                        {regularText.length > 0 && (
-                          <p className="mb-4">{regularText.join(' ')}</p>
-                        )}
-                        {bulletItems.length > 0 && (
-                          <ul className="list-disc list-inside space-y-2 ml-4">
-                            {bulletItems.map((item, itemIdx) => (
-                              <li key={itemIdx}>
-                                {item.replace(/^•\s*/, '')}
-                              </li>
-                            ))}
-                          </ul>
-                        )}
-                      </div>
-                    );
-                  }
-                  return (
-                    <p key={idx} className="mb-4">
-                      {paragraph}
-                    </p>
-                  );
-                })}
+                <p className="mb-4">{caseStudy.solution}</p>
+                {caseStudy.solutionBullets && (
+                  <ul className={`list-disc space-y-2 ${isRTL ? 'list-inside' : 'ml-4'}`}>
+                    {Object.values(caseStudy.solutionBullets).map((bullet: any, idx: number) => (
+                      <li key={idx}>{bullet}</li>
+                    ))}
+                  </ul>
+                )}
               </div>
               <div className="bg-muted p-6 rounded-lg">
-                <h4 className="font-semibold mb-4">Tools & Technologies Used:</h4>
+                <h4 className="font-semibold mb-4">{t("caseStudies.detail.toolsTechnologies")}</h4>
                 <div className="flex flex-wrap gap-2">
                   {caseStudy.tools.map((tool: string, index: number) => (
                     <Badge key={index} variant="secondary">
@@ -222,14 +208,14 @@ const CaseStudyDetail = () => {
 
           {/* Workflow Diagram Placeholder */}
           <div className="bg-muted rounded-2xl p-12 text-center">
-            <p className="text-muted-foreground">Workflow Diagram</p>
-            <p className="text-sm text-muted-foreground mt-2">Visual representation of the automation flow</p>
+            <p className="text-muted-foreground">{t("caseStudies.detail.workflowDiagram")}</p>
+            <p className="text-sm text-muted-foreground mt-2">{t("caseStudies.detail.workflowDiagramDesc")}</p>
           </div>
 
           {/* Results */}
           <Card>
             <CardHeader>
-              <CardTitle className="text-2xl">Measurable Results</CardTitle>
+              <CardTitle className="text-2xl">{t("caseStudies.detail.measurableResults")}</CardTitle>
             </CardHeader>
             <CardContent>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -262,13 +248,13 @@ const CaseStudyDetail = () => {
       <section className="py-20 px-6 lg:px-8 bg-navy text-white">
         <div className="container mx-auto max-w-4xl text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Ready for similar results?
+            {t("caseStudies.detail.readyForResults")}
           </h2>
           <p className="text-xl mb-8 opacity-90">
-            Let's discuss how we can automate your clinic's workflows
+            {t("caseStudies.detail.discussAutomation")}
           </p>
           <Button size="lg" variant="secondary" className="text-lg px-10" asChild>
-            <Link to="/book-a-call">Book a Call</Link>
+            <a href="https://cal.com/axiogen-8w3n8i/30min?overlayCalendar=true">{t("cta.bookACall")}</a>
           </Button>
         </div>
       </section>

@@ -1,12 +1,19 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Languages } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import logo from "../assets/axiogen.png";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
+  const { t, i18n } = useTranslation();
+
+  const changeLanguage = (lng: string) => {
+    i18n.changeLanguage(lng);
+    localStorage.setItem('i18nextLng', lng);
+  };
 
   // Lock body scroll when mobile menu is open
   useEffect(() => {
@@ -18,11 +25,11 @@ const Navigation = () => {
   }, [isOpen]);
 
   const navLinks = [
-    { name: "Home", path: "/" },
-    { name: "Services", path: "/services" },
-    { name: "Case Studies", path: "/case-studies" },
-    { name: "About", path: "/about" },
-    { name: "Contact", path: "/contact" },
+    { name: t("nav.home"), path: "/" },
+    { name: t("nav.services"), path: "/services" },
+    { name: t("nav.caseStudies"), path: "/case-studies" },
+    { name: t("nav.about"), path: "/about" },
+    { name: t("nav.contact"), path: "/contact" },
   ];
 
   const isActive = (path: string) => location.pathname === path;
@@ -59,9 +66,19 @@ const Navigation = () => {
                 {link.name}
               </Link>
             ))}
-            <Button asChild className="ml-2 font-semibold shadow-sm">
-              <a href="https://cal.com/axiogen-8w3n8i/30min?overlayCalendar=true">Book a Call</a>
-            </Button>
+            <div className="flex items-center gap-2 ml-2">
+              <button
+                onClick={() => changeLanguage(i18n.language === 'ar' ? 'en' : 'ar')}
+                className="flex items-center gap-1 px-3 py-1.5 rounded-md text-sm font-medium text-muted-foreground hover:text-primary hover:bg-accent transition-colors"
+                aria-label="Toggle language"
+              >
+                <Languages className="w-4 h-4" />
+                <span>{i18n.language === 'ar' ? 'EN' : 'AR'}</span>
+              </button>
+              <Button asChild className="font-semibold shadow-sm">
+                <a href="https://cal.com/axiogen-8w3n8i/30min?overlayCalendar=true">{t("nav.bookACall")}</a>
+              </Button>
+            </div>
           </nav>
 
           {/* Mobile Menu Toggle */}
@@ -97,10 +114,19 @@ const Navigation = () => {
               ))}
             </div>
 
-            <div className="mt-4 px-4">
+            <div className="mt-4 px-4 space-y-3">
+              <button
+                onClick={() => {
+                  changeLanguage(i18n.language === 'ar' ? 'en' : 'ar');
+                }}
+                className="w-full flex items-center justify-center gap-2 px-4 py-3 rounded-md text-lg font-medium text-foreground hover:bg-accent transition-colors border border-border"
+              >
+                <Languages className="w-5 h-5" />
+                <span>{i18n.language === 'ar' ? 'English' : 'العربية'}</span>
+              </button>
               <Button asChild className="w-full text-lg h-12">
                 <a href="https://cal.com/axiogen-8w3n8i/30min?overlayCalendar=true" onClick={() => setIsOpen(false)}>
-                  Book a Call
+                  {t("nav.bookACall")}
                 </a>
               </Button>
             </div>

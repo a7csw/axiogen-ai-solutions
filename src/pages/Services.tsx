@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import CTABlock from "@/components/CTABlock";
 import { MessageSquare, Calendar, Bell, FileText, BarChart3, Check } from "lucide-react";
 import whatsappMockup from "@/assets/whatsapp-ai-mockup.jpg";
@@ -10,67 +11,68 @@ import patientIntake from "@/assets/patient-intake-mockup.jpg";
 import analyticsDashboard from "@/assets/analytics-dashboard.jpg";
 
 const Services = () => {
+  const { t } = useTranslation();
   const services = [
     {
       icon: MessageSquare,
-      title: "AI-Powered Patient Communication Platform",
-      description: "Custom-built patient engagement system with intelligent multi-channel communication capabilities, enabling 24/7 automated responses and seamless integration with your existing healthcare infrastructure.",
+      title: t("services.communication.title"),
+      description: t("services.communication.description"),
       features: [
-        "Multi-channel patient communication (WhatsApp, SMS, Email)",
-        "Advanced NLP for medical query understanding",
-        "Intelligent triage and escalation workflows",
-        "HIPAA-compliant data handling and encryption",
-        "Integration with EHR/EMR and practice management systems"
+        t("services.communication.features.1"),
+        t("services.communication.features.2"),
+        t("services.communication.features.3"),
+        t("services.communication.features.4"),
+        t("services.communication.features.5")
       ],
       image: whatsappMockup,
       imageAlt: "WhatsApp AI receptionist interface"
     },
     {
       icon: Calendar,
-      title: "Healthcare Appointment Management System",
-      description: "Enterprise-grade scheduling platform designed for medical institutions, featuring real-time availability management, automated workflows, and seamless calendar synchronization across departments.",
+      title: t("services.appointment.title"),
+      description: t("services.appointment.description"),
       features: [
-        "Multi-provider and multi-location scheduling",
-        "Real-time availability and resource management",
-        "Automated appointment confirmations and reminders",
-        "Bi-directional calendar sync (Google, Outlook, Apple)",
-        "Intelligent waitlist management and rebooking automation"
+        t("services.appointment.features.1"),
+        t("services.appointment.features.2"),
+        t("services.appointment.features.3"),
+        t("services.appointment.features.4"),
+        t("services.appointment.features.5")
       ]
     },
     {
       icon: Bell,
-      title: "Patient Engagement & Follow-Up Platform",
-      description: "Comprehensive engagement system that reduces no-shows, improves treatment adherence, and enhances patient satisfaction through intelligent, personalized communication sequences.",
+      title: t("services.engagement.title"),
+      description: t("services.engagement.description"),
       features: [
-        "Customizable multi-touch reminder campaigns",
-        "Post-procedure follow-up automation",
-        "Patient satisfaction surveys and feedback collection",
-        "Two-way communication with confirmation tracking",
-        "Predictive analytics for no-show risk assessment"
+        t("services.engagement.features.1"),
+        t("services.engagement.features.2"),
+        t("services.engagement.features.3"),
+        t("services.engagement.features.4"),
+        t("services.engagement.features.5")
       ]
     },
     {
       icon: FileText,
-      title: "Digital Patient Intake & Registration System",
-      description: "Streamlined digital onboarding platform that modernizes patient registration, reduces administrative burden, and ensures accurate data capture with direct EHR integration.",
+      title: t("services.intake.title"),
+      description: t("services.intake.description"),
       features: [
-        "Customizable digital registration and intake forms",
-        "Automated medical history and symptom collection",
-        "E-signature for consent and HIPAA forms",
-        "Insurance verification and eligibility checks",
-        "Seamless integration with practice management systems"
+        t("services.intake.features.1"),
+        t("services.intake.features.2"),
+        t("services.intake.features.3"),
+        t("services.intake.features.4"),
+        t("services.intake.features.5")
       ]
     },
     {
       icon: BarChart3,
-      title: "Healthcare Analytics & Reporting Dashboard",
-      description: "Custom-built analytics platform providing actionable insights into clinical operations, patient flow, revenue cycles, and operational efficiency across your healthcare organization.",
+      title: t("services.analytics.title"),
+      description: t("services.analytics.description"),
       features: [
-        "Real-time operational metrics and KPI tracking",
-        "Patient journey and engagement analytics",
-        "Revenue cycle and financial performance insights",
-        "Predictive modeling for capacity planning",
-        "Custom reporting with data visualization tools"
+        t("services.analytics.features.1"),
+        t("services.analytics.features.2"),
+        t("services.analytics.features.3"),
+        t("services.analytics.features.4"),
+        t("services.analytics.features.5")
       ]
     }
   ];
@@ -81,10 +83,10 @@ const Services = () => {
       <section className="py-20 px-6 lg:px-8 bg-gradient-to-b from-background to-muted">
         <div className="container mx-auto max-w-4xl text-center">
           <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-6">
-            Healthcare SaaS Solutions & Platform Development
+            {t("services.title")}
           </h1>
           <p className="text-xl text-muted-foreground">
-            Custom-built software platforms and intelligent automation for hospitals, clinics, universities, and medical institutions
+            {t("services.subtitle")}
           </p>
         </div>
       </section>
@@ -129,10 +131,7 @@ const Services = () => {
         </div>
       </section>
 
-      <CTABlock 
-        title="Ready to Modernize Your Healthcare Operations?"
-        description="Partner with Axiogen to design custom healthcare SaaS platforms and intelligent automations — built for hospitals, clinics, universities, and medical institutions."
-      />
+      <CTABlock />
     </div>
   );
 };

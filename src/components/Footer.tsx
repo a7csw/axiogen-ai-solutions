@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { Mail, Phone, Linkedin, Twitter } from "lucide-react";
 import logo from "../assets/axiogen.png";
 
 const Footer = () => {
+  const { t } = useTranslation();
   return (
     <footer className="bg-navy text-white">
       <div className="container mx-auto px-6 lg:px-8 py-16">
@@ -17,20 +19,20 @@ const Footer = () => {
               />
             </div>
             <p className="text-gray-300 max-w-md">
-              Axiogen builds secure, intelligent healthcare SaaS platforms and automation systems that streamline operations, improve clinical workflows, and enhance patient experience across hospitals, clinics, universities, and medical institutions.
+              {t("footer.description")}
             </p>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
+            <h4 className="text-lg font-semibold mb-4">{t("footer.quickLinks")}</h4>
             <ul className="space-y-2">
               <li>
                 <Link
                   to="/"
                   className="text-gray-300 hover:text-primary transition-colors"
                 >
-                  Home
+                  {t("nav.home")}
                 </Link>
               </li>
               <li>
@@ -38,7 +40,7 @@ const Footer = () => {
                   to="/services"
                   className="text-gray-300 hover:text-primary transition-colors"
                 >
-                  Services
+                  {t("nav.services")}
                 </Link>
               </li>
               <li>
@@ -46,7 +48,7 @@ const Footer = () => {
                   to="/case-studies"
                   className="text-gray-300 hover:text-primary transition-colors"
                 >
-                  Case Studies
+                  {t("nav.caseStudies")}
                 </Link>
               </li>
               <li>
@@ -54,7 +56,7 @@ const Footer = () => {
                   to="/about"
                   className="text-gray-300 hover:text-primary transition-colors"
                 >
-                  About
+                  {t("nav.about")}
                 </Link>
               </li>
               <li>
@@ -62,7 +64,7 @@ const Footer = () => {
                   to="/contact"
                   className="text-gray-300 hover:text-primary transition-colors"
                 >
-                  Contact
+                  {t("nav.contact")}
                 </Link>
               </li>
             </ul>
@@ -70,7 +72,7 @@ const Footer = () => {
 
           {/* Contact */}
           <div>
-            <h4 className="text-lg font-semibold mb-4">Contact</h4>
+            <h4 className="text-lg font-semibold mb-4">{t("footer.contact")}</h4>
             <ul className="space-y-3">
               <li className="flex items-center space-x-2 text-gray-300">
                 <Mail className="w-4 h-4" />
@@ -86,7 +88,7 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-gray-700 mt-12 pt-8 text-center text-gray-400 text-sm">
-          © {new Date().getFullYear()} Axiogen. All rights reserved.
+          © {new Date().getFullYear()} Axiogen. {t("footer.allRightsReserved")}
         </div>
       </div>
     </footer>

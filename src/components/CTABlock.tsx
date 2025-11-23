@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { useTranslation } from "react-i18next";
 import { MessageSquare, Calendar } from "lucide-react";
 
 interface CTABlockProps {
@@ -8,18 +9,21 @@ interface CTABlockProps {
 }
 
 const CTABlock = ({ 
-  title = "Ready to Modernize Your Healthcare Operations?",
-  description = "Partner with Axiogen to design custom healthcare SaaS solutions and intelligent automations — built for hospitals, clinics, universities, and medical institutions.",
+  title,
+  description,
   showWhatsApp = true
 }: CTABlockProps) => {
+  const { t } = useTranslation();
+  const defaultTitle = t("cta.title");
+  const defaultDescription = t("cta.description");
   return (
     <section className="py-20 px-6 lg:px-8 bg-gradient-to-br from-primary to-accent text-white">
       <div className="container mx-auto max-w-4xl text-center">
         <h2 className="text-4xl md:text-5xl font-bold mb-6">
-          {title}
+          {title || defaultTitle}
         </h2>
         <p className="text-xl mb-10 opacity-90">
-          {description}
+          {description || defaultDescription}
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Button 
@@ -30,7 +34,7 @@ const CTABlock = ({
           >
             <a href="https://cal.com/axiogen-8w3n8i/30min?overlayCalendar=true">
               <Calendar className="mr-2 w-5 h-5" />
-              Book a Call
+              {t("cta.bookACall")}
             </a>
           </Button>
           {showWhatsApp && (
@@ -42,7 +46,7 @@ const CTABlock = ({
             >
               <a href="https://wa.me/yourphonenumber" target="_blank" rel="noopener noreferrer">
                 <MessageSquare className="mr-2 w-5 h-5" />
-                Contact Us on WhatsApp
+                {t("cta.contactWhatsApp")}
               </a>
             </Button>
           )}
