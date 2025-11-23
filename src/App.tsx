@@ -11,7 +11,6 @@ import CaseStudies from "./pages/CaseStudies";
 import CaseStudyDetail from "./pages/CaseStudyDetail";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
-import BookACall from "./pages/BookACall";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -30,7 +29,6 @@ const App = () => (
           <Route path="/case-studies/:slug" element={<CaseStudyDetail />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/book-a-call" element={<BookACall />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />

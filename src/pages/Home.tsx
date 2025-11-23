@@ -35,7 +35,7 @@ const Home = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button size="lg" className="text-lg px-8 hover-scale" asChild>
-                  <Link to="/book-a-call">Book a Call</Link>
+                  <a href="https://cal.com/axiogen-8w3n8i/30min?overlayCalendar=true">Book a Call</a>
                 </Button>
                 <Button
                   size="lg"

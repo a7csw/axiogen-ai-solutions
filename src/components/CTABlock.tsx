@@ -1,5 +1,4 @@
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
 import { MessageSquare, Calendar } from "lucide-react";
 
 interface CTABlockProps {
@@ -29,10 +28,10 @@ const CTABlock = ({
             className="text-lg px-10 hover-scale" 
             asChild
           >
-            <Link to="/book-a-call">
+            <a href="https://cal.com/axiogen-8w3n8i/30min?overlayCalendar=true">
               <Calendar className="mr-2 w-5 h-5" />
               Book a Call
-            </Link>
+            </a>
           </Button>
           {showWhatsApp && (
             <Button 
