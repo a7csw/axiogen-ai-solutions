@@ -11,7 +11,7 @@ const About = () => {
             Our Mission
           </h1>
           <p className="text-xl text-muted-foreground">
-            Modernizing medical clinics through intelligent automation
+            Modernizing healthcare operations with intelligent SaaS platforms and AI-driven automation
           </p>
         </div>
       </section>
@@ -20,10 +20,11 @@ const About = () => {
       <section className="py-16 px-6 lg:px-8">
         <div className="container mx-auto max-w-4xl">
           <p className="text-2xl text-center text-muted-foreground leading-relaxed">
-            At Axiogen, we believe that medical professionals should spend their
-            time on what matters most: providing exceptional patient care. Our
-            mission is to eliminate the administrative burden that holds clinics
-            back from reaching their full potential.
+            At Axiogen, we partner with healthcare organizations to build intelligent 
+            software infrastructure that transforms clinical operations. Our mission is 
+            to modernize medical institutions with custom SaaS platforms and AI-powered 
+            automation that enhance patient care, streamline workflows, and drive 
+            operational excellence.
           </p>
         </div>
       </section>
@@ -38,13 +39,14 @@ const About = () => {
               </CardHeader>
               <CardContent>
                 <p className="text-lg text-muted-foreground leading-relaxed">
-                  Axiogen is a specialized AI automation agency focused
-                  exclusively on the medical industry. We combine deep
-                  healthcare domain knowledge with cutting-edge automation
-                  technology to create solutions that truly understand the
-                  unique needs of medical practices. Our team consists of
-                  automation experts, healthcare consultants, and AI specialists
-                  who are passionate about transforming clinic operations.
+                  Axiogen is a healthcare-focused SaaS and automation company 
+                  specializing in custom software development for medical institutions. 
+                  We design and build enterprise-grade digital platforms that address 
+                  the complex operational challenges faced by hospitals, clinics, 
+                  universities, and healthcare organizations. Our team brings together 
+                  software engineers, healthcare workflow specialists, and AI experts 
+                  who understand the nuances of medical operations and regulatory 
+                  compliance.
                 </p>
               </CardContent>
             </Card>
@@ -55,13 +57,14 @@ const About = () => {
               </CardHeader>
               <CardContent>
                 <p className="text-lg text-muted-foreground leading-relaxed">
-                  We started Axiogen after witnessing firsthand how much time
-                  medical professionals waste on repetitive administrative
-                  tasks. Phone calls, appointment scheduling, follow-ups, and
-                  data entry consume hours that could be spent with patients. We
-                  exist to change that reality—to automate the mundane so
-                  healthcare providers can focus on what they do best: healing
-                  and caring for people.
+                  Healthcare organizations face unprecedented operational complexity—
+                  fragmented systems, administrative overload, and inefficient workflows 
+                  that drain resources and impact patient care. We founded Axiogen to 
+                  solve these systemic challenges through purpose-built software platforms 
+                  and intelligent automation. Our goal is to empower medical institutions 
+                  with modern technology infrastructure that reduces administrative burden, 
+                  improves operational efficiency, and enables healthcare professionals to 
+                  focus on delivering exceptional patient outcomes.
                 </p>
               </CardContent>
             </Card>
@@ -82,10 +85,10 @@ const About = () => {
               </div>
               <h3 className="text-2xl font-semibold mb-4">Precision</h3>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                In healthcare, accuracy is paramount. Our automation systems are
-                built with meticulous attention to detail, ensuring every
-                interaction and data point is handled with the highest level of
-                precision and reliability.
+                In healthcare, accuracy is non-negotiable. Every platform we build 
+                is engineered with meticulous attention to detail, ensuring data 
+                integrity, regulatory compliance, and reliable performance across 
+                all clinical workflows and patient interactions.
               </p>
             </div>
 
@@ -95,10 +98,11 @@ const About = () => {
               </div>
               <h3 className="text-2xl font-semibold mb-4">Efficiency</h3>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                We're obsessed with eliminating waste. Every system we build is
-                designed to maximize efficiency, reduce redundant work, and
-                streamline operations so your clinic can do more with less
-                effort.
+                We design software that eliminates operational friction. Every 
+                platform and automation we build is optimized to streamline workflows, 
+                reduce administrative overhead, and maximize resource utilization—
+                enabling healthcare organizations to scale effectively while maintaining 
+                quality of care.
               </p>
             </div>
 
@@ -106,12 +110,12 @@ const About = () => {
               <div className="w-20 h-20 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-6">
                 <Heart className="w-10 h-10 text-primary" />
               </div>
-              <h3 className="text-2xl font-semibold mb-4">Care</h3>
+              <h3 className="text-2xl font-semibold mb-4">Care & Empathy</h3>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                At our core, we care deeply about improving healthcare delivery.
-                We design our solutions with empathy—for the patients receiving
-                care and the professionals providing it. Better automation means
-                better care for everyone.
+                We deeply understand the human side of healthcare. Our solutions 
+                are designed with empathy for both patients and providers—creating 
+                technology that enhances the care experience, reduces burnout, and 
+                supports better health outcomes for everyone in the healthcare ecosystem.
               </p>
             </div>
           </div>
