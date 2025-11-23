@@ -1,20 +1,24 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 const BookACall = () => {
+  const [isLoading, setIsLoading] = useState(true);
+
   useEffect(() => {
     // Load Cal.com embed script
     const script = document.createElement("script");
     script.type = "text/javascript";
-    script.innerHTML = `
-      (function(c,a,l){var d=c.createElement(a);d.src=l;d.async=true;
-      var s=c.getElementsByTagName(a)[0];s.parentNode.insertBefore(d,s);})
-      (document,"script","https://app.cal.com/embed/embed.js");
-    `;
+    script.src = "https://cal.com/embed.js";
+    script.async = true;
+    
+    script.onload = () => {
+      setIsLoading(false);
+    };
+
     document.body.appendChild(script);
 
     return () => {
       // Cleanup script on unmount
-      const existingScript = document.querySelector('script[src="https://app.cal.com/embed/embed.js"]');
+      const existingScript = document.querySelector('script[src="https://cal.com/embed.js"]');
       if (existingScript) {
         existingScript.remove();
       }
@@ -38,11 +42,19 @@ const BookACall = () => {
       {/* Cal.com Embed */}
       <section className="py-16 px-6 lg:px-8">
         <div className="container mx-auto max-w-4xl">
+          {isLoading && (
+            <div className="flex items-center justify-center h-[700px] text-muted-foreground">
+              <div className="text-center">
+                <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary mx-auto mb-4"></div>
+                <p>Loading booking calendar...</p>
+              </div>
+            </div>
+          )}
           <div
-            style={{ width: "100%", height: "700px" }}
-            data-cal-link="team/leftclick/discovery?source=linkedin"
-            data-cal-namespace="axiogen"
-            className="cal-embed"
+            id="cal-inline"
+            className="cal-inline-widget"
+            style={{ width: "100%", height: "700px", overflow: "hidden", borderRadius: "12px" }}
+            data-url="https://cal.com/team/leftclick/discovery?embed"
           />
         </div>
       </section>
