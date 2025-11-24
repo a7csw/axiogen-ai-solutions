@@ -9,6 +9,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { useTranslation } from "react-i18next";
+import { ThemeToggle } from "@/components/ThemeToggle";
 import logo from "../assets/axiogen.png";
 
 const Navigation = () => {
@@ -72,6 +73,7 @@ const Navigation = () => {
                 {link.name}
               </Link>
             ))}
+            <ThemeToggle />
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button variant="ghost" size="sm" className="gap-2">
@@ -129,6 +131,9 @@ const Navigation = () => {
             </div>
 
             <div className="mt-4 px-4 space-y-3">
+              <div className="flex items-center justify-center mb-2">
+                <ThemeToggle />
+              </div>
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                   <Button variant="outline" className="w-full text-lg h-12 justify-between">
