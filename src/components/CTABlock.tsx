@@ -17,7 +17,7 @@ const CTABlock = ({
   const defaultTitle = t("cta.title");
   const defaultDescription = t("cta.description");
   return (
-    <section className="py-20 px-6 lg:px-8 bg-gradient-to-br from-primary to-accent text-white">
+    <section className="reveal py-20 px-6 lg:px-8 bg-gradient-to-br from-primary to-accent text-white cta-shimmer">
       <div className="container mx-auto max-w-4xl text-center">
         <h2 className="text-4xl md:text-5xl font-bold mb-6">
           {title || defaultTitle}
@@ -29,7 +29,7 @@ const CTABlock = ({
           <Button 
             size="lg" 
             variant="secondary" 
-            className="text-lg px-10 hover-scale" 
+            className="text-lg px-10 hover-scale btn-shimmer"
             asChild
           >
             <a href="https://cal.com/axiogen-8w3n8i/30min?overlayCalendar=true">
@@ -41,10 +41,10 @@ const CTABlock = ({
             <Button 
               size="lg" 
               variant="outline" 
-              className="text-lg px-10 bg-white/10 hover:bg-white/20 border-white/30 text-white hover-scale" 
+              className="text-lg px-10 bg-white/10 hover:bg-white/20 border-white/30 text-white hover-scale btn-shimmer"
               asChild
             >
-              <a href="https://wa.me/yourphonenumber" target="_blank" rel="noopener noreferrer">
+              <a href="https://wa.me/905353296589" target="_blank" rel="noopener noreferrer">
                 <MessageSquare className="mr-2 w-5 h-5" />
                 {t("cta.contactWhatsApp")}
               </a>

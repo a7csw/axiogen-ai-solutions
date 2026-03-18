@@ -17,7 +17,7 @@ const CaseStudyCard = ({ title, description, tag, slug }: CaseStudyCardProps) =>
   
   return (
     <Link to={`/case-studies/${slug}`}>
-      <Card className="group hover-lift cursor-pointer h-full border-2 border-border">
+      <Card className="group hover-card cursor-pointer h-full border-2 border-border">
         <CardHeader>
           <Badge className="w-fit mb-3 bg-primary/10 text-primary group-hover:bg-primary/20 transition-colors">
             {tag}
@@ -28,7 +28,7 @@ const CaseStudyCard = ({ title, description, tag, slug }: CaseStudyCardProps) =>
           <CardDescription className="text-base">{description}</CardDescription>
         </CardHeader>
         <CardContent>
-          <div className={`flex items-center text-primary font-medium transition-transform ${isRTL ? 'group-hover:-translate-x-2' : 'group-hover:translate-x-2'}`}>
+          <div className={`flex items-center text-primary font-medium transition-transform ${isRTL ? 'group-hover:-translate-x-1' : 'group-hover:translate-x-1'}`}>
             {t("common.readCaseStudy")} <ArrowRight className={`ml-2 w-4 h-4 ${isRTL ? 'rtl-flip' : ''}`} />
           </div>
         </CardContent>

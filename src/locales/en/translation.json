@@ -9,30 +9,18 @@
   },
   "home": {
     "hero": {
-      "title": "Intelligent Software Infrastructure for Healthcare Organizations",
-      "description": "Axiogen designs secure, scalable SaaS systems and AI automations that improve efficiency across hospitals, clinics, universities, and medical institutions.",
+      "title": "Book More Patients. Cut Admin Work. We Build the AI Systems That Make It Happen.",
+      "description": "Axiogen builds AI automation systems and software platforms for clinics and dental practices — from WhatsApp booking bots to AI voice agents and full clinic management SaaS.",
       "bookACall": "Book a Call",
       "viewCaseStudies": "View Case Studies"
     },
     "stats": {
       "title": "Results That Healthcare Teams Feel Immediately",
       "subtitle": "Real improvements delivered through Axiogen-built SaaS platforms and AI-powered healthcare systems.",
-      "fasterProcesses": {
-        "label": "Faster Administrative Processes",
-        "description": "Average improvement after modernizing manual workflows with integrated digital systems."
-      },
-      "dataErrors": {
-        "label": "Reduction in Data Errors",
-        "description": "Smart validation tools ensure clean, accurate patient records and safer clinical operations."
-      },
-      "appointments": {
-        "label": "Increase in Confirmed Appointments",
-        "description": "Smarter scheduling systems reduce no-shows and optimize patient flow."
-      },
-      "satisfaction": {
-        "label": "Patient Satisfaction",
-        "description": "Better booking experiences and faster turnaround times improve patient outcomes."
-      }
+      "booking": "Built to eliminate manual booking calls",
+      "reminders": "Designed to reduce no-shows with automated reminders",
+      "voice": "AI voice agents that answer patients 24/7",
+      "automation": "Automation systems that free your staff for real patient care"
     },
     "services": {
       "title": "Automation Solutions",

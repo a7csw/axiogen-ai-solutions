@@ -1,6 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useTranslation } from "react-i18next";
 import { Target, Zap, Heart } from "lucide-react";
+import CTABlock from "@/components/CTABlock";
 
 const About = () => {
   const { t } = useTranslation();
@@ -95,6 +96,8 @@ const About = () => {
           </div>
         </div>
       </section>
+
+      <CTABlock />
 
       {/* Team Section Placeholder */}
       {/* <section className="py-24 px-6 lg:px-8 bg-muted">

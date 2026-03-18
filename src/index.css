@@ -17,7 +17,8 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 213 52% 11%;
 
-    --primary: 214 100% 57%;
+    /* Brand teal — matched to Axiogen logo */
+    --primary: 174 90% 34%;
     --primary-foreground: 0 0% 100%;
 
     --secondary: 213 52% 11%;
@@ -26,22 +27,23 @@ All colors MUST be HSL.
     --muted: 220 13% 95%;
     --muted-foreground: 213 20% 50%;
 
-    --accent: 174 100% 38%;
+    /* Blue as secondary accent */
+    --accent: 214 90% 54%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
-    --ring: 214 100% 57%;
+    --border: 174 20% 88%;
+    --input: 174 20% 88%;
+    --ring: 174 90% 34%;
 
     --radius: 0.75rem;
-    
+
     --navy: 213 52% 11%;
-    
-    --gradient-primary: linear-gradient(135deg, hsl(214 100% 57%), hsl(174 100% 38%));
-    --gradient-hero: linear-gradient(180deg, hsl(0 0% 100%), hsl(220 13% 97%));
+
+    --gradient-primary: linear-gradient(135deg, hsl(174 90% 34%), hsl(214 90% 54%));
+    --gradient-hero: linear-gradient(180deg, hsl(0 0% 100%), hsl(174 40% 97%));
     
     --shadow-sm: 0 1px 2px 0 hsl(213 52% 11% / 0.05);
     --shadow-card: 0 4px 6px -1px hsl(213 52% 11% / 0.05), 0 2px 4px -2px hsl(213 52% 11% / 0.05);
@@ -69,8 +71,9 @@ All colors MUST be HSL.
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    /* Brand blue — lightened so it reads clearly on dark backgrounds */
+    --primary: 214 85% 62%;
+    --primary-foreground: 0 0% 100%;
 
     --secondary: 217.2 32.6% 17.5%;
     --secondary-foreground: 210 40% 98%;
@@ -78,23 +81,24 @@ All colors MUST be HSL.
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    /* Brand teal — lightened so it reads clearly on dark backgrounds */
+    --accent: 174 72% 48%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
 
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --ring: 214 85% 62%;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary: 214 85% 62%;
     --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 240 3.7% 15.9%;
     --sidebar-accent-foreground: 240 4.8% 95.9%;
     --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-ring: 214 85% 62%;
   }
 }
 
@@ -114,62 +118,311 @@ All colors MUST be HSL.
 }
 
 @layer utilities {
-  .animate-fade-in-up {
-    animation: fade-in-up 0.6s ease-out forwards;
+  /* ── Smooth scroll (item 13) ──────────────────────────────────────── */
+  html {
+    scroll-behavior: smooth;
   }
-  
+
+  .animate-fade-in-up {
+    animation: fade-in-up 0.65s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
   .animate-fade-in {
     animation: fade-in 0.5s ease-out forwards;
   }
-  
+
+  /* ── Page entrance animation (item 2) ─────────────────────────────── */
+  .page-enter {
+    animation: page-entrance 0.4s ease-out forwards;
+  }
+
+  /* ── Scroll-reveal (item 1 — richer animations) ───────────────────────
+     Elements get .reveal in JSX. The global observer in App.tsx adds
+     .is-visible when the element enters the viewport.
+  ────────────────────────────────────────────────────────────────────── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(20px) scale(0.98);
+    transition:
+      opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+      transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
+  /* ── Stats spring entrance (item 3) ───────────────────────────────── */
+  .reveal-spring {
+    opacity: 0;
+    transform: translateY(24px) scale(0.92);
+    transition: none;
+  }
+
+  .reveal-spring.is-visible {
+    animation: spring-entrance 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  }
+
+  /* ── Hover interactions ───────────────────────────────────────────── */
   .hover-lift {
-    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+                box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+                border-color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   }
-  
+
   .hover-lift:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 25px -5px hsl(213 52% 11% / 0.1), 0 10px 10px -5px hsl(213 52% 11% / 0.04);
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px -8px hsl(213 52% 11% / 0.15), 0 8px 16px -4px hsl(213 52% 11% / 0.08);
   }
-  
+
+  /* ServiceCard teal left border on hover (item 4) */
+  .hover-lift-accent {
+    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+                box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+                border-left-color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    border-left: 3px solid transparent;
+  }
+
+  .hover-lift-accent:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px -8px hsl(213 52% 11% / 0.15), 0 8px 16px -4px hsl(213 52% 11% / 0.08);
+    border-left-color: hsl(var(--primary));
+  }
+
+  /* CaseStudyCard hover (item 5) */
+  .hover-card {
+    transition: transform 0.2s ease-out,
+                box-shadow 0.2s ease-out;
+  }
+
+  .hover-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 20px 40px -8px hsl(213 52% 11% / 0.15), 0 8px 16px -4px hsl(213 52% 11% / 0.08);
+  }
+
+  /* CTA buttons (item 7) */
   .hover-scale {
-    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   }
-  
+
   .hover-scale:hover {
-    transform: scale(1.05);
+    transform: scale(1.03);
   }
-  
+
+  .hover-scale:active {
+    transform: scale(0.98);
+    transition-duration: 0.1s;
+  }
+
+  /* Button shimmer sweep on hover (item 7) */
+  .btn-shimmer {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .btn-shimmer::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      105deg,
+      transparent 40%,
+      hsla(0, 0%, 100%, 0.2) 45%,
+      hsla(0, 0%, 100%, 0.3) 50%,
+      hsla(0, 0%, 100%, 0.2) 55%,
+      transparent 60%
+    );
+    transform: translateX(-100%);
+    transition: none;
+  }
+
+  .btn-shimmer:hover::after {
+    animation: shimmer-sweep 0.6s ease-out forwards;
+  }
+
   .hover-image-zoom {
     overflow: hidden;
   }
-  
+
   .hover-image-zoom img {
-    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.55s cubic-bezier(0.4, 0, 0.2, 1);
   }
-  
+
   .hover-image-zoom:hover img {
-    transform: scale(1.1);
+    transform: scale(1.06);
+  }
+
+  /* ── Logo glow on hover (item 8) ──────────────────────────────────── */
+  .logo-glow {
+    transition: filter 0.3s ease;
+  }
+
+  .logo-glow:hover {
+    filter: drop-shadow(0 0 12px hsl(var(--primary) / 0.35));
+  }
+
+  /* ── Focus states (item 14) ───────────────────────────────────────── */
+  :focus-visible {
+    outline: 2px solid hsl(var(--primary));
+    outline-offset: 3px;
+  }
+
+  /* ── Background effects ───────────────────────────────────────────── */
+
+  /* Hero gradient mesh (item 9) */
+  .hero-gradient-mesh {
+    position: relative;
+  }
+
+  .hero-gradient-mesh::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 600px 400px at 20% 50%, hsl(174 90% 34% / 0.07), transparent),
+      radial-gradient(ellipse 500px 350px at 80% 30%, hsl(214 90% 54% / 0.06), transparent);
+    animation: gradient-mesh-drift 12s ease-in-out infinite alternate;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* Stats dot pattern (item 10) */
+  .dot-pattern {
+    position: relative;
+  }
+
+  .dot-pattern::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle, hsl(var(--foreground) / 0.04) 1px, transparent 1px);
+    background-size: 24px 24px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .dot-pattern > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* CTABlock diagonal shimmer (item 11) */
+  .cta-shimmer {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cta-shimmer::after {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+      45deg,
+      transparent 40%,
+      hsla(0, 0%, 100%, 0.04) 45%,
+      hsla(0, 0%, 100%, 0.08) 50%,
+      hsla(0, 0%, 100%, 0.04) 55%,
+      transparent 60%
+    );
+    animation: cta-diagonal-shimmer 4s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .cta-shimmer > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ── Hero word stagger (item 12) ──────────────────────────────────── */
+  .word-stagger span {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(12px);
+    animation: word-fade-in 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   }
 }
 
-@keyframes fade-in-up {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
+/* ── Reduced motion ──────────────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+
+  .reveal,
+  .reveal-spring {
     opacity: 1;
-    transform: translateY(0);
+    transform: none;
+    transition: none;
   }
+
+  .reveal-spring.is-visible { animation: none; opacity: 1; }
+
+  .animate-fade-in-up,
+  .animate-fade-in,
+  .page-enter {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .hover-lift:hover,
+  .hover-lift-accent:hover { transform: none; box-shadow: none; }
+  .hover-card:hover         { transform: none; box-shadow: none; }
+  .hover-scale:hover        { transform: none; }
+  .hover-scale:active       { transform: none; }
+  .hover-image-zoom:hover img { transform: none; }
+
+  .btn-shimmer:hover::after { animation: none; }
+  .cta-shimmer::after       { animation: none; }
+  .hero-gradient-mesh::before { animation: none; }
+  .word-stagger span        { animation: none; opacity: 1; transform: none; }
+}
+
+/* ── Keyframes ──────────────────────────────────────────────────────────── */
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes fade-in {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes page-entrance {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes spring-entrance {
+  0%   { opacity: 0; transform: translateY(24px) scale(0.92); }
+  60%  { opacity: 1; transform: translateY(-4px) scale(1.03); }
+  80%  { transform: translateY(2px) scale(0.99); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes shimmer-sweep {
+  0%   { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+@keyframes gradient-mesh-drift {
+  0%   { opacity: 0.7; transform: scale(1) rotate(0deg); }
+  100% { opacity: 1; transform: scale(1.05) rotate(1deg); }
+}
+
+@keyframes cta-diagonal-shimmer {
+  0%   { transform: translateX(-100%) translateY(-100%); }
+  50%  { transform: translateX(10%) translateY(10%); }
+  100% { transform: translateX(-100%) translateY(-100%); }
+}
+
+@keyframes word-fade-in {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
 /* RTL Support */
