@@ -195,40 +195,39 @@ const Navigation = () => {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="fixed inset-0 top-20 z-50 grid place-items-start bg-background/98 backdrop-blur-sm p-6 animate-in slide-in-from-top-5 md:hidden h-[calc(100vh-5rem)] overflow-y-auto border-t border-border/40">
-          <div className="flex w-full flex-col gap-6">
-            <div className="flex flex-col gap-1">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.path}
-                  to={link.path}
-                  className={`block rounded-lg px-4 py-3 text-lg font-medium transition-colors ${
-                    isActive(link.path)
-                      ? "bg-primary/8 text-primary"
-                      : "text-foreground hover:bg-muted"
-                  }`}
-                >
-                  {link.name}
-                </Link>
-              ))}
-            </div>
-
-            <div className="mt-2 px-2 space-y-3">
-              {/* Theme selector row */}
-              <MobileThemeRow />
-              <button
-                onClick={() => changeLanguage(i18n.language === "ar" ? "en" : "ar")}
-                className="w-full flex items-center justify-center gap-2 px-4 py-3 rounded-lg text-base font-medium text-foreground hover:bg-muted transition-colors border border-border"
+        <div className="fixed inset-0 top-20 z-50 flex flex-col bg-background animate-in slide-in-from-top-5 md:hidden h-[calc(100vh-5rem)] overflow-y-auto border-t border-border/40">
+          <div className="flex flex-col items-center justify-center flex-1 gap-2 px-6 py-8">
+            {navLinks.map((link) => (
+              <Link
+                key={link.path}
+                to={link.path}
+                onClick={() => setIsOpen(false)}
+                className={`w-full text-center rounded-xl px-6 py-4 text-xl font-medium transition-colors ${
+                  isActive(link.path)
+                    ? "bg-primary/10 text-primary"
+                    : "text-foreground hover:bg-muted"
+                }`}
               >
-                <Languages className="w-5 h-5" />
-                <span>{i18n.language === "ar" ? "English" : "العربية"}</span>
-              </button>
-              <Button asChild className="w-full text-base h-12">
-                <a href="https://cal.com/abdulrahman-alfaiadi-jrzs4m/30min" target="_blank" rel="noopener noreferrer">
-                  {t("nav.bookACall")}
-                </a>
-              </Button>
-            </div>
+                {link.name}
+              </Link>
+            ))}
+          </div>
+
+          <div className="px-6 pb-8 space-y-3">
+            {/* Theme selector row */}
+            <MobileThemeRow />
+            <button
+              onClick={() => changeLanguage(i18n.language === "ar" ? "en" : "ar")}
+              className="w-full flex items-center justify-center gap-2 px-4 py-3 rounded-lg text-base font-medium text-foreground hover:bg-muted transition-colors border border-border"
+            >
+              <Languages className="w-5 h-5" />
+              <span>{i18n.language === "ar" ? "English" : "العربية"}</span>
+            </button>
+            <Button asChild className="w-full text-base h-12">
+              <a href="https://cal.com/abdulrahman-alfaiadi-jrzs4m/30min" target="_blank" rel="noopener noreferrer">
+                {t("nav.bookACall")}
+              </a>
+            </Button>
           </div>
         </div>
       )}

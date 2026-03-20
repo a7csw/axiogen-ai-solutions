@@ -23,7 +23,7 @@ import clinicStaff from "@/assets/clinic-staff-tablet.jpg";
 const HeroTitle = ({ text }: { text: string }) => {
   const words = text.split(" ");
   return (
-    <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-foreground mb-6 leading-tight word-stagger">
+    <h1 className="text-[1.75rem] sm:text-4xl md:text-6xl lg:text-7xl font-bold text-foreground mb-4 md:mb-6 leading-tight word-stagger">
       {words.map((word, i) => (
         <span key={i} style={{ animationDelay: `${i * 60}ms` }}>
           {word}{i < words.length - 1 ? "\u00A0" : ""}
@@ -38,29 +38,29 @@ const Home = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="pt-32 pb-20 px-6 lg:px-8 bg-gradient-to-b from-background via-muted/30 to-background hero-gradient-mesh">
+      <section className="pt-20 pb-10 md:pt-32 md:pb-20 px-4 md:px-6 lg:px-8 bg-gradient-to-b from-background via-muted/30 to-background hero-gradient-mesh">
         <div className="container mx-auto max-w-7xl relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="animate-fade-in-up">
               <HeroTitle text={t("home.hero.title")} />
-              <p className="text-xl md:text-2xl text-muted-foreground mb-10">
+              <p className="text-[0.95rem] sm:text-xl md:text-2xl text-muted-foreground mb-6 md:mb-10">
               {t("home.hero.description")}
               </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="text-lg px-8 hover-scale btn-shimmer" asChild>
+              <div className="flex flex-col gap-3 sm:flex-row sm:gap-4">
+                <Button size="lg" className="w-full sm:w-auto text-lg px-8 hover-scale btn-shimmer" asChild>
                   <a href="https://cal.com/abdulrahman-alfaiadi-jrzs4m/30min" target="_blank" rel="noopener noreferrer">{t("home.hero.bookACall")}</a>
                 </Button>
                 <Button
                   size="lg"
                   variant="outline"
-                  className="text-lg px-8 hover-scale"
+                  className="w-full sm:w-auto text-lg px-8 hover-scale"
                   asChild
                 >
                   <Link to="/case-studies">{t("home.hero.viewCaseStudies")}</Link>
                 </Button>
               </div>
             </div>
-            <div className="animate-fade-in hover-image-zoom rounded-2xl overflow-hidden shadow-2xl">
+            <div className="hidden md:block animate-fade-in hover-image-zoom rounded-2xl overflow-hidden shadow-2xl">
               <img
                 src={heroDashboard}
                 alt={t("common.alt.dashboard")}
@@ -75,13 +75,13 @@ const Home = () => {
       <StatsSection />
 
       {/* Services Preview */}
-      <section className="py-24 px-6 lg:px-8">
+      <section className="py-12 md:py-24 px-4 md:px-6 lg:px-8">
         <div className="container mx-auto max-w-6xl">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+          <div className="text-center mb-8 md:mb-16">
+            <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
               {t("home.services.title")}
             </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-base md:text-xl text-muted-foreground max-w-2xl mx-auto">
               {t("home.services.subtitle")}
             </p>
           </div>
@@ -115,13 +115,13 @@ const Home = () => {
       </section>
 
       {/* Case Studies Preview */}
-      <section className="py-24 px-6 lg:px-8 bg-muted">
+      <section className="py-12 md:py-24 px-4 md:px-6 lg:px-8 bg-muted">
         <div className="container mx-auto max-w-6xl">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+          <div className="text-center mb-8 md:mb-16">
+            <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
               {t("home.caseStudies.title")}
             </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-base md:text-xl text-muted-foreground max-w-2xl mx-auto">
               {t("home.caseStudies.subtitle")}
             </p>
           </div>
@@ -142,13 +142,13 @@ const Home = () => {
       </section>
 
       {/* Why We Built Axiogen */}
-      <section className="py-24 px-6 lg:px-8">
+      <section className="py-12 md:py-24 px-4 md:px-6 lg:px-8">
         <div className="container mx-auto max-w-6xl">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+          <div className="text-center mb-8 md:mb-16">
+            <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
               {t("home.whyWeBuilt.title")}
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-base md:text-xl text-muted-foreground max-w-3xl mx-auto">
               {t("home.whyWeBuilt.subtitle")}
             </p>
           </div>

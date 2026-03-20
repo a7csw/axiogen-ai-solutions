@@ -88,21 +88,21 @@ const Services = () => {
   return (
     <div className="min-h-screen pt-20">
       {/* Header */}
-      <section className="py-20 px-6 lg:px-8 bg-gradient-to-b from-background to-muted/40">
+      <section className="py-12 md:py-20 px-4 md:px-6 lg:px-8 bg-gradient-to-b from-background to-muted/40">
         <div ref={headerRef} className="reveal container mx-auto max-w-4xl text-center">
-          <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-6 tracking-tight">
+          <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 tracking-tight">
             {t("services.title")}
           </h1>
-          <p className="text-xl text-muted-foreground leading-relaxed">
+          <p className="text-base md:text-xl text-muted-foreground leading-relaxed">
             {t("services.subtitle")}
           </p>
         </div>
       </section>
 
       {/* Services */}
-      <section className="py-20 px-6 lg:px-8">
+      <section className="py-12 md:py-20 px-4 md:px-6 lg:px-8">
         <div className="container mx-auto max-w-6xl">
-          <div className="space-y-28">
+          <div className="space-y-16 md:space-y-28">
             {services.map((service, index) => {
               const isReversed = index % 2 === 1;
               return (
@@ -148,7 +148,7 @@ const ServiceRow = ({ service, reversed }: ServiceRowProps) => {
         <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-6">
           <service.icon className="w-7 h-7 text-primary" />
         </div>
-        <h2 className="text-3xl md:text-4xl font-bold mb-4 tracking-tight">{service.title}</h2>
+        <h2 className="text-xl md:text-3xl lg:text-4xl font-bold mb-4 tracking-tight">{service.title}</h2>
         <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
           {service.description}
         </p>
@@ -169,11 +169,11 @@ const ServiceRow = ({ service, reversed }: ServiceRowProps) => {
         ref={imageRef}
         className={`reveal reveal-delay-2 ${reversed ? "lg:order-1" : ""}`}
       >
-        <div className="hover-image-zoom rounded-2xl overflow-hidden shadow-xl border border-border/50">
+        <div className="hover-image-zoom rounded-2xl overflow-hidden shadow-xl border border-border/50 max-h-[200px] md:max-h-none">
           <img
             src={service.image}
             alt={service.imageAlt}
-            className="w-full h-auto object-cover"
+            className="w-full h-full object-cover md:h-auto"
           />
         </div>
       </div>
