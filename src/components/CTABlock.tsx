@@ -32,7 +32,7 @@ const CTABlock = ({
             className="text-lg px-10 hover-scale btn-shimmer"
             asChild
           >
-            <a href="https://cal.com/axiogen-8w3n8i/30min?overlayCalendar=true">
+            <a href="https://cal.com/abdulrahman-alfaiadi-jrzs4m/30min" target="_blank" rel="noopener noreferrer">
               <Calendar className="mr-2 w-5 h-5" />
               {t("cta.bookACall")}
             </a>

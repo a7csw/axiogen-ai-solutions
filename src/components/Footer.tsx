@@ -76,7 +76,7 @@ const Footer = () => {
             <ul className="space-y-3">
               <li className="flex items-center space-x-2 text-gray-300">
                 <Mail className="w-4 h-4" />
-                <span>axiogen2@gmail.com</span>
+                <span>contact@getaxiogenai.com</span>
               </li>
               <li className="flex items-center space-x-2 text-gray-300">
                 <Phone className="w-4 h-4" />

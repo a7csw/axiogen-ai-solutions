@@ -48,7 +48,7 @@ const Home = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button size="lg" className="text-lg px-8 hover-scale btn-shimmer" asChild>
-                  <a href="https://cal.com/axiogen-8w3n8i/30min?overlayCalendar=true">{t("home.hero.bookACall")}</a>
+                  <a href="https://cal.com/abdulrahman-alfaiadi-jrzs4m/30min" target="_blank" rel="noopener noreferrer">{t("home.hero.bookACall")}</a>
                 </Button>
                 <Button
                   size="lg"

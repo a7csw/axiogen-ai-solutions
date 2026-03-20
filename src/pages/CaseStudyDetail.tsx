@@ -189,7 +189,7 @@ const CaseStudyDetail = () => {
             {t("caseStudies.detail.discussAutomation")}
           </p>
           <Button size="lg" variant="secondary" className="text-base px-10 h-12 hover-scale" asChild>
-            <a href="https://cal.com/axiogen-8w3n8i/30min?overlayCalendar=true">
+            <a href="https://cal.com/abdulrahman-alfaiadi-jrzs4m/30min" target="_blank" rel="noopener noreferrer">
               {t("cta.bookACall")}
             </a>
           </Button>

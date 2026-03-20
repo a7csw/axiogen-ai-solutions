@@ -175,7 +175,7 @@ const Navigation = () => {
                 <span>{i18n.language === "ar" ? "EN" : "AR"}</span>
               </button>
               <Button asChild className="font-semibold shadow-sm">
-                <a href="https://cal.com/axiogen-8w3n8i/30min?overlayCalendar=true">
+                <a href="https://cal.com/abdulrahman-alfaiadi-jrzs4m/30min" target="_blank" rel="noopener noreferrer">
                   {t("nav.bookACall")}
                 </a>
               </Button>
@@ -224,7 +224,7 @@ const Navigation = () => {
                 <span>{i18n.language === "ar" ? "English" : "العربية"}</span>
               </button>
               <Button asChild className="w-full text-base h-12">
-                <a href="https://cal.com/axiogen-8w3n8i/30min?overlayCalendar=true">
+                <a href="https://cal.com/abdulrahman-alfaiadi-jrzs4m/30min" target="_blank" rel="noopener noreferrer">
                   {t("nav.bookACall")}
                 </a>
               </Button>
