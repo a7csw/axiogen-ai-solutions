@@ -16,6 +16,9 @@ import CaseStudyDetail from "./pages/CaseStudyDetail";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
+import NovaDentDemo from "./pages/NovaDentDemo";
+
+const RTL_LANGS = new Set(["ar"]);
 
 const queryClient = new QueryClient();
 
@@ -48,7 +51,7 @@ const AppContent = () => {
 
   useEffect(() => {
     const currentLang = i18n.language || 'en';
-    const isRTL = currentLang === 'ar';
+    const isRTL = RTL_LANGS.has(currentLang);
 
     document.documentElement.dir = isRTL ? 'rtl' : 'ltr';
     document.documentElement.lang = currentLang;
@@ -85,6 +88,7 @@ const AppContent = () => {
           <Route path="/case-studies/:slug" element={<CaseStudyDetail />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/demo/novadent" element={<NovaDentDemo />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </div>

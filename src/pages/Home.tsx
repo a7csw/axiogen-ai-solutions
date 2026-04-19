@@ -16,6 +16,7 @@ import {
   FileText,
   Zap,
   Plug,
+  Mic,
 } from "lucide-react";
 import heroDashboard from "@/assets/hero-dashboard.jpg";
 import clinicStaff from "@/assets/clinic-staff-tablet.jpg";
@@ -46,9 +47,20 @@ const Home = () => {
               <p className="text-[0.95rem] sm:text-xl md:text-2xl text-muted-foreground mb-6 md:mb-10">
               {t("home.hero.description")}
               </p>
-              <div className="flex flex-col gap-3 sm:flex-row sm:gap-4">
+              <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
                 <Button size="lg" className="w-full sm:w-auto text-lg px-8 hover-scale btn-shimmer" asChild>
                   <a href="https://cal.com/abdulrahman-alfaiadi-jrzs4m/30min" target="_blank" rel="noopener noreferrer">{t("home.hero.bookACall")}</a>
+                </Button>
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="w-full sm:w-auto text-lg px-8 hover-scale btn-shimmer border-accent text-accent hover:bg-accent hover:text-white"
+                  asChild
+                >
+                  <Link to="/demo/novadent">
+                    <Mic className="mr-2 w-5 h-5" />
+                    {t("home.hero.tryLiveDemo")}
+                  </Link>
                 </Button>
                 <Button
                   size="lg"

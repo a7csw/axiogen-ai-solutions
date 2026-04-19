@@ -3,6 +3,7 @@
     "home": "Home",
     "services": "Services",
     "caseStudies": "Case Studies",
+    "demos": "Demos",
     "about": "About",
     "contact": "Contact",
     "bookACall": "Book a Call"
@@ -12,7 +13,8 @@
       "title": "Book More Patients. Cut Admin Work. We Build the AI Systems That Make It Happen.",
       "description": "Axiogen builds AI automation systems and software platforms for clinics and dental practices — from WhatsApp booking bots to AI voice agents and full clinic management SaaS.",
       "bookACall": "Book a Call",
-      "viewCaseStudies": "View Case Studies"
+      "viewCaseStudies": "View Case Studies",
+      "tryLiveDemo": "Try Live Demo →"
     },
     "stats": {
       "title": "Results That Healthcare Teams Feel Immediately",
@@ -342,6 +344,67 @@
       "clinicStaff": "Medical professional using tablet"
     },
     "readCaseStudy": "Read case study"
+  },
+  "demo": {
+    "novaDent": {
+      "pageTitle": "NovaDent Clinic",
+      "heroHeadline": "Experience AI Reception — Live",
+      "heroSubheadline": "Talk to Nova, NovaDent's AI receptionist. Book appointments, ask questions, hear the future of clinic automation.",
+      "clinicName": "NovaDent Clinic",
+      "languageSelector": {
+        "label": "Choose a language",
+        "english": "English",
+        "turkish": "Turkish",
+        "arabic": "Arabic"
+      },
+      "callButton": {
+        "idle": "Call Nova",
+        "connecting": "Connecting...",
+        "active": "On Call",
+        "ended": "Call Again"
+      },
+      "endCallButton": "End Call",
+      "callStatus": {
+        "idle": "Tap 'Call Nova' to begin",
+        "connecting": "Connecting to Nova...",
+        "active": "Nova is listening — speak naturally",
+        "ended": "Call ended"
+      },
+      "transcriptPanel": {
+        "title": "Live Transcript",
+        "empty": "Transcript will appear here once you start a call.",
+        "you": "You",
+        "nova": "Nova"
+      },
+      "bookingsPanel": {
+        "title": "Captured Bookings",
+        "empty": "No bookings yet — start a call to see Nova capture them live.",
+        "statusPending": "Pending Confirmation"
+      },
+      "bookingCard": {
+        "patient": "Patient",
+        "phone": "Phone",
+        "type": "Appointment Type",
+        "date": "Date",
+        "time": "Time"
+      },
+      "micError": {
+        "title": "Couldn't access microphone",
+        "description": "Please grant microphone permission in your browser and try again."
+      },
+      "configError": {
+        "title": "Demo not configured",
+        "description": "The VITE_VAPI_PUBLIC_KEY environment variable is missing."
+      },
+      "genericError": {
+        "title": "Couldn't start the call",
+        "description": "Please try again. If the issue persists, check your connection."
+      },
+      "microcopy": {
+        "micHint": "Tap 'Call Nova' and allow microphone access to talk",
+        "callActive": "Call active"
+      }
+    }
   },
   "notFound": {
     "title": "404",

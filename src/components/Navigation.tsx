@@ -1,10 +1,30 @@
 import { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Languages, Sun, Moon, Monitor } from "lucide-react";
+import { Menu, X, Languages, Sun, Moon, Monitor, Check } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { useTheme } from "next-themes";
 import logo from "../assets/axiogen.png";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+
+type LangCode = "en" | "tr" | "ar";
+
+const LANGUAGE_OPTIONS: { code: LangCode; flag: string; label: string; short: string }[] = [
+  { code: "en", flag: "🇬🇧", label: "English", short: "EN" },
+  { code: "tr", flag: "🇹🇷", label: "Türkçe", short: "TR" },
+  { code: "ar", flag: "🇸🇦", label: "العربية", short: "AR" },
+];
+
+function normalizeLangCode(lang: string | undefined): LangCode {
+  const base = (lang || "en").split("-")[0].toLowerCase();
+  if (base === "ar" || base === "tr") return base;
+  return "en";
+}
 
 const ThemeToggle = () => {
   const { theme, setTheme } = useTheme();
@@ -121,9 +141,13 @@ const Navigation = () => {
     { name: t("nav.home"), path: "/" },
     { name: t("nav.services"), path: "/services" },
     { name: t("nav.caseStudies"), path: "/case-studies" },
+    { name: t("nav.demos"), path: "/demo/novadent" },
     { name: t("nav.about"), path: "/about" },
     { name: t("nav.contact"), path: "/contact" },
   ];
+
+  const activeLang = normalizeLangCode(i18n.language);
+  const activeLangMeta = LANGUAGE_OPTIONS.find((l) => l.code === activeLang) ?? LANGUAGE_OPTIONS[0];
 
   const isActive = (path: string) => location.pathname === path;
 
@@ -166,14 +190,30 @@ const Navigation = () => {
             ))}
             <div className="flex items-center gap-2 ml-2">
               <ThemeToggle />
-              <button
-                onClick={() => changeLanguage(i18n.language === "ar" ? "en" : "ar")}
-                className="flex items-center gap-1.5 px-3 py-1.5 rounded-md text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
-                aria-label="Toggle language"
-              >
-                <Languages className="w-4 h-4" />
-                <span>{i18n.language === "ar" ? "EN" : "AR"}</span>
-              </button>
+              <DropdownMenu>
+                <DropdownMenuTrigger
+                  className="flex items-center gap-1.5 px-3 py-1.5 rounded-md text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-muted transition-colors focus:outline-none"
+                  aria-label="Select language"
+                >
+                  <Languages className="w-4 h-4" />
+                  <span>{activeLangMeta.short}</span>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="end" className="w-40">
+                  {LANGUAGE_OPTIONS.map((lang) => (
+                    <DropdownMenuItem
+                      key={lang.code}
+                      onClick={() => changeLanguage(lang.code)}
+                      className="gap-2"
+                    >
+                      <span className="text-base leading-none" aria-hidden>{lang.flag}</span>
+                      <span className="flex-1">{lang.label}</span>
+                      {activeLang === lang.code && (
+                        <Check className="w-4 h-4 text-primary" />
+                      )}
+                    </DropdownMenuItem>
+                  ))}
+                </DropdownMenuContent>
+              </DropdownMenu>
               <Button asChild className="font-semibold shadow-sm">
                 <a href="https://cal.com/abdulrahman-alfaiadi-jrzs4m/30min" target="_blank" rel="noopener noreferrer">
                   {t("nav.bookACall")}
@@ -216,13 +256,33 @@ const Navigation = () => {
           <div className="px-6 pb-8 space-y-3">
             {/* Theme selector row */}
             <MobileThemeRow />
-            <button
-              onClick={() => changeLanguage(i18n.language === "ar" ? "en" : "ar")}
-              className="w-full flex items-center justify-center gap-2 px-4 py-3 rounded-lg text-base font-medium text-foreground hover:bg-muted transition-colors border border-border"
-            >
-              <Languages className="w-5 h-5" />
-              <span>{i18n.language === "ar" ? "English" : "العربية"}</span>
-            </button>
+            <div className="rounded-lg border border-border p-2">
+              <div className="flex items-center gap-2 px-2 pb-2">
+                <Languages className="w-4 h-4 text-muted-foreground" />
+                <span className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+                  Language
+                </span>
+              </div>
+              <div className="grid grid-cols-3 gap-1">
+                {LANGUAGE_OPTIONS.map((lang) => {
+                  const selected = activeLang === lang.code;
+                  return (
+                    <button
+                      key={lang.code}
+                      onClick={() => changeLanguage(lang.code)}
+                      className={`flex flex-col items-center gap-1 rounded-md px-2 py-2 text-xs font-medium transition-colors ${
+                        selected
+                          ? "bg-primary/10 text-primary"
+                          : "text-foreground hover:bg-muted"
+                      }`}
+                    >
+                      <span className="text-lg leading-none" aria-hidden>{lang.flag}</span>
+                      <span>{lang.short}</span>
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
             <Button asChild className="w-full text-base h-12">
               <a href="https://cal.com/abdulrahman-alfaiadi-jrzs4m/30min" target="_blank" rel="noopener noreferrer">
                 {t("nav.bookACall")}

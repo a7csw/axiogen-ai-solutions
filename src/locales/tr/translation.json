@@ -1,0 +1,414 @@
+{
+  "nav": {
+    "home": "Ana Sayfa",
+    "services": "Hizmetler",
+    "caseStudies": "Vaka Çalışmaları",
+    "demos": "Demolar",
+    "about": "Hakkımızda",
+    "contact": "İletişim",
+    "bookACall": "Görüşme Planla"
+  },
+  "home": {
+    "hero": {
+      "title": "Daha Fazla Hasta Kazanın. İdari Yükü Azaltın. Bunu Mümkün Kılan Yapay Zeka Sistemlerini Biz Kuruyoruz.",
+      "description": "Axiogen, klinikler ve diş hekimliği muayenehaneleri için yapay zeka otomasyon sistemleri ve yazılım platformları geliştirir — WhatsApp randevu botlarından yapay zeka sesli asistanlara ve eksiksiz klinik yönetim SaaS çözümlerine kadar.",
+      "bookACall": "Görüşme Planla",
+      "viewCaseStudies": "Vaka Çalışmalarını Görüntüle",
+      "tryLiveDemo": "Canlı Demoyu Deneyin →"
+    },
+    "stats": {
+      "title": "Sağlık Ekiplerinin Anında Hissettiği Sonuçlar",
+      "subtitle": "Axiogen tarafından geliştirilen SaaS platformları ve yapay zeka destekli sağlık sistemleri ile elde edilen gerçek iyileştirmeler.",
+      "booking": "Manuel randevu çağrılarını ortadan kaldırmak için tasarlandı",
+      "reminders": "Otomatik hatırlatıcılarla randevuya gelmeme oranını azaltmak için tasarlandı",
+      "voice": "Hastalara 7/24 yanıt veren yapay zeka sesli asistanlar",
+      "automation": "Ekibinizi gerçek hasta bakımı için serbest bırakan otomasyon sistemleri"
+    },
+    "services": {
+      "title": "Otomasyon Çözümleri",
+      "subtitle": "Yapay zeka destekli sistemlerle klinik operasyonlarınızı kolaylaştırın",
+      "whatsapp": {
+        "title": "Yapay Zeka WhatsApp Resepsiyonisti",
+        "description": "Hasta sorgularına 7/24 akıllı yanıtlar; sık sorulan soruları ele alır ve acil konuları doğru şekilde yönlendirir."
+      },
+      "booking": {
+        "title": "Otomatik Randevu Yönetimi",
+        "description": "Takvim sisteminizle sorunsuz entegrasyon; hastaların randevuları anında almasına, yeniden planlamasına veya iptal etmesine olanak tanır."
+      },
+      "followUp": {
+        "title": "Hasta Takip ve Hatırlatmaları",
+        "description": "Randevuya gelmeme oranını düşüren ve hastaları tedavi planlarıyla etkileşimde tutan otomatik hatırlatma sistemi."
+      }
+    },
+    "caseStudies": {
+      "title": "Kanıtlanmış Sonuçlar",
+      "subtitle": "Kliniklerin iş akışlarını nasıl otomatikleştirmelerine yardımcı olduğumuzu görün"
+    },
+    "whyWeBuilt": {
+      "title": "Axiogen'i Neden Kurduk",
+      "subtitle": "Sağlık ekipleri sayısız saati manuel işler, eski sistemler ve verimsiz süreçlerle harcıyor. Axiogen'i modern SaaS altyapısını ve akıllı otomasyonu hastanelere, kliniklere, üniversitelere ve tıbbi kurumlara getirmek için kurduk.",
+      "reduceBurden": {
+        "title": "İdari Yükü Azaltın",
+        "description": "Tekrarlayan görevleri otomatikleştirin ki sağlık personeli daha iyi hasta bakımına odaklanabilsin."
+      },
+      "improveEfficiency": {
+        "title": "Operasyonel Verimliliği Artırın",
+        "description": "Akıllı iş akışları hataları azaltır, süreçleri hızlandırır ve organizasyonunuzda ölçülebilir iyileşmelerin önünü açar."
+      },
+      "integrate": {
+        "title": "Mevcut Araçlarla Entegre Olun",
+        "description": "Axiogen; EMR sistemleri, takvimler, mesajlaşma platformları, analiz panoları ve dahili araçlarla kesintisiz bir şekilde bağlantı kurar."
+      }
+    }
+  },
+  "services": {
+    "title": "Sağlık SaaS Çözümleri ve Platform Geliştirme",
+    "subtitle": "Hastaneler, klinikler, üniversiteler ve tıbbi kurumlar için özel olarak geliştirilen yazılım platformları ve akıllı otomasyon",
+    "communication": {
+      "title": "Yapay Zeka Destekli Hasta İletişim Platformu",
+      "description": "Akıllı çok kanallı iletişim yeteneklerine sahip, hastayla özel olarak geliştirilen etkileşim sistemi; 7/24 otomatik yanıtlar ve mevcut sağlık altyapınızla sorunsuz entegrasyon sağlar.",
+      "features": {
+        "1": "Çok kanallı hasta iletişimi (WhatsApp, SMS, E-posta)",
+        "2": "Tıbbi sorguları anlamak için gelişmiş NLP",
+        "3": "Akıllı triyaj ve yönlendirme iş akışları",
+        "4": "HIPAA uyumlu veri işleme ve şifreleme",
+        "5": "EHR/EMR ve muayenehane yönetim sistemleriyle entegrasyon"
+      }
+    },
+    "appointment": {
+      "title": "Sağlık Randevu Yönetim Sistemi",
+      "description": "Tıbbi kurumlar için tasarlanmış kurumsal düzeyde planlama platformu; gerçek zamanlı uygunluk yönetimi, otomatik iş akışları ve departmanlar arası kesintisiz takvim senkronizasyonu sunar.",
+      "features": {
+        "1": "Çoklu sağlayıcı ve çoklu konum planlaması",
+        "2": "Gerçek zamanlı uygunluk ve kaynak yönetimi",
+        "3": "Otomatik randevu onayları ve hatırlatmaları",
+        "4": "Çift yönlü takvim senkronizasyonu (Google, Outlook, Apple)",
+        "5": "Akıllı bekleme listesi yönetimi ve yeniden planlama otomasyonu"
+      }
+    },
+    "engagement": {
+      "title": "Hasta Etkileşim ve Takip Platformu",
+      "description": "Randevuya gelmeme oranını azaltan, tedavi uyumunu iyileştiren ve akıllı, kişiselleştirilmiş iletişim dizileriyle hasta memnuniyetini artıran kapsamlı etkileşim sistemi.",
+      "features": {
+        "1": "Özelleştirilebilir çok kanallı hatırlatma kampanyaları",
+        "2": "İşlem sonrası otomatik takip",
+        "3": "Hasta memnuniyeti anketleri ve geri bildirim toplama",
+        "4": "Onay takibi ile çift yönlü iletişim",
+        "5": "Randevuya gelmeme riski için tahmine dayalı analiz"
+      }
+    },
+    "intake": {
+      "title": "Dijital Hasta Kayıt ve Giriş Sistemi",
+      "description": "Hasta kaydını modernleştiren, idari yükü azaltan ve doğrudan EHR entegrasyonu ile doğru veri yakalamayı sağlayan akıcı dijital başlangıç platformu.",
+      "features": {
+        "1": "Özelleştirilebilir dijital kayıt ve giriş formları",
+        "2": "Otomatik tıbbi geçmiş ve semptom toplama",
+        "3": "Onam ve HIPAA formları için e-imza",
+        "4": "Sigorta doğrulaması ve uygunluk kontrolleri",
+        "5": "Muayenehane yönetim sistemleriyle kesintisiz entegrasyon"
+      }
+    },
+    "analytics": {
+      "title": "Sağlık Analitiği ve Raporlama Panosu",
+      "description": "Klinik operasyonlar, hasta akışı, gelir döngüleri ve operasyonel verimlilik hakkında eyleme dönüştürülebilir içgörüler sağlayan özel olarak geliştirilen analiz platformu.",
+      "features": {
+        "1": "Gerçek zamanlı operasyonel metrikler ve KPI takibi",
+        "2": "Hasta yolculuğu ve etkileşim analizi",
+        "3": "Gelir döngüsü ve finansal performans içgörüleri",
+        "4": "Kapasite planlaması için tahmine dayalı modelleme",
+        "5": "Veri görselleştirme araçlarıyla özel raporlama"
+      }
+    }
+  },
+  "caseStudies": {
+    "title": "Gerçek Kliniklerden Kanıtlanmış Sonuçlar",
+    "subtitle": "Verimlilik, gelir ve hasta memnuniyetinde ölçülebilir iyileşmeler sağlayan gerçek otomasyon sistemleri",
+    "dentalIntake": {
+      "title": "Diş Kliniği için Otomatik Hasta Kaydı",
+      "description": "Akıllı form otomasyonu ile kayıt süresini %60 azalttı.",
+      "tag": "Diş"
+    },
+    "whatsappBooking": {
+      "title": "WhatsApp Randevu Sistemi Uygulaması",
+      "description": "Yapay zeka destekli 7/24 planlama ile randevuları %45 artırdı.",
+      "tag": "Tıbbi"
+    },
+    "followUp": {
+      "title": "Takip Otomasyonu Başarısı",
+      "description": "Otomatik hatırlatıcılarla hasta bağlılığını %35 iyileştirdi.",
+      "tag": "Diş"
+    },
+    "analytics": {
+      "title": "Yapay Zeka Destekli Hasta Analitik Sistemi",
+      "description": "Akıllı analiz panoları sayesinde klinisyen idari süresini %50 azalttı.",
+      "tag": "Klinik Operasyonları"
+    },
+    "saas": {
+      "title": "Klinik Yönetim SaaS Prototipi",
+      "description": "Hasta kayıtlarını, randevuları ve operasyonları yönetmek için uçtan uca sistem.",
+      "tag": "SaaS"
+    },
+    "detail": {
+      "notFound": "Vaka Çalışması Bulunamadı",
+      "backToCaseStudies": "Vaka Çalışmalarına Dön",
+      "challenge": "Zorluk",
+      "solution": "Çözümümüz",
+      "toolsTechnologies": "Kullanılan Araçlar ve Teknolojiler:",
+      "workflowDiagram": "İş Akışı Diyagramı",
+      "workflowDiagramDesc": "Otomasyon akışının görsel temsili",
+      "measurableResults": "Ölçülebilir Sonuçlar",
+      "readyForResults": "Benzer sonuçlar için hazır mısınız?",
+      "discussAutomation": "Kliniğinizin iş akışlarını nasıl otomatikleştirebileceğimizi konuşalım",
+      "patientIntake": {
+        "intro": "Hasta başlangıç sürecini dönüştüren ve manuel evrak işlerini ortadan kaldıran kapsamlı bir dijital kayıt sistemi.",
+        "problem": "Büyüyen bir diş hekimliği muayenehanesi, manuel kayıt formları için hasta başına 15-20 dakika harcıyordu; bu da uzun bekleme sürelerine ve personel memnuniyetsizliğine yol açıyordu. Kağıda dayalı sistem, eksik veriler ve takip çağrısı gerektiren sık hatalarla sonuçlanıyordu.",
+        "solution": "Axiogen, hastaların gelmeden önce WhatsApp veya e-posta ile doldurduğu kapsamlı bir dijital kayıt sistemi uyguladı. Sistem; koşullu mantıklı akıllı formlar, otomatik doğrulama ve muayenehane yönetim yazılımlarıyla kesintisiz entegrasyon kullanır. Temel özellikler:",
+        "solutionBullets": {
+          "1": "Çoklu kanal aracılığıyla randevu öncesi form tamamlama",
+          "2": "Hasta yanıtlarına göre uyarlanan akıllı koşullu mantık",
+          "3": "Otomatik veri doğrulama ve hata önleme",
+          "4": "Muayenehane yönetim sistemleriyle gerçek zamanlı senkronizasyon",
+          "5": "HIPAA uyumlu güvenli hasta verisi işleme"
+        },
+        "results": {
+          "1": "%65 daha hızlı idari süreçler",
+          "2": "Randevulardan önce %95 form tamamlama oranı",
+          "3": "Veri giriş hatalarında %90 azalma",
+          "4": "Günde 4 saatlik idari iş ortadan kalktı"
+        },
+        "testimonial": {
+          "text": "Otomatik kayıt sistemi muayenehanemiz için bir dönüm noktası oldu. Hastalar formları kendi uygun zamanlarında doldurmayı seviyor ve ekibimiz evrak işleri yerine mükemmel bakım sağlamaya odaklanabiliyor.",
+          "author": "Dr. Sarah Mitchell",
+          "role": "Muayenehane Sahibi"
+        }
+      },
+      "whatsappBooking": {
+        "intro": "Randevuları günün her saatinde yakalayan ve klinik takvimleriyle sorunsuz şekilde entegre olan yapay zeka destekli 7/24 randevu sistemi.",
+        "problem": "Klinik, mesai dışı saatlerde ve öğle aralarında potansiyel randevuları kaçırıyordu. Telefon hatları sık sık meşguldü; bu da hasta memnuniyetsizliğine ve gelir kaybına yol açıyordu. Personel, otomatikleştirilebilecek rutin planlama çağrılarına önemli ölçüde zaman harcıyordu.",
+        "solution": "Axiogen, randevu alımını yöneten, sık sorulan soruları yanıtlayan ve kliniğin takvim sistemiyle entegre olan yapay zeka destekli bir WhatsApp resepsiyonisti devreye aldı. Sistem doğal sohbet yapabilir, uygunluğu gerçek zamanlı kontrol edebilir ve randevuları anında onaylayabilir. Çözüm şunları içerir:",
+        "solutionBullets": {
+          "1": "Sohbete dayalı randevu için doğal dil işleme",
+          "2": "Gerçek zamanlı takvim entegrasyonu ve uygunluk kontrolü",
+          "3": "Farklı hasta grupları için çok dilli destek",
+          "4": "Otomatik onay mesajları ve hatırlatıcılar",
+          "5": "Karmaşık sorgularda insan personele sorunsuz aktarma"
+        },
+        "results": {
+          "1": "Onaylanmış randevularda %45 artış",
+          "2": "Telefon çağrısı hacminde %70 azalma",
+          "3": "7/24 randevu kullanılabilirliği",
+          "4": "Aylık 15.000 dolar ek gelir"
+        },
+        "testimonial": {
+          "text": "Artık daha önce tamamen kaçıracağımız randevuları yakalıyoruz. Yapay zeka resepsiyonisti günün her saati çalışıyor ve asla izin almıyor. Üç ek ekip üyesine sahip olmak gibi.",
+          "author": "Maria Rodriguez",
+          "role": "Klinik Müdürü"
+        }
+      },
+      "followUp": {
+        "intro": "Randevuya gelmeme oranını önemli ölçüde azaltan ve hasta bağlılığını iyileştiren çok kanallı hatırlatma ve takip sistemi.",
+        "problem": "Muayenehanede %18 randevuya gelmeme oranı vardı ve bu her ay binlerce dolarlık gelir kaybına yol açıyordu. Manuel hatırlatma çağrıları zaman alıcı ve tutarsızdı. Tedavi sonrası takipler sıkça unutuluyor; bu da zayıf hasta etkileşimine ve bağlılığına neden oluyordu.",
+        "solution": "Axiogen, optimal zamanlarda WhatsApp ve SMS üzerinden otomatik randevu hatırlatıcıları gönderen çok kanallı bir hatırlatma sistemi oluşturdu. Sistem ayrıca tedavi sonrası kontrolleri ve kayıp hastalar için yeniden etkileşim kampanyalarını yönetir. Özellikler:",
+        "solutionBullets": {
+          "1": "Randevu türüne ve hasta geçmişine göre akıllı zamanlama",
+          "2": "Çok kanallı teslim (WhatsApp, SMS, E-posta)",
+          "3": "Tedavi sonrası otomatik takip dizileri",
+          "4": "Kayıp hastalar için yeniden etkileşim kampanyaları",
+          "5": "Kesintisiz iş akışı için muayenehane yönetim sistemleriyle entegrasyon"
+        },
+        "results": {
+          "1": "Hasta bağlılığında %35 iyileşme",
+          "2": "Randevuya gelmeme oranı %18'den %7'ye düştü",
+          "3": "Otomatik takiplere %92 olumlu yanıt",
+          "4": "Haftada 10 saat personel zamanı tasarrufu"
+        },
+        "testimonial": {
+          "text": "Randevuya gelmeme oranımız ilk ay içinde dramatik şekilde düştü. Hastalar kullanışlı hatırlatıcıları takdir ediyor ve düzenli bakım rutinlerinden kopan birçok hastayla yeniden bağlantı kurduk.",
+          "author": "Dr. James Chen",
+          "role": "Baş Diş Hekimi"
+        }
+      },
+      "patientAnalytics": {
+        "intro": "Hasta verilerini eyleme dönüştürülebilir içgörülere çeviren, idari yükü azaltan ve klinik karar vermeyi iyileştiren akıllı analiz panoları.",
+        "problem": "Klinisyenler idari görevler ve veri girişinde aşırı zaman harcıyor; bu da hasta bakımı için kalan zamanı azaltıyordu. Klinikte hasta akışı, randevu kalıpları ve operasyonel verimlilik konusunda görünürlük yoktu. Manuel raporlama zaman alıcıydı ve çoğu zaman tamamlandığında güncelliğini yitirmiş oluyordu.",
+        "solution": "Axiogen, klinik operasyonları hakkında eyleme dönüştürülebilir içgörüler sağlayan gerçek zamanlı panolara sahip kapsamlı bir hasta analitik sistemi geliştirdi. Sistem; birden fazla kaynaktan veri toplar, kalıpları ve eğilimleri belirlemek için yapay zeka kullanır ve bilgileri sezgisel görselleştirmelerle sunar. Temel yetenekler:",
+        "solutionBullets": {
+          "1": "Gerçek zamanlı hasta akışı ve randevu analizi",
+          "2": "Randevu planlama optimizasyonu için tahmine dayalı içgörüler",
+          "3": "Otomatik raporlama ve KPI takibi",
+          "4": "Mevcut klinik yönetim sistemleriyle entegrasyon",
+          "5": "Farklı roller için özelleştirilebilir panolar (klinisyenler, yöneticiler, idareciler)",
+          "6": "Operasyonel sorunlar için yapay zeka destekli anomali tespiti"
+        },
+        "results": {
+          "1": "Klinisyen idari süresinde %50 azalma",
+          "2": "Randevu kullanımında %30 iyileşme",
+          "3": "Gerçek zamanlı operasyonel içgörüler",
+          "4": "Otomatik günlük/haftalık raporlama"
+        },
+        "testimonial": {
+          "text": "Analiz sistemi çalışma şeklimizi dönüştürdü. Artık darboğazların nerede oluştuğunu tam olarak görebiliyor ve verilere dayalı kararlar verebiliyoruz. Klinisyenlerimizin hastalar için daha çok vakti var ve operasyonlarımız çok daha sorunsuz yürüyor.",
+          "author": "Dr. Emily Watson",
+          "role": "Baş Tıp Sorumlusu"
+        }
+      },
+      "clinicSaaS": {
+        "intro": "Hasta kayıtlarını, randevuları ve klinik operasyonlarını tek bir entegre sistemde merkezileştiren uçtan uca SaaS platformu.",
+        "problem": "Klinik; hasta kayıtları, planlama, faturalandırma ve operasyonlar için birbirinden kopuk birden fazla sistem kullanıyordu. Bu parçalanma veri siloları, yinelenen veri girişi ve verimsizliklere yol açtı. Personel birden fazla uygulama arasında geçiş yapmak zorundaydı ve hasta bilgileri farklı platformlara dağılmıştı.",
+        "solution": "Axiogen, tüm operasyonları tek bir entegre sistemde birleştiren kapsamlı bir klinik yönetim SaaS platformu tasarlayıp geliştirdi. Platform; hasta kayıt yönetimi, randevu planlama, faturalandırma entegrasyonu, personel yönetimi ve raporlama yeteneklerini içerir. Çözüm şunları sunar:",
+        "solutionBullets": {
+          "1": "Güvenli veri depolama ile birleşik hasta kayıt sistemi",
+          "2": "Entegre randevu alma ve takvim yönetimi",
+          "3": "Otomatik faturalandırma ve ödeme işleme",
+          "4": "Personel planlaması ve görev yönetimi",
+          "5": "Kapsamlı raporlama ve analiz",
+          "6": "Mobil uyumlu tasarım ile hareket halindeyken erişim",
+          "7": "Üçüncü taraf hizmetleriyle API entegrasyonları",
+          "8": "Güvenlik için role dayalı erişim kontrolü"
+        },
+        "results": {
+          "1": "Uçtan uca sistem entegrasyonu",
+          "2": "Veri giriş süresinde %60 azalma",
+          "3": "Tüm hasta verileri için tek doğru kaynak",
+          "4": "Personel üretkenliğinde ve memnuniyetinde iyileşme"
+        },
+        "testimonial": {
+          "text": "Her şeyin tek bir yerde olması operasyonlarımızı devrim niteliğinde değiştirdi. Artık sistemler arasında geçiş yaparak veya hasta bilgilerini arayarak zaman kaybetmiyoruz. Platform sezgisel, hızlı ve verimliliğimizi önemli ölçüde artırdı.",
+          "author": "Robert Kim",
+          "role": "Operasyon Direktörü"
+        }
+      }
+    }
+  },
+  "about": {
+    "title": "Misyonumuz",
+    "subtitle": "Akıllı SaaS platformları ve yapay zeka destekli otomasyonla sağlık operasyonlarını modernize ediyoruz",
+    "missionStatement": "Axiogen olarak, klinik operasyonları dönüştüren akıllı yazılım altyapısı inşa etmek için sağlık kuruluşlarıyla ortaklık kuruyoruz. Misyonumuz; tıbbi kurumları, hasta bakımını geliştiren, iş akışlarını kolaylaştıran ve operasyonel mükemmelliği sağlayan özel SaaS platformları ve yapay zeka destekli otomasyonla modernleştirmektir.",
+    "whoWeAre": {
+      "title": "Biz Kimiz",
+      "description": "Axiogen, tıbbi kurumlar için özel yazılım geliştirme konusunda uzmanlaşmış, sağlık odaklı bir SaaS ve otomasyon şirketidir. Hastanelerin, kliniklerin, üniversitelerin ve sağlık kuruluşlarının karşılaştığı karmaşık operasyonel zorlukları ele alan kurumsal düzeyde dijital platformlar tasarlıyor ve inşa ediyoruz. Ekibimiz; tıbbi operasyonların ve düzenleyici uyumun inceliklerini kavrayan yazılım mühendislerini, sağlık iş akışı uzmanlarını ve yapay zeka uzmanlarını bir araya getirir."
+    },
+    "whyWeExist": {
+      "title": "Neden Varız",
+      "description": "Sağlık kuruluşları benzeri görülmemiş bir operasyonel karmaşıklıkla karşı karşıya—parçalanmış sistemler, idari aşırı yük ve kaynakları tüketen ve hasta bakımını etkileyen verimsiz iş akışları. Axiogen'i, bu sistemik sorunları amaca yönelik geliştirilmiş yazılım platformları ve akıllı otomasyonla çözmek için kurduk. Amacımız; idari yükü azaltan, operasyonel verimliliği artıran ve sağlık profesyonellerinin olağanüstü hasta sonuçları sunmaya odaklanmasına olanak tanıyan modern teknoloji altyapısıyla tıbbi kurumları güçlendirmektir."
+    },
+    "coreValues": {
+      "title": "Temel Değerlerimiz",
+      "precision": {
+        "title": "Hassasiyet",
+        "description": "Sağlık alanında doğruluk pazarlık konusu değildir. Geliştirdiğimiz her platform; veri bütünlüğünü, düzenleyici uyumu ve tüm klinik iş akışlarında ve hasta etkileşimlerinde güvenilir performansı sağlamak için titiz bir özenle tasarlanır."
+      },
+      "efficiency": {
+        "title": "Verimlilik",
+        "description": "Operasyonel sürtüşmeyi ortadan kaldıran yazılımlar tasarlıyoruz. Geliştirdiğimiz her platform ve otomasyon; iş akışlarını kolaylaştırmak, idari yükü azaltmak ve kaynak kullanımını en üst düzeye çıkarmak için optimize edilmiştir — böylece sağlık kuruluşları bakım kalitesini korurken etkili bir şekilde ölçeklenebilir."
+      },
+      "care": {
+        "title": "Özen ve Empati",
+        "description": "Sağlığın insani yönünü derinlemesine anlıyoruz. Çözümlerimiz; hastalara ve sağlayıcılara karşı empati ile tasarlanır — bakım deneyimini geliştiren, tükenmişliği azaltan ve sağlık ekosistemindeki herkes için daha iyi sağlık sonuçlarını destekleyen bir teknoloji yaratır."
+      }
+    }
+  },
+  "contact": {
+    "title": "Sağlık Çözümünüzü Birlikte İnşa Edelim",
+    "subtitle": "Sağlık operasyonlarınızı modernleştirmeye hazır mısınız? Ekibimizle iletişime geçin.",
+    "whatsapp": {
+      "title": "WhatsApp'ta Bizimle Sohbet Edin",
+      "description": "Sorularınıza anında yanıt alın",
+      "button": "WhatsApp'ı Aç"
+    },
+    "email": {
+      "title": "E-posta Gönderin",
+      "value": "contact@getaxiogenai.com"
+    },
+    "phone": {
+      "title": "Bizi Arayın",
+      "value": "+90 535 329 6589"
+    }
+  },
+  "footer": {
+    "description": "Axiogen; hastanelerde, kliniklerde, üniversitelerde ve tıbbi kurumlarda operasyonları kolaylaştıran, klinik iş akışlarını iyileştiren ve hasta deneyimini geliştiren güvenli, akıllı sağlık SaaS platformları ve otomasyon sistemleri geliştirir.",
+    "quickLinks": "Hızlı Bağlantılar",
+    "contact": "İletişim",
+    "allRightsReserved": "Tüm hakları saklıdır."
+  },
+  "cta": {
+    "title": "Sağlık Operasyonlarınızı Modernleştirmeye Hazır mısınız?",
+    "description": "Hastaneler, klinikler, üniversiteler ve tıbbi kurumlar için — özel sağlık SaaS platformları ve akıllı otomasyonlar tasarlamak için Axiogen ile ortaklık kurun.",
+    "bookACall": "Görüşme Planla",
+    "contactWhatsApp": "WhatsApp'ta Bize Ulaşın"
+  },
+  "common": {
+    "alt": {
+      "logo": "Axiogen",
+      "dashboard": "Axiogen tıbbi otomasyon panosu",
+      "clinicStaff": "Tablet kullanan sağlık profesyoneli"
+    },
+    "readCaseStudy": "Vaka çalışmasını oku"
+  },
+  "demo": {
+    "novaDent": {
+      "pageTitle": "NovaDent Kliniği",
+      "heroHeadline": "Yapay Zeka Resepsiyonu — Canlı Deneyimleyin",
+      "heroSubheadline": "NovaDent'in yapay zeka resepsiyonisti Nova ile konuşun. Randevu alın, sorular sorun ve klinik otomasyonunun geleceğini duyun.",
+      "clinicName": "NovaDent Kliniği",
+      "languageSelector": {
+        "label": "Bir dil seçin",
+        "english": "İngilizce",
+        "turkish": "Türkçe",
+        "arabic": "Arapça"
+      },
+      "callButton": {
+        "idle": "Nova'yı Ara",
+        "connecting": "Bağlanıyor...",
+        "active": "Aramada",
+        "ended": "Tekrar Ara"
+      },
+      "endCallButton": "Aramayı Bitir",
+      "callStatus": {
+        "idle": "Başlamak için 'Nova'yı Ara'ya dokunun",
+        "connecting": "Nova'ya bağlanıyor...",
+        "active": "Nova dinliyor — doğal olarak konuşun",
+        "ended": "Arama sona erdi"
+      },
+      "transcriptPanel": {
+        "title": "Canlı Transkript",
+        "empty": "Bir görüşme başlattığınızda transkript burada görünecek.",
+        "you": "Siz",
+        "nova": "Nova"
+      },
+      "bookingsPanel": {
+        "title": "Yakalanan Randevular",
+        "empty": "Henüz randevu yok — Nova'nın canlı yakaladığını görmek için bir görüşme başlatın.",
+        "statusPending": "Onay Bekliyor"
+      },
+      "bookingCard": {
+        "patient": "Hasta",
+        "phone": "Telefon",
+        "type": "Randevu Türü",
+        "date": "Tarih",
+        "time": "Saat"
+      },
+      "micError": {
+        "title": "Mikrofona erişilemedi",
+        "description": "Lütfen tarayıcınızın mikrofon iznini verin ve tekrar deneyin."
+      },
+      "configError": {
+        "title": "Demo yapılandırılmadı",
+        "description": "VITE_VAPI_PUBLIC_KEY ortam değişkeni eksik."
+      },
+      "genericError": {
+        "title": "Görüşme başlatılamadı",
+        "description": "Lütfen bir kez daha deneyin. Sorun devam ederse bağlantınızı kontrol edin."
+      },
+      "microcopy": {
+        "micHint": "Görüşmek için 'Nova'yı Ara'ya dokunun ve mikrofon erişimine izin verin",
+        "callActive": "Görüşme aktif"
+      }
+    }
+  },
+  "notFound": {
+    "title": "404",
+    "message": "Hay aksi! Sayfa bulunamadı",
+    "returnHome": "Ana Sayfaya Dön"
+  }
+}
