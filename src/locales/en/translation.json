@@ -26,18 +26,18 @@
     },
     "services": {
       "title": "Automation Solutions",
-      "subtitle": "Streamline your clinic operations with AI-powered systems",
-      "whatsapp": {
-        "title": "AI WhatsApp Receptionist",
-        "description": "24/7 intelligent responses to patient inquiries, handling common questions and routing urgent matters appropriately."
+      "subtitle": "AI systems purpose-built for dental, dermatology, and cosmetic clinics",
+      "voiceReceptionist": {
+        "title": "AI Voice Receptionist",
+        "description": "Answers every call 24/7, books appointments in natural conversation, and never lets a patient slip through the cracks."
       },
-      "booking": {
-        "title": "Automated Appointment Booking",
-        "description": "Seamless integration with your calendar system, allowing patients to book, reschedule, or cancel appointments instantly."
+      "reminders": {
+        "title": "Appointment Reminder System",
+        "description": "Automated SMS and WhatsApp reminders at clinically-optimal intervals — cutting no-shows and protecting revenue."
       },
-      "followUp": {
-        "title": "Patient Follow-Up & Reminders",
-        "description": "Automated reminder system that reduces no-shows and keeps patients engaged with their treatment plans."
+      "reactivation": {
+        "title": "Patient Reactivation Campaigns",
+        "description": "Personalized re-engagement sequences bring lapsed patients back for overdue checkups and pending treatments."
       }
     },
     "caseStudies": {
@@ -62,91 +62,62 @@
     }
   },
   "services": {
-    "title": "Healthcare SaaS Solutions & Platform Development",
-    "subtitle": "Custom-built software platforms and intelligent automation for hospitals, clinics, universities, and medical institutions",
-    "communication": {
-      "title": "AI-Powered Patient Communication Platform",
-      "description": "Custom-built patient engagement system with intelligent multi-channel communication capabilities, enabling 24/7 automated responses and seamless integration with your existing healthcare infrastructure.",
-      "features": {
-        "1": "Multi-channel patient communication (WhatsApp, SMS, Email)",
-        "2": "Advanced NLP for medical query understanding",
-        "3": "Intelligent triage and escalation workflows",
-        "4": "HIPAA-compliant data handling and encryption",
-        "5": "Integration with EHR/EMR and practice management systems"
-      }
+    "title": "AI Systems That Grow Your Practice",
+    "subtitle": "Five automation platforms purpose-built for dental, dermatology, and cosmetic clinics — each designed to capture missed revenue, reduce no-shows, and free your front desk.",
+    "voiceReceptionist": {
+      "title": "AI Voice Receptionist",
+      "description": "An always-on AI phone agent that answers calls in natural conversation, books appointments, handles common questions, and transfers urgent cases — so your practice never misses a patient again.",
+      "stat": "67% of missed calls never call back"
     },
-    "appointment": {
-      "title": "Healthcare Appointment Management System",
-      "description": "Enterprise-grade scheduling platform designed for medical institutions, featuring real-time availability management, automated workflows, and seamless calendar synchronization across departments.",
-      "features": {
-        "1": "Multi-provider and multi-location scheduling",
-        "2": "Real-time availability and resource management",
-        "3": "Automated appointment confirmations and reminders",
-        "4": "Bi-directional calendar sync (Google, Outlook, Apple)",
-        "5": "Intelligent waitlist management and rebooking automation"
-      }
+    "reminders": {
+      "title": "Appointment Reminder System",
+      "description": "Automated multi-channel reminders delivered via SMS, WhatsApp, and email at clinically-optimal intervals — keeping your schedule full and protecting revenue from last-minute cancellations.",
+      "stat": "Reduce no-shows from 28% to under 10%"
     },
-    "engagement": {
-      "title": "Patient Engagement & Follow-Up Platform",
-      "description": "Comprehensive engagement system that reduces no-shows, improves treatment adherence, and enhances patient satisfaction through intelligent, personalized communication sequences.",
-      "features": {
-        "1": "Customizable multi-touch reminder campaigns",
-        "2": "Post-procedure follow-up automation",
-        "3": "Patient satisfaction surveys and feedback collection",
-        "4": "Two-way communication with confirmation tracking",
-        "5": "Predictive analytics for no-show risk assessment"
-      }
+    "reactivation": {
+      "title": "Patient Reactivation Campaigns",
+      "description": "Automatically re-engage lapsed and dormant patients with personalized follow-up sequences, bringing them back for overdue checkups, recalls, and pending treatments.",
+      "stat": "Reactivate 20–30% of dormant patients"
+    },
+    "reputation": {
+      "title": "Reputation & Review System",
+      "description": "Automated post-visit review requests sent at the perfect moment — turning happy patients into Google and Yelp reviews that attract new ones, while quietly routing negative feedback to the practice manager.",
+      "stat": "Boost ratings from 3.8 to 4.7 stars"
     },
     "intake": {
-      "title": "Digital Patient Intake & Registration System",
-      "description": "Streamlined digital onboarding platform that modernizes patient registration, reduces administrative burden, and ensures accurate data capture with direct EHR integration.",
-      "features": {
-        "1": "Customizable digital registration and intake forms",
-        "2": "Automated medical history and symptom collection",
-        "3": "E-signature for consent and HIPAA forms",
-        "4": "Insurance verification and eligibility checks",
-        "5": "Seamless integration with practice management systems"
-      }
-    },
-    "analytics": {
-      "title": "Healthcare Analytics & Reporting Dashboard",
-      "description": "Custom-built analytics platform providing actionable insights into clinical operations, patient flow, revenue cycles, and operational efficiency across your healthcare organization.",
-      "features": {
-        "1": "Real-time operational metrics and KPI tracking",
-        "2": "Patient journey and engagement analytics",
-        "3": "Revenue cycle and financial performance insights",
-        "4": "Predictive modeling for capacity planning",
-        "5": "Custom reporting with data visualization tools"
-      }
+      "title": "Digital Patient Intake",
+      "description": "Modern pre-visit digital forms with e-signature, medical history capture, insurance verification, and direct EHR sync — eliminating paper and clearing waiting-room bottlenecks.",
+      "stat": "Save 7+ hours per week on manual intake"
     }
   },
   "caseStudies": {
-    "title": "Proven Results from Real Clinics",
-    "subtitle": "Real automation systems delivering measurable improvements in efficiency, revenue, and patient satisfaction",
-    "dentalIntake": {
-      "title": "Automated Patient Intake for Dental Clinic",
-      "description": "Reduced intake time by 60% with intelligent form automation.",
+    "title": "Research-Backed Case Studies",
+    "subtitle": "Reference implementations and pilot results showing what Axiogen's systems deliver for dental, dermatology, and cosmetic clinics.",
+    "demoLabel": "Demo Case Study",
+    "noShowReduction": {
+      "title": "From 28% to 9% No-Show Rate at a 3-Chair Dental Clinic",
+      "description": "Automated multi-channel reminders cut missed appointments by two-thirds in 90 days.",
       "tag": "Dental"
     },
-    "whatsappBooking": {
-      "title": "WhatsApp Booking System Implementation",
-      "description": "Increased bookings by 45% with AI-powered 24/7 scheduling.",
-      "tag": "Medical"
-    },
-    "followUp": {
-      "title": "Follow-Up Automation Success",
-      "description": "Improved patient retention by 35% with automated reminders.",
+    "voiceReceptionist": {
+      "title": "47 New Patients Booked After-Hours in 90 Days",
+      "description": "An AI voice agent answered every missed call and booked appointments around the clock at a dental practice.",
       "tag": "Dental"
     },
-    "analytics": {
-      "title": "AI-Powered Patient Analytics System",
-      "description": "Reduced clinician admin time by 50% through smart analytics dashboards.",
-      "tag": "Clinic Ops"
+    "patientReactivation": {
+      "title": "127 Lapsed Patients Reactivated at a Dermatology Clinic",
+      "description": "A 6-week re-engagement sequence brought back patients who hadn't visited in over a year.",
+      "tag": "Dermatology"
     },
-    "saas": {
-      "title": "Clinic Management SaaS Prototype",
-      "description": "End-to-end system for managing patient records, bookings, and operations.",
-      "tag": "SaaS"
+    "reviewAutomation": {
+      "title": "3.8 → 4.7 Google Rating at a Cosmetic Practice",
+      "description": "Automated post-visit review requests captured happy patients before they forgot.",
+      "tag": "Cosmetic"
+    },
+    "digitalIntake": {
+      "title": "7 Hours Saved Weekly at a Dermatology Clinic",
+      "description": "Digital pre-visit intake eliminated the clipboard and cut front-desk workload in half.",
+      "tag": "Dermatology"
     },
     "detail": {
       "notFound": "Case Study Not Found",
@@ -154,128 +125,93 @@
       "challenge": "The Challenge",
       "solution": "Our Solution",
       "toolsTechnologies": "Tools & Technologies Used:",
-      "workflowDiagram": "Workflow Diagram",
-      "workflowDiagramDesc": "Visual representation of the automation flow",
       "measurableResults": "Measurable Results",
       "readyForResults": "Ready for similar results?",
       "discussAutomation": "Let's discuss how we can automate your clinic's workflows",
-      "patientIntake": {
-        "intro": "A comprehensive digital intake system that transforms patient onboarding and eliminates manual paperwork.",
-        "problem": "A growing dental practice was spending 15-20 minutes per patient on manual intake forms, leading to long wait times and staff frustration. The paper-based system resulted in incomplete data and frequent errors that required follow-up calls.",
-        "solution": "Axiogen implemented a comprehensive digital intake system that patients complete before arrival via WhatsApp or email. The system uses intelligent forms with conditional logic, automatic validation, and seamless integration with their practice management software. Key features include:",
+      "demoDisclaimer": "Reference implementation built on industry research and Axiogen pilot data. Individual clinic results will vary.",
+      "noShowReduction": {
+        "intro": "An automated multi-channel reminder system that drove a 3-chair dental clinic's no-show rate from 28% to 9% in 90 days.",
+        "problem": "A mid-sized dental clinic was losing thousands in revenue every month to a 28% no-show rate. Manual reminder calls were inconsistent, and the front-desk team couldn't keep up — industry data shows no-show rates above 20% cost small practices $150K+ annually in lost chair time.",
+        "solution": "Axiogen deployed an automated reminder system that delivers personalized SMS, WhatsApp, and email reminders at clinically-optimal intervals (72h, 24h, and 2h before the visit). Patients can confirm, reschedule, or cancel with a single tap — and cancellations instantly trigger waitlist outreach to fill the slot. The system includes:",
         "solutionBullets": {
-          "1": "Pre-appointment form completion via multiple channels",
-          "2": "Intelligent conditional logic that adapts questions based on patient responses",
-          "3": "Automatic data validation and error prevention",
-          "4": "Real-time sync with practice management systems",
-          "5": "Secure patient data handling with HIPAA compliance"
+          "1": "Three-touch reminder sequence timed to evidence-based intervals",
+          "2": "One-tap confirm, reschedule, or cancel from any channel",
+          "3": "Instant waitlist outreach when slots open up",
+          "4": "Real-time calendar sync with practice management software",
+          "5": "Language and tone tuned to each clinic's patient base"
         },
         "results": {
-          "1": "65% faster administrative processes",
-          "2": "95% form completion rate before appointments",
-          "3": "90% reduction in data entry errors",
-          "4": "Eliminated 4 hours of admin work per day"
-        },
-        "testimonial": {
-          "text": "The automated intake system has been a game-changer for our practice. Patients love completing forms at their convenience, and our team can focus on providing excellent care instead of paperwork.",
-          "author": "Dr. Sarah Mitchell",
-          "role": "Practice Owner"
+          "1": "No-show rate dropped from 28% to 9%",
+          "2": "Over 40 appointment slots recovered per month",
+          "3": "Staff reminder workload down by 85%"
         }
       },
-      "whatsappBooking": {
-        "intro": "An AI-powered 24/7 booking system that captures appointments around the clock and integrates seamlessly with clinic calendars.",
-        "problem": "The clinic was missing potential bookings during off-hours and lunch breaks. Phone lines were often busy, leading to frustrated patients and lost revenue. Staff spent significant time handling routine scheduling calls that could be automated.",
-        "solution": "Axiogen deployed an AI-powered WhatsApp receptionist that handles appointment bookings, answers common questions, and integrates with the clinic's calendar system. The system can converse naturally, check availability in real-time, and confirm appointments instantly. The solution includes:",
+      "voiceReceptionist": {
+        "intro": "A 24/7 AI voice receptionist that answered every missed call at a dental practice and booked 47 new patients after-hours in the first 90 days.",
+        "problem": "A dental practice was losing an estimated 30+ calls per week outside business hours and during peak times when the front desk was overwhelmed. Each missed call was a potential new patient — industry research shows 67% of callers who reach voicemail never call back.",
+        "solution": "Axiogen built an AI voice receptionist (Nova) on Vapi, GPT-4o, and ElevenLabs that answers every call, collects patient details, books appointments directly into the practice management calendar, and sends confirmations — all in natural, human-sounding conversation. The solution includes:",
         "solutionBullets": {
-          "1": "Natural language processing for conversational booking",
-          "2": "Real-time calendar integration and availability checking",
-          "3": "Multi-language support for diverse patient populations",
-          "4": "Automated confirmation messages and reminders",
-          "5": "Seamless handoff to human staff for complex inquiries"
+          "1": "Natural-sounding voice conversation with sub-second latency",
+          "2": "Direct booking into the practice's calendar system",
+          "3": "Automated SMS confirmation and reminder",
+          "4": "Live handoff to human staff for complex or urgent cases",
+          "5": "Multi-language support (English, Turkish, Arabic)"
         },
         "results": {
-          "1": "45% increase in confirmed appointments",
-          "2": "70% reduction in phone call volume",
-          "3": "24/7 booking availability",
-          "4": "$15,000 additional monthly revenue"
-        },
-        "testimonial": {
-          "text": "We're now capturing bookings we would have completely missed before. The AI receptionist works around the clock and never takes a day off. It's like having three extra team members.",
-          "author": "Maria Rodriguez",
-          "role": "Clinic Manager"
+          "1": "47 new patients booked after-hours in 90 days",
+          "2": "100% call answer rate, day or night",
+          "3": "Estimated $80K+ in recovered revenue"
         }
       },
-      "followUp": {
-        "intro": "A multi-channel reminder and follow-up system that dramatically reduces no-shows and improves patient retention.",
-        "problem": "The practice experienced an 18% no-show rate, costing thousands in lost revenue monthly. Manual reminder calls were time-consuming and inconsistent. Post-treatment follow-ups were frequently forgotten, leading to poor patient engagement and retention.",
-        "solution": "Axiogen created a multi-channel reminder system that sends automated appointment reminders via WhatsApp and SMS at optimal times. The system also handles post-treatment check-ins and re-engagement campaigns for lapsed patients. Features include:",
+      "patientReactivation": {
+        "intro": "A 6-week automated re-engagement sequence that reactivated 127 lapsed patients at a dermatology clinic — all without adding staff hours.",
+        "problem": "The clinic had thousands of dormant patient records — people who had come once for a consultation or treatment and never returned. Manual outreach was impractical at that scale, and the clinic was leaving years of recall revenue on the table.",
+        "solution": "Axiogen segmented 2,300 dormant patients by original visit type and built an automated WhatsApp + SMS reactivation sequence with personalized offers tailored to each segment (cosmetic follow-ups, skin-cancer screenings, prescription refills, etc.). Responses flowed directly into the online booking system. Features include:",
         "solutionBullets": {
-          "1": "Intelligent timing based on appointment type and patient history",
-          "2": "Multi-channel delivery (WhatsApp, SMS, Email)",
-          "3": "Automated post-treatment follow-up sequences",
-          "4": "Re-engagement campaigns for lapsed patients",
-          "5": "Integration with practice management systems for seamless workflow"
+          "1": "Segmentation by original treatment type and time-since-visit",
+          "2": "Personalized messaging and offer per segment",
+          "3": "Multi-touch cadence across WhatsApp, SMS, and email",
+          "4": "One-click booking from any message",
+          "5": "Real-time performance dashboard for the practice manager"
         },
         "results": {
-          "1": "35% improvement in patient retention",
-          "2": "18% to 7% no-show rate reduction",
-          "3": "92% positive response to automated follow-ups",
-          "4": "Saved 10 hours per week of staff time"
-        },
-        "testimonial": {
-          "text": "Our no-show rate dropped dramatically within the first month. Patients appreciate the convenient reminders, and we've reconnected with many patients who had fallen out of their regular care routine.",
-          "author": "Dr. James Chen",
-          "role": "Lead Dentist"
+          "1": "127 lapsed patients reactivated in 6 weeks",
+          "2": "5.5% reactivation rate on a dormant list",
+          "3": "$45K+ in recovered revenue with zero additional staff overhead"
         }
       },
-      "patientAnalytics": {
-        "intro": "Smart analytics dashboards that transform patient data into actionable insights, reducing administrative burden and improving clinical decision-making.",
-        "problem": "Clinicians were spending excessive time on administrative tasks and data entry, reducing time available for patient care. The clinic lacked visibility into patient flow, appointment patterns, and operational efficiency. Manual reporting was time-consuming and often outdated by the time it was completed.",
-        "solution": "Axiogen developed a comprehensive patient analytics system with real-time dashboards that provide actionable insights into clinic operations. The system aggregates data from multiple sources, uses AI to identify patterns and trends, and presents information in intuitive visualizations. Key capabilities include:",
+      "reviewAutomation": {
+        "intro": "An automated post-visit review system that lifted a cosmetic practice's Google rating from 3.8 to 4.7 stars in four months.",
+        "problem": "A cosmetic practice had excellent clinical outcomes but a 3.8-star Google rating — because only unhappy patients were motivated enough to leave reviews. Staff regularly forgot to ask, paper cards ended up in the trash, and the practice's reputation was silently hurting new-patient acquisition.",
+        "solution": "Axiogen built an automated reputation system that sends a personalized review request via SMS two hours after each visit — while the experience is still fresh. Happy patients receive a direct link to Google, while patients who rate below 4 stars are routed to a private feedback form delivered straight to the practice manager. The solution includes:",
         "solutionBullets": {
-          "1": "Real-time patient flow and appointment analytics",
-          "2": "Predictive insights for appointment scheduling optimization",
-          "3": "Automated reporting and KPI tracking",
-          "4": "Integration with existing clinic management systems",
-          "5": "Customizable dashboards for different roles (clinicians, managers, administrators)",
-          "6": "AI-powered anomaly detection for operational issues"
+          "1": "Timed post-visit review request via SMS",
+          "2": "Smart routing: 4–5 stars go public, ≤3 stars stay private",
+          "3": "Personalized messaging using patient and clinician names",
+          "4": "Private-feedback inbox for the practice manager",
+          "5": "Review performance dashboard with month-over-month tracking"
         },
         "results": {
-          "1": "50% reduction in clinician admin time",
-          "2": "30% improvement in appointment utilization",
-          "3": "Real-time operational insights",
-          "4": "Automated daily/weekly reporting"
-        },
-        "testimonial": {
-          "text": "The analytics system has transformed how we operate. We can now see exactly where bottlenecks occur and make data-driven decisions. Our clinicians have more time for patients, and our operations run much more smoothly.",
-          "author": "Dr. Emily Watson",
-          "role": "Chief Medical Officer"
+          "1": "Google rating climbed from 3.8 to 4.7 stars in 4 months",
+          "2": "Review volume up 9x",
+          "3": "Negative feedback captured privately, not publicly"
         }
       },
-      "clinicSaaS": {
-        "intro": "An end-to-end SaaS platform that centralizes patient records, bookings, and clinic operations in one integrated system.",
-        "problem": "The clinic was using multiple disconnected systems for patient records, scheduling, billing, and operations. This fragmentation led to data silos, duplicate data entry, and inefficiencies. Staff had to switch between multiple applications, and patient information was scattered across different platforms.",
-        "solution": "Axiogen designed and built a comprehensive clinic management SaaS platform that consolidates all operations into a single, integrated system. The platform includes patient record management, appointment scheduling, billing integration, staff management, and reporting capabilities. The solution features:",
+      "digitalIntake": {
+        "intro": "A mobile-first digital intake flow that saved a dermatology clinic 7+ hours of front-desk time every week and cut waiting-room times in half.",
+        "problem": "Front-desk staff were spending 20+ minutes per new patient on intake paperwork and manual data entry — creating waiting-room backlogs, data-entry errors, and burnout. Paper forms also slowed insurance verification and delayed clinician prep time.",
+        "solution": "Axiogen built a mobile-first digital intake flow that sends patients a secure link 24 hours before their appointment. Patients complete medical history, consent forms, insurance information, and e-signatures on their phone — and everything syncs directly into the EHR before they arrive. Key features include:",
         "solutionBullets": {
-          "1": "Unified patient record system with secure data storage",
-          "2": "Integrated appointment booking and calendar management",
-          "3": "Automated billing and payment processing",
-          "4": "Staff scheduling and task management",
-          "5": "Comprehensive reporting and analytics",
-          "6": "Mobile-responsive design for on-the-go access",
-          "7": "API integrations with third-party services",
-          "8": "Role-based access control for security"
+          "1": "Pre-visit link delivered via SMS and email 24h before appointment",
+          "2": "Mobile-first forms with conditional logic and auto-save",
+          "3": "E-signature for consent and HIPAA documents",
+          "4": "Insurance photo capture with automated verification",
+          "5": "Direct EHR sync so clinicians are prepped before the patient walks in"
         },
         "results": {
-          "1": "End-to-end system integration",
-          "2": "60% reduction in data entry time",
-          "3": "Single source of truth for all patient data",
-          "4": "Improved staff productivity and satisfaction"
-        },
-        "testimonial": {
-          "text": "Having everything in one place has revolutionized our operations. We no longer waste time switching between systems or searching for patient information. The platform is intuitive, fast, and has significantly improved our efficiency.",
-          "author": "Robert Kim",
-          "role": "Operations Director"
+          "1": "7+ hours of front-desk time saved per week",
+          "2": "95% pre-visit form completion rate",
+          "3": "Waiting-room times reduced by an average of 18 minutes"
         }
       }
     }

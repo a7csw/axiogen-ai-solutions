@@ -7,11 +7,8 @@ import TrustLogos from "@/components/TrustLogos";
 import StatsSection from "@/components/StatsSection";
 import CTABlock from "@/components/CTABlock";
 import {
-  MessageSquare,
-  Calendar,
-  Bell,
-  TrendingUp,
-  Clock,
+  Phone,
+  CalendarCheck,
   Users,
   FileText,
   Zap,
@@ -100,25 +97,25 @@ const Home = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="reveal" style={{ transitionDelay: "0ms" }}>
               <ServiceCard
-                icon={MessageSquare}
-                title={t("home.services.whatsapp.title")}
-                description={t("home.services.whatsapp.description")}
+                icon={Phone}
+                title={t("home.services.voiceReceptionist.title")}
+                description={t("home.services.voiceReceptionist.description")}
                 link="/services"
               />
             </div>
             <div className="reveal" style={{ transitionDelay: "80ms" }}>
               <ServiceCard
-                icon={Calendar}
-                title={t("home.services.booking.title")}
-                description={t("home.services.booking.description")}
+                icon={CalendarCheck}
+                title={t("home.services.reminders.title")}
+                description={t("home.services.reminders.description")}
                 link="/services"
               />
             </div>
             <div className="reveal" style={{ transitionDelay: "160ms" }}>
               <ServiceCard
-                icon={Bell}
-                title={t("home.services.followUp.title")}
-                description={t("home.services.followUp.description")}
+                icon={Users}
+                title={t("home.services.reactivation.title")}
+                description={t("home.services.reactivation.description")}
                 link="/services"
               />
             </div>
@@ -139,14 +136,14 @@ const Home = () => {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8">
             {[
-              { title: t("caseStudies.dentalIntake.title"), description: t("caseStudies.dentalIntake.description"), tag: t("caseStudies.dentalIntake.tag"), slug: "patient-intake-automation" },
-              { title: t("caseStudies.whatsappBooking.title"), description: t("caseStudies.whatsappBooking.description"), tag: t("caseStudies.whatsappBooking.tag"), slug: "whatsapp-booking-automation" },
-              { title: t("caseStudies.followUp.title"), description: t("caseStudies.followUp.description"), tag: t("caseStudies.followUp.tag"), slug: "follow-up-automation" },
-              { title: t("caseStudies.analytics.title"), description: t("caseStudies.analytics.description"), tag: t("caseStudies.analytics.tag"), slug: "patient-analytics" },
-              { title: t("caseStudies.saas.title"), description: t("caseStudies.saas.description"), tag: t("caseStudies.saas.tag"), slug: "clinic-saas-prototype" },
+              { title: t("caseStudies.noShowReduction.title"), description: t("caseStudies.noShowReduction.description"), tag: t("caseStudies.noShowReduction.tag"), slug: "dental-no-show-reduction" },
+              { title: t("caseStudies.voiceReceptionist.title"), description: t("caseStudies.voiceReceptionist.description"), tag: t("caseStudies.voiceReceptionist.tag"), slug: "dental-voice-receptionist" },
+              { title: t("caseStudies.patientReactivation.title"), description: t("caseStudies.patientReactivation.description"), tag: t("caseStudies.patientReactivation.tag"), slug: "derm-patient-reactivation" },
+              { title: t("caseStudies.reviewAutomation.title"), description: t("caseStudies.reviewAutomation.description"), tag: t("caseStudies.reviewAutomation.tag"), slug: "cosmetic-review-automation" },
+              { title: t("caseStudies.digitalIntake.title"), description: t("caseStudies.digitalIntake.description"), tag: t("caseStudies.digitalIntake.tag"), slug: "derm-digital-intake" },
             ].map((study, i) => (
               <div key={study.slug} className="reveal" style={{ transitionDelay: `${i * 60}ms` }}>
-                <CaseStudyCard {...study} />
+                <CaseStudyCard {...study} demoLabel={t("caseStudies.demoLabel")} />
               </div>
             ))}
           </div>

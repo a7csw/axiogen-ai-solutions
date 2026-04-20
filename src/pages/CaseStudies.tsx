@@ -4,37 +4,38 @@ import CTABlock from "@/components/CTABlock";
 
 const CaseStudies = () => {
   const { t } = useTranslation();
+  const demoLabel = t("caseStudies.demoLabel");
   const caseStudies = [
     {
-      title: t("caseStudies.dentalIntake.title"),
-      description: t("caseStudies.dentalIntake.description"),
-      tag: t("caseStudies.dentalIntake.tag"),
-      slug: "patient-intake-automation"
+      title: t("caseStudies.noShowReduction.title"),
+      description: t("caseStudies.noShowReduction.description"),
+      tag: t("caseStudies.noShowReduction.tag"),
+      slug: "dental-no-show-reduction",
     },
     {
-      title: t("caseStudies.whatsappBooking.title"),
-      description: t("caseStudies.whatsappBooking.description"),
-      tag: t("caseStudies.whatsappBooking.tag"),
-      slug: "whatsapp-booking-automation"
+      title: t("caseStudies.voiceReceptionist.title"),
+      description: t("caseStudies.voiceReceptionist.description"),
+      tag: t("caseStudies.voiceReceptionist.tag"),
+      slug: "dental-voice-receptionist",
     },
     {
-      title: t("caseStudies.followUp.title"),
-      description: t("caseStudies.followUp.description"),
-      tag: t("caseStudies.followUp.tag"),
-      slug: "follow-up-automation"
+      title: t("caseStudies.patientReactivation.title"),
+      description: t("caseStudies.patientReactivation.description"),
+      tag: t("caseStudies.patientReactivation.tag"),
+      slug: "derm-patient-reactivation",
     },
     {
-      title: t("caseStudies.analytics.title"),
-      description: t("caseStudies.analytics.description"),
-      tag: t("caseStudies.analytics.tag"),
-      slug: "patient-analytics"
+      title: t("caseStudies.reviewAutomation.title"),
+      description: t("caseStudies.reviewAutomation.description"),
+      tag: t("caseStudies.reviewAutomation.tag"),
+      slug: "cosmetic-review-automation",
     },
     {
-      title: t("caseStudies.saas.title"),
-      description: t("caseStudies.saas.description"),
-      tag: t("caseStudies.saas.tag"),
-      slug: "clinic-saas-prototype"
-    }
+      title: t("caseStudies.digitalIntake.title"),
+      description: t("caseStudies.digitalIntake.description"),
+      tag: t("caseStudies.digitalIntake.tag"),
+      slug: "derm-digital-intake",
+    },
   ];
 
   return (
@@ -56,8 +57,8 @@ const CaseStudies = () => {
         <div className="container mx-auto max-w-6xl">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {caseStudies.map((study, index) => (
-              <div key={index} className="reveal" style={{ transitionDelay: `${index * 80}ms` }}>
-                <CaseStudyCard {...study} />
+              <div key={study.slug} className="reveal" style={{ transitionDelay: `${index * 80}ms` }}>
+                <CaseStudyCard {...study} demoLabel={demoLabel} />
               </div>
             ))}
           </div>

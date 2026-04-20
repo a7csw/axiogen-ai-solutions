@@ -3,14 +3,14 @@ import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
-import { ArrowLeft, CheckCircle2, Wrench } from "lucide-react";
+import { ArrowLeft, CheckCircle2, Wrench, FlaskConical, Info } from "lucide-react";
 
 const TOOLS_BY_SLUG: Record<string, string[]> = {
-  "patient-intake-automation":    ["Typeform", "Supabase", "Make.com", "WhatsApp Business API", "Practice Management API", "Custom React Dashboard"],
-  "whatsapp-booking-automation":  ["WhatsApp Cloud API", "n8n", "Google Calendar API", "OpenAI GPT-4", "Supabase", "Twilio"],
-  "follow-up-automation":         ["n8n", "Twilio", "WhatsApp Business API", "Supabase", "OpenAI API"],
-  "patient-analytics":            ["Supabase", "Custom React Dashboard", "Recharts", "Python Analytics Engine", "PostgreSQL", "Make.com"],
-  "clinic-saas-prototype":        ["React", "Node.js", "TypeScript", "Supabase", "Stripe API", "Google Calendar API", "PostgreSQL", "Vite"],
+  "dental-no-show-reduction":   ["Twilio SMS", "WhatsApp Business API", "n8n", "Supabase", "Practice Management API", "Google Calendar"],
+  "dental-voice-receptionist":  ["Vapi", "OpenAI GPT-4o", "ElevenLabs", "Deepgram Nova-2", "Supabase", "Practice Management API"],
+  "derm-patient-reactivation":  ["WhatsApp Business API", "Twilio SMS", "n8n", "Supabase", "Segment", "Custom React Dashboard"],
+  "cosmetic-review-automation": ["Twilio SMS", "Google Business Profile API", "n8n", "Supabase", "Postmark", "Custom React Dashboard"],
+  "derm-digital-intake":        ["Typeform", "Supabase", "Make.com", "E-Signature API", "Insurance Verification API", "EHR Integration"],
 };
 
 const CaseStudyDetail = () => {
@@ -22,33 +22,35 @@ const CaseStudyDetail = () => {
   const problemRef = useScrollReveal<HTMLDivElement>();
   const solutionRef = useScrollReveal<HTMLDivElement>();
   const resultsRef = useScrollReveal<HTMLDivElement>();
-  const testimonialRef = useScrollReveal<HTMLDivElement>();
 
   const getCaseStudyData = (slug: string | undefined) => {
     if (!slug) return null;
 
-    const caseStudyMap: Record<string, { detailKey: string; listKey: string }> = {
-      "patient-intake-automation": { detailKey: "patientIntake", listKey: "dentalIntake" },
-      "whatsapp-booking-automation": { detailKey: "whatsappBooking", listKey: "whatsappBooking" },
-      "follow-up-automation": { detailKey: "followUp", listKey: "followUp" },
-      "patient-analytics": { detailKey: "patientAnalytics", listKey: "analytics" },
-      "clinic-saas-prototype": { detailKey: "clinicSaaS", listKey: "saas" },
+    const caseStudyMap: Record<string, { key: string }> = {
+      "dental-no-show-reduction":   { key: "noShowReduction" },
+      "dental-voice-receptionist":  { key: "voiceReceptionist" },
+      "derm-patient-reactivation":  { key: "patientReactivation" },
+      "cosmetic-review-automation": { key: "reviewAutomation" },
+      "derm-digital-intake":        { key: "digitalIntake" },
     };
 
     const mapping = caseStudyMap[slug];
     if (!mapping) return null;
 
-    const detailData = t(`caseStudies.detail.${mapping.detailKey}`, { returnObjects: true }) as any;
+    const detailData = t(`caseStudies.detail.${mapping.key}`, { returnObjects: true }) as Record<string, unknown>;
+    const listData = t(`caseStudies.${mapping.key}`, { returnObjects: true }) as Record<string, string>;
+
     return {
-      title: t(`caseStudies.${mapping.listKey}.title`),
-      tag: t(`caseStudies.${mapping.listKey}.tag`),
-      intro: detailData.intro,
-      problem: detailData.problem,
-      solution: detailData.solution,
-      solutionBullets: detailData.solutionBullets,
+      title: listData.title,
+      tag: listData.tag,
+      demoLabel: t("caseStudies.demoLabel"),
+      intro: detailData.intro as string,
+      problem: detailData.problem as string,
+      solution: detailData.solution as string,
+      solutionBullets: detailData.solutionBullets as Record<string, string> | undefined,
       tools: TOOLS_BY_SLUG[slug] ?? [],
-      results: Object.values(detailData.results || {}),
-      testimonial: detailData.testimonial,
+      results: Object.values((detailData.results as Record<string, string>) || {}),
+      disclaimer: t("caseStudies.detail.demoDisclaimer"),
     };
   };
 
@@ -84,9 +86,15 @@ const CaseStudyDetail = () => {
       {/* Header */}
       <section className="py-16 px-6 lg:px-8 bg-gradient-to-b from-background to-muted/40">
         <div ref={headerRef} className="reveal container mx-auto max-w-4xl">
-          <Badge className="mb-5 bg-primary/10 text-primary border-0 hover:bg-primary/20 text-sm px-3 py-1">
-            {caseStudy.tag}
-          </Badge>
+          <div className="flex flex-wrap items-center gap-2 mb-5">
+            <Badge className="bg-primary/10 text-primary border-0 hover:bg-primary/20 text-sm px-3 py-1">
+              {caseStudy.tag}
+            </Badge>
+            <Badge variant="outline" className="border-accent/40 text-accent bg-accent/5 text-sm px-3 py-1 gap-1">
+              <FlaskConical className="w-3.5 h-3.5" />
+              {caseStudy.demoLabel}
+            </Badge>
+          </div>
           <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6 tracking-tight leading-tight">
             {caseStudy.title}
           </h1>
@@ -117,7 +125,7 @@ const CaseStudyDetail = () => {
             </p>
             {caseStudy.solutionBullets && (
               <ul className={`space-y-2 mb-8 ${isRTL ? "list-inside" : "ml-0"}`}>
-                {Object.values(caseStudy.solutionBullets).map((bullet: any, idx: number) => (
+                {Object.values(caseStudy.solutionBullets).map((bullet, idx) => (
                   <li key={idx} className="flex items-start gap-3 text-muted-foreground">
                     <CheckCircle2 className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
                     <span>{bullet}</span>
@@ -134,7 +142,7 @@ const CaseStudyDetail = () => {
                 </h4>
               </div>
               <div className="flex flex-wrap gap-2">
-                {caseStudy.tools.map((tool: string, i: number) => (
+                {caseStudy.tools.map((tool, i) => (
                   <Badge key={i} variant="secondary" className="text-sm">
                     {tool}
                   </Badge>
@@ -147,7 +155,7 @@ const CaseStudyDetail = () => {
           <div ref={resultsRef} className="reveal rounded-2xl border border-border bg-card p-8 shadow-sm">
             <h2 className="text-2xl font-bold mb-6">{t("caseStudies.detail.measurableResults")}</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-              {caseStudy.results.map((result: string, index: number) => (
+              {caseStudy.results.map((result, index) => (
                 <div
                   key={index}
                   className="flex items-start gap-3 p-4 rounded-xl bg-accent/5 border border-accent/10"
@@ -159,21 +167,13 @@ const CaseStudyDetail = () => {
             </div>
           </div>
 
-          {/* Testimonial */}
-          <div
-            ref={testimonialRef}
-            className="reveal rounded-2xl bg-gradient-to-br from-primary/5 to-accent/5 border border-border/60 p-8 shadow-sm"
-          >
-            <div className="text-4xl text-primary/30 font-serif leading-none mb-4">"</div>
-            <p className="text-xl text-foreground leading-relaxed mb-6 font-medium">
-              {caseStudy.testimonial.text}
-            </p>
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-accent flex-shrink-0" />
-              <div>
-                <p className="font-semibold">{caseStudy.testimonial.author}</p>
-                <p className="text-sm text-muted-foreground">{caseStudy.testimonial.role}</p>
-              </div>
+          {/* Demo Disclaimer */}
+          <div className="reveal rounded-2xl border border-border/60 bg-muted/40 p-6">
+            <div className="flex items-start gap-3">
+              <Info className="w-5 h-5 text-muted-foreground mt-0.5 flex-shrink-0" />
+              <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
+                {caseStudy.disclaimer}
+              </p>
             </div>
           </div>
         </div>

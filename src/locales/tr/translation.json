@@ -26,18 +26,18 @@
     },
     "services": {
       "title": "Otomasyon Çözümleri",
-      "subtitle": "Yapay zeka destekli sistemlerle klinik operasyonlarınızı kolaylaştırın",
-      "whatsapp": {
-        "title": "Yapay Zeka WhatsApp Resepsiyonisti",
-        "description": "Hasta sorgularına 7/24 akıllı yanıtlar; sık sorulan soruları ele alır ve acil konuları doğru şekilde yönlendirir."
+      "subtitle": "Diş, dermatoloji ve estetik klinikleri için özel olarak geliştirilen yapay zeka sistemleri",
+      "voiceReceptionist": {
+        "title": "Yapay Zeka Sesli Resepsiyonist",
+        "description": "7/24 aktif çalışan bir yapay zeka telefon asistanı; her aramayı doğal bir sohbetle yanıtlar, randevu alır ve kliniğiniz hiçbir hastayı kaçırmaz."
       },
-      "booking": {
-        "title": "Otomatik Randevu Yönetimi",
-        "description": "Takvim sisteminizle sorunsuz entegrasyon; hastaların randevuları anında almasına, yeniden planlamasına veya iptal etmesine olanak tanır."
+      "reminders": {
+        "title": "Randevu Hatırlatma Sistemi",
+        "description": "SMS ve WhatsApp üzerinden optimal zamanlarda gönderilen otomatik hatırlatmalar — randevuya gelmeme oranını düşürür ve geliri korur."
       },
-      "followUp": {
-        "title": "Hasta Takip ve Hatırlatmaları",
-        "description": "Randevuya gelmeme oranını düşüren ve hastaları tedavi planlarıyla etkileşimde tutan otomatik hatırlatma sistemi."
+      "reactivation": {
+        "title": "Hasta Yeniden Aktivasyon Kampanyaları",
+        "description": "Kişiselleştirilmiş takip dizileri, kayıp hastaları gecikmiş kontroller ve bekleyen tedaviler için kliniğinize geri getirir."
       }
     },
     "caseStudies": {
@@ -62,91 +62,62 @@
     }
   },
   "services": {
-    "title": "Sağlık SaaS Çözümleri ve Platform Geliştirme",
-    "subtitle": "Hastaneler, klinikler, üniversiteler ve tıbbi kurumlar için özel olarak geliştirilen yazılım platformları ve akıllı otomasyon",
-    "communication": {
-      "title": "Yapay Zeka Destekli Hasta İletişim Platformu",
-      "description": "Akıllı çok kanallı iletişim yeteneklerine sahip, hastayla özel olarak geliştirilen etkileşim sistemi; 7/24 otomatik yanıtlar ve mevcut sağlık altyapınızla sorunsuz entegrasyon sağlar.",
-      "features": {
-        "1": "Çok kanallı hasta iletişimi (WhatsApp, SMS, E-posta)",
-        "2": "Tıbbi sorguları anlamak için gelişmiş NLP",
-        "3": "Akıllı triyaj ve yönlendirme iş akışları",
-        "4": "HIPAA uyumlu veri işleme ve şifreleme",
-        "5": "EHR/EMR ve muayenehane yönetim sistemleriyle entegrasyon"
-      }
+    "title": "Kliniğinizi Büyüten Yapay Zeka Sistemleri",
+    "subtitle": "Diş, dermatoloji ve estetik klinikleri için özel olarak geliştirilen beş otomasyon platformu — her biri kaçan geliri yakalamak, randevuya gelmeme oranını azaltmak ve ön büro ekibinizi rahatlatmak için tasarlandı.",
+    "voiceReceptionist": {
+      "title": "Yapay Zeka Sesli Resepsiyonist",
+      "description": "Her aramayı doğal bir sohbetle yanıtlayan, randevu alan, sık sorulan soruları cevaplayan ve acil durumları yönlendiren 7/24 aktif yapay zeka telefon asistanı — kliniğiniz bir daha asla hasta kaçırmaz.",
+      "stat": "Kaçan aramaların %67'si bir daha aramıyor"
     },
-    "appointment": {
-      "title": "Sağlık Randevu Yönetim Sistemi",
-      "description": "Tıbbi kurumlar için tasarlanmış kurumsal düzeyde planlama platformu; gerçek zamanlı uygunluk yönetimi, otomatik iş akışları ve departmanlar arası kesintisiz takvim senkronizasyonu sunar.",
-      "features": {
-        "1": "Çoklu sağlayıcı ve çoklu konum planlaması",
-        "2": "Gerçek zamanlı uygunluk ve kaynak yönetimi",
-        "3": "Otomatik randevu onayları ve hatırlatmaları",
-        "4": "Çift yönlü takvim senkronizasyonu (Google, Outlook, Apple)",
-        "5": "Akıllı bekleme listesi yönetimi ve yeniden planlama otomasyonu"
-      }
+    "reminders": {
+      "title": "Randevu Hatırlatma Sistemi",
+      "description": "SMS, WhatsApp ve e-posta üzerinden klinik açıdan optimal zamanlarda gönderilen otomatik çok kanallı hatırlatmalar — takviminizi dolu tutar ve son dakika iptallerinden gelirinizi korur.",
+      "stat": "Randevuya gelmeme oranını %28'den %10'un altına düşürür"
     },
-    "engagement": {
-      "title": "Hasta Etkileşim ve Takip Platformu",
-      "description": "Randevuya gelmeme oranını azaltan, tedavi uyumunu iyileştiren ve akıllı, kişiselleştirilmiş iletişim dizileriyle hasta memnuniyetini artıran kapsamlı etkileşim sistemi.",
-      "features": {
-        "1": "Özelleştirilebilir çok kanallı hatırlatma kampanyaları",
-        "2": "İşlem sonrası otomatik takip",
-        "3": "Hasta memnuniyeti anketleri ve geri bildirim toplama",
-        "4": "Onay takibi ile çift yönlü iletişim",
-        "5": "Randevuya gelmeme riski için tahmine dayalı analiz"
-      }
+    "reactivation": {
+      "title": "Hasta Yeniden Aktivasyon Kampanyaları",
+      "description": "Kişiselleştirilmiş takip dizileriyle kayıp ve uyuyan hastaları otomatik olarak yeniden etkileşime sokar; onları gecikmiş kontroller, çağrılar ve bekleyen tedaviler için geri getirir.",
+      "stat": "Uyuyan hastaların %20–30'unu yeniden kazanır"
+    },
+    "reputation": {
+      "title": "İtibar ve Yorum Sistemi",
+      "description": "Ziyaret sonrası tam zamanında gönderilen otomatik yorum istekleri — mutlu hastaları yeni hastalar çeken Google ve Yelp yorumlarına dönüştürür, olumsuz geri bildirimleri ise sessizce klinik yöneticisine yönlendirir.",
+      "stat": "Puanı 3.8'den 4.7 yıldıza yükseltir"
     },
     "intake": {
-      "title": "Dijital Hasta Kayıt ve Giriş Sistemi",
-      "description": "Hasta kaydını modernleştiren, idari yükü azaltan ve doğrudan EHR entegrasyonu ile doğru veri yakalamayı sağlayan akıcı dijital başlangıç platformu.",
-      "features": {
-        "1": "Özelleştirilebilir dijital kayıt ve giriş formları",
-        "2": "Otomatik tıbbi geçmiş ve semptom toplama",
-        "3": "Onam ve HIPAA formları için e-imza",
-        "4": "Sigorta doğrulaması ve uygunluk kontrolleri",
-        "5": "Muayenehane yönetim sistemleriyle kesintisiz entegrasyon"
-      }
-    },
-    "analytics": {
-      "title": "Sağlık Analitiği ve Raporlama Panosu",
-      "description": "Klinik operasyonlar, hasta akışı, gelir döngüleri ve operasyonel verimlilik hakkında eyleme dönüştürülebilir içgörüler sağlayan özel olarak geliştirilen analiz platformu.",
-      "features": {
-        "1": "Gerçek zamanlı operasyonel metrikler ve KPI takibi",
-        "2": "Hasta yolculuğu ve etkileşim analizi",
-        "3": "Gelir döngüsü ve finansal performans içgörüleri",
-        "4": "Kapasite planlaması için tahmine dayalı modelleme",
-        "5": "Veri görselleştirme araçlarıyla özel raporlama"
-      }
+      "title": "Dijital Hasta Kaydı",
+      "description": "E-imza, tıbbi geçmiş toplama, sigorta doğrulama ve doğrudan EHR senkronizasyonu ile modern ziyaret öncesi dijital formlar — kağıt işlerini ortadan kaldırır ve bekleme odasındaki darboğazları açar.",
+      "stat": "Manuel kayıt için haftada 7+ saat tasarruf"
     }
   },
   "caseStudies": {
-    "title": "Gerçek Kliniklerden Kanıtlanmış Sonuçlar",
-    "subtitle": "Verimlilik, gelir ve hasta memnuniyetinde ölçülebilir iyileşmeler sağlayan gerçek otomasyon sistemleri",
-    "dentalIntake": {
-      "title": "Diş Kliniği için Otomatik Hasta Kaydı",
-      "description": "Akıllı form otomasyonu ile kayıt süresini %60 azalttı.",
+    "title": "Araştırmaya Dayalı Vaka Çalışmaları",
+    "subtitle": "Axiogen'in sistemlerinin diş, dermatoloji ve estetik klinikleri için neler sunduğunu gösteren referans uygulamalar ve pilot sonuçlar.",
+    "demoLabel": "Demo Vaka Çalışması",
+    "noShowReduction": {
+      "title": "3 Ünitelik Bir Diş Kliniğinde Randevuya Gelmeme Oranı %28'den %9'a",
+      "description": "Otomatik çok kanallı hatırlatmalar 90 günde kaçırılan randevuları üçte iki oranında azalttı.",
       "tag": "Diş"
     },
-    "whatsappBooking": {
-      "title": "WhatsApp Randevu Sistemi Uygulaması",
-      "description": "Yapay zeka destekli 7/24 planlama ile randevuları %45 artırdı.",
-      "tag": "Tıbbi"
-    },
-    "followUp": {
-      "title": "Takip Otomasyonu Başarısı",
-      "description": "Otomatik hatırlatıcılarla hasta bağlılığını %35 iyileştirdi.",
+    "voiceReceptionist": {
+      "title": "90 Günde Mesai Dışı 47 Yeni Hasta Kaydı",
+      "description": "Bir diş kliniğinde yapay zeka sesli asistan her kaçan aramayı yanıtladı ve 7/24 randevu aldı.",
       "tag": "Diş"
     },
-    "analytics": {
-      "title": "Yapay Zeka Destekli Hasta Analitik Sistemi",
-      "description": "Akıllı analiz panoları sayesinde klinisyen idari süresini %50 azalttı.",
-      "tag": "Klinik Operasyonları"
+    "patientReactivation": {
+      "title": "Dermatoloji Kliniğinde 127 Kayıp Hasta Geri Kazanıldı",
+      "description": "6 haftalık yeniden etkileşim dizisi, bir yıldan uzun süredir gelmeyen hastaları geri getirdi.",
+      "tag": "Dermatoloji"
     },
-    "saas": {
-      "title": "Klinik Yönetim SaaS Prototipi",
-      "description": "Hasta kayıtlarını, randevuları ve operasyonları yönetmek için uçtan uca sistem.",
-      "tag": "SaaS"
+    "reviewAutomation": {
+      "title": "Estetik Klinikte Google Puanı 3.8 → 4.7",
+      "description": "Ziyaret sonrası otomatik yorum istekleri, mutlu hastaları unutmadan yakaladı.",
+      "tag": "Estetik"
+    },
+    "digitalIntake": {
+      "title": "Dermatoloji Kliniğinde Haftada 7 Saat Tasarruf",
+      "description": "Ziyaret öncesi dijital kayıt sistemi, kâğıt panoyu ortadan kaldırdı ve ön büro iş yükünü yarıya indirdi.",
+      "tag": "Dermatoloji"
     },
     "detail": {
       "notFound": "Vaka Çalışması Bulunamadı",
@@ -154,128 +125,93 @@
       "challenge": "Zorluk",
       "solution": "Çözümümüz",
       "toolsTechnologies": "Kullanılan Araçlar ve Teknolojiler:",
-      "workflowDiagram": "İş Akışı Diyagramı",
-      "workflowDiagramDesc": "Otomasyon akışının görsel temsili",
       "measurableResults": "Ölçülebilir Sonuçlar",
       "readyForResults": "Benzer sonuçlar için hazır mısınız?",
       "discussAutomation": "Kliniğinizin iş akışlarını nasıl otomatikleştirebileceğimizi konuşalım",
-      "patientIntake": {
-        "intro": "Hasta başlangıç sürecini dönüştüren ve manuel evrak işlerini ortadan kaldıran kapsamlı bir dijital kayıt sistemi.",
-        "problem": "Büyüyen bir diş hekimliği muayenehanesi, manuel kayıt formları için hasta başına 15-20 dakika harcıyordu; bu da uzun bekleme sürelerine ve personel memnuniyetsizliğine yol açıyordu. Kağıda dayalı sistem, eksik veriler ve takip çağrısı gerektiren sık hatalarla sonuçlanıyordu.",
-        "solution": "Axiogen, hastaların gelmeden önce WhatsApp veya e-posta ile doldurduğu kapsamlı bir dijital kayıt sistemi uyguladı. Sistem; koşullu mantıklı akıllı formlar, otomatik doğrulama ve muayenehane yönetim yazılımlarıyla kesintisiz entegrasyon kullanır. Temel özellikler:",
+      "demoDisclaimer": "Sektör araştırmaları ve Axiogen pilot verileri üzerine inşa edilmiş referans uygulama. Her kliniğin sonuçları farklılık gösterebilir.",
+      "noShowReduction": {
+        "intro": "Bir 3 ünitelik diş kliniğinin randevuya gelmeme oranını 90 günde %28'den %9'a düşüren otomatik çok kanallı hatırlatma sistemi.",
+        "problem": "Orta ölçekli bir diş kliniği, %28'lik randevuya gelmeme oranı yüzünden her ay binlerce dolar gelir kaybediyordu. Manuel hatırlatma çağrıları tutarsızdı ve ön büro ekibi yetişemiyordu — sektör verileri, %20'nin üzerindeki gelmeme oranlarının küçük muayenehanelere yıllık 150 bin dolardan fazla koltuk süresi kaybı yaşattığını gösteriyor.",
+        "solution": "Axiogen, klinik açıdan optimal aralıklarla (randevudan 72 saat, 24 saat ve 2 saat önce) SMS, WhatsApp ve e-posta üzerinden kişiselleştirilmiş hatırlatmalar gönderen bir otomatik hatırlatma sistemi devreye aldı. Hastalar tek dokunuşla onaylayabilir, yeniden planlayabilir veya iptal edebilir — iptaller ise boşalan koltuğu doldurmak için anında bekleme listesine tetikleyici gönderir. Sistem şunları içerir:",
         "solutionBullets": {
-          "1": "Çoklu kanal aracılığıyla randevu öncesi form tamamlama",
-          "2": "Hasta yanıtlarına göre uyarlanan akıllı koşullu mantık",
-          "3": "Otomatik veri doğrulama ve hata önleme",
-          "4": "Muayenehane yönetim sistemleriyle gerçek zamanlı senkronizasyon",
-          "5": "HIPAA uyumlu güvenli hasta verisi işleme"
+          "1": "Kanıta dayalı aralıklara ayarlı üç adımlı hatırlatma dizisi",
+          "2": "Tüm kanallardan tek dokunuşla onay, yeniden planlama veya iptal",
+          "3": "Slot açıldığında bekleme listesine anında ulaşım",
+          "4": "Muayenehane yönetim yazılımıyla gerçek zamanlı takvim senkronizasyonu",
+          "5": "Her kliniğin hasta kitlesine uygun dil ve ton"
         },
         "results": {
-          "1": "%65 daha hızlı idari süreçler",
-          "2": "Randevulardan önce %95 form tamamlama oranı",
-          "3": "Veri giriş hatalarında %90 azalma",
-          "4": "Günde 4 saatlik idari iş ortadan kalktı"
-        },
-        "testimonial": {
-          "text": "Otomatik kayıt sistemi muayenehanemiz için bir dönüm noktası oldu. Hastalar formları kendi uygun zamanlarında doldurmayı seviyor ve ekibimiz evrak işleri yerine mükemmel bakım sağlamaya odaklanabiliyor.",
-          "author": "Dr. Sarah Mitchell",
-          "role": "Muayenehane Sahibi"
+          "1": "Randevuya gelmeme oranı %28'den %9'a düştü",
+          "2": "Ayda 40'ın üzerinde randevu slotu geri kazanıldı",
+          "3": "Personel hatırlatma iş yükü %85 azaldı"
         }
       },
-      "whatsappBooking": {
-        "intro": "Randevuları günün her saatinde yakalayan ve klinik takvimleriyle sorunsuz şekilde entegre olan yapay zeka destekli 7/24 randevu sistemi.",
-        "problem": "Klinik, mesai dışı saatlerde ve öğle aralarında potansiyel randevuları kaçırıyordu. Telefon hatları sık sık meşguldü; bu da hasta memnuniyetsizliğine ve gelir kaybına yol açıyordu. Personel, otomatikleştirilebilecek rutin planlama çağrılarına önemli ölçüde zaman harcıyordu.",
-        "solution": "Axiogen, randevu alımını yöneten, sık sorulan soruları yanıtlayan ve kliniğin takvim sistemiyle entegre olan yapay zeka destekli bir WhatsApp resepsiyonisti devreye aldı. Sistem doğal sohbet yapabilir, uygunluğu gerçek zamanlı kontrol edebilir ve randevuları anında onaylayabilir. Çözüm şunları içerir:",
+      "voiceReceptionist": {
+        "intro": "Bir diş kliniğinde her kaçan aramayı yanıtlayan ve ilk 90 günde mesai dışı 47 yeni hastayı kaydeden 7/24 yapay zeka sesli resepsiyonisti.",
+        "problem": "Bir diş kliniği, mesai saatleri dışında ve ön büronun yoğun olduğu zamanlarda tahminen haftada 30'dan fazla arama kaybediyordu. Kaçırılan her arama potansiyel yeni bir hastaydı — sektör araştırmaları, sesli mesaja düşen arayanların %67'sinin bir daha aramadığını gösteriyor.",
+        "solution": "Axiogen; Vapi, GPT-4o ve ElevenLabs üzerine inşa edilen bir yapay zeka sesli resepsiyonist (Nova) geliştirdi. Her aramayı yanıtlar, hasta bilgilerini toplar, muayenehane takvimine doğrudan randevu kaydı oluşturur ve onay mesajları gönderir — hepsi doğal, insan gibi konuşan bir sohbetle. Çözüm şunları içerir:",
         "solutionBullets": {
-          "1": "Sohbete dayalı randevu için doğal dil işleme",
-          "2": "Gerçek zamanlı takvim entegrasyonu ve uygunluk kontrolü",
-          "3": "Farklı hasta grupları için çok dilli destek",
-          "4": "Otomatik onay mesajları ve hatırlatıcılar",
-          "5": "Karmaşık sorgularda insan personele sorunsuz aktarma"
+          "1": "Saniye altı gecikmeyle doğal sesli sohbet",
+          "2": "Kliniğin takvim sistemine doğrudan randevu yazma",
+          "3": "Otomatik SMS onay ve hatırlatma",
+          "4": "Karmaşık veya acil durumlar için insan personele canlı aktarım",
+          "5": "Çok dilli destek (İngilizce, Türkçe, Arapça)"
         },
         "results": {
-          "1": "Onaylanmış randevularda %45 artış",
-          "2": "Telefon çağrısı hacminde %70 azalma",
-          "3": "7/24 randevu kullanılabilirliği",
-          "4": "Aylık 15.000 dolar ek gelir"
-        },
-        "testimonial": {
-          "text": "Artık daha önce tamamen kaçıracağımız randevuları yakalıyoruz. Yapay zeka resepsiyonisti günün her saati çalışıyor ve asla izin almıyor. Üç ek ekip üyesine sahip olmak gibi.",
-          "author": "Maria Rodriguez",
-          "role": "Klinik Müdürü"
+          "1": "90 günde mesai dışı 47 yeni hasta kaydı",
+          "2": "Gece gündüz %100 arama yanıt oranı",
+          "3": "Tahmini 80 bin doların üzerinde geri kazanılan gelir"
         }
       },
-      "followUp": {
-        "intro": "Randevuya gelmeme oranını önemli ölçüde azaltan ve hasta bağlılığını iyileştiren çok kanallı hatırlatma ve takip sistemi.",
-        "problem": "Muayenehanede %18 randevuya gelmeme oranı vardı ve bu her ay binlerce dolarlık gelir kaybına yol açıyordu. Manuel hatırlatma çağrıları zaman alıcı ve tutarsızdı. Tedavi sonrası takipler sıkça unutuluyor; bu da zayıf hasta etkileşimine ve bağlılığına neden oluyordu.",
-        "solution": "Axiogen, optimal zamanlarda WhatsApp ve SMS üzerinden otomatik randevu hatırlatıcıları gönderen çok kanallı bir hatırlatma sistemi oluşturdu. Sistem ayrıca tedavi sonrası kontrolleri ve kayıp hastalar için yeniden etkileşim kampanyalarını yönetir. Özellikler:",
+      "patientReactivation": {
+        "intro": "Bir dermatoloji kliniğinde 127 kayıp hastayı yeniden kazanan — hem de ek personel saati olmadan — 6 haftalık otomatik yeniden etkileşim dizisi.",
+        "problem": "Klinikte binlerce uyuyan hasta kaydı vardı — bir konsültasyon veya tedavi için gelip bir daha dönmeyen kişiler. Bu ölçekte manuel ulaşım pratik değildi ve klinik yıllarca süren geri çağırma gelirini masada bırakıyordu.",
+        "solution": "Axiogen, 2.300 uyuyan hastayı ilk ziyaret türüne göre segmente etti ve her segmente özel teklifler içeren (estetik takipleri, cilt kanseri taramaları, reçete yenilemeleri vb.) otomatik bir WhatsApp + SMS yeniden aktivasyon dizisi kurdu. Yanıtlar doğrudan online randevu sistemine akıyor. Özellikler şunları içerir:",
         "solutionBullets": {
-          "1": "Randevu türüne ve hasta geçmişine göre akıllı zamanlama",
-          "2": "Çok kanallı teslim (WhatsApp, SMS, E-posta)",
-          "3": "Tedavi sonrası otomatik takip dizileri",
-          "4": "Kayıp hastalar için yeniden etkileşim kampanyaları",
-          "5": "Kesintisiz iş akışı için muayenehane yönetim sistemleriyle entegrasyon"
+          "1": "Orijinal tedavi türüne ve son ziyaretten bu yana geçen süreye göre segmentasyon",
+          "2": "Her segment için kişiselleştirilmiş mesaj ve teklif",
+          "3": "WhatsApp, SMS ve e-posta arasında çoklu temas ritmi",
+          "4": "Herhangi bir mesajdan tek tıkla randevu alma",
+          "5": "Klinik yöneticisi için gerçek zamanlı performans panosu"
         },
         "results": {
-          "1": "Hasta bağlılığında %35 iyileşme",
-          "2": "Randevuya gelmeme oranı %18'den %7'ye düştü",
-          "3": "Otomatik takiplere %92 olumlu yanıt",
-          "4": "Haftada 10 saat personel zamanı tasarrufu"
-        },
-        "testimonial": {
-          "text": "Randevuya gelmeme oranımız ilk ay içinde dramatik şekilde düştü. Hastalar kullanışlı hatırlatıcıları takdir ediyor ve düzenli bakım rutinlerinden kopan birçok hastayla yeniden bağlantı kurduk.",
-          "author": "Dr. James Chen",
-          "role": "Baş Diş Hekimi"
+          "1": "6 haftada 127 kayıp hasta yeniden kazanıldı",
+          "2": "Uyuyan listede %5,5 yeniden aktivasyon oranı",
+          "3": "Sıfır ek personel yüküyle 45 bin doların üzerinde geri kazanılan gelir"
         }
       },
-      "patientAnalytics": {
-        "intro": "Hasta verilerini eyleme dönüştürülebilir içgörülere çeviren, idari yükü azaltan ve klinik karar vermeyi iyileştiren akıllı analiz panoları.",
-        "problem": "Klinisyenler idari görevler ve veri girişinde aşırı zaman harcıyor; bu da hasta bakımı için kalan zamanı azaltıyordu. Klinikte hasta akışı, randevu kalıpları ve operasyonel verimlilik konusunda görünürlük yoktu. Manuel raporlama zaman alıcıydı ve çoğu zaman tamamlandığında güncelliğini yitirmiş oluyordu.",
-        "solution": "Axiogen, klinik operasyonları hakkında eyleme dönüştürülebilir içgörüler sağlayan gerçek zamanlı panolara sahip kapsamlı bir hasta analitik sistemi geliştirdi. Sistem; birden fazla kaynaktan veri toplar, kalıpları ve eğilimleri belirlemek için yapay zeka kullanır ve bilgileri sezgisel görselleştirmelerle sunar. Temel yetenekler:",
+      "reviewAutomation": {
+        "intro": "Bir estetik kliniğinin Google puanını dört ayda 3.8'den 4.7 yıldıza çıkaran otomatik ziyaret sonrası yorum sistemi.",
+        "problem": "Bir estetik kliniğin mükemmel klinik sonuçları vardı ama Google puanı yalnızca 3.8'di — çünkü yalnızca memnun olmayan hastalar yorum bırakacak kadar motive oluyordu. Personel düzenli olarak sormayı unutuyor, kağıt kartlar çöpe gidiyor ve kliniğin itibarı sessizce yeni hasta kazanımını baltalıyordu.",
+        "solution": "Axiogen, her ziyaretten iki saat sonra — deneyim hala tazeyken — SMS ile kişiselleştirilmiş yorum isteği gönderen bir otomatik itibar sistemi kurdu. Mutlu hastalar doğrudan Google bağlantısı alırken, 4 yıldızın altında değerlendirme yapan hastalar doğrudan klinik yöneticisine ulaşan özel bir geri bildirim formuna yönlendirilir. Çözüm şunları içerir:",
         "solutionBullets": {
-          "1": "Gerçek zamanlı hasta akışı ve randevu analizi",
-          "2": "Randevu planlama optimizasyonu için tahmine dayalı içgörüler",
-          "3": "Otomatik raporlama ve KPI takibi",
-          "4": "Mevcut klinik yönetim sistemleriyle entegrasyon",
-          "5": "Farklı roller için özelleştirilebilir panolar (klinisyenler, yöneticiler, idareciler)",
-          "6": "Operasyonel sorunlar için yapay zeka destekli anomali tespiti"
+          "1": "SMS ile ziyaret sonrası zamanlanmış yorum isteği",
+          "2": "Akıllı yönlendirme: 4–5 yıldız herkese açık, ≤3 yıldız özel kalır",
+          "3": "Hasta ve hekim isimlerini kullanan kişiselleştirilmiş mesajlar",
+          "4": "Klinik yöneticisi için özel geri bildirim gelen kutusu",
+          "5": "Aydan aya takipli yorum performans panosu"
         },
         "results": {
-          "1": "Klinisyen idari süresinde %50 azalma",
-          "2": "Randevu kullanımında %30 iyileşme",
-          "3": "Gerçek zamanlı operasyonel içgörüler",
-          "4": "Otomatik günlük/haftalık raporlama"
-        },
-        "testimonial": {
-          "text": "Analiz sistemi çalışma şeklimizi dönüştürdü. Artık darboğazların nerede oluştuğunu tam olarak görebiliyor ve verilere dayalı kararlar verebiliyoruz. Klinisyenlerimizin hastalar için daha çok vakti var ve operasyonlarımız çok daha sorunsuz yürüyor.",
-          "author": "Dr. Emily Watson",
-          "role": "Baş Tıp Sorumlusu"
+          "1": "4 ayda Google puanı 3.8'den 4.7 yıldıza yükseldi",
+          "2": "Yorum hacmi 9 kat arttı",
+          "3": "Olumsuz geri bildirim herkese açık değil, özel olarak yakalandı"
         }
       },
-      "clinicSaaS": {
-        "intro": "Hasta kayıtlarını, randevuları ve klinik operasyonlarını tek bir entegre sistemde merkezileştiren uçtan uca SaaS platformu.",
-        "problem": "Klinik; hasta kayıtları, planlama, faturalandırma ve operasyonlar için birbirinden kopuk birden fazla sistem kullanıyordu. Bu parçalanma veri siloları, yinelenen veri girişi ve verimsizliklere yol açtı. Personel birden fazla uygulama arasında geçiş yapmak zorundaydı ve hasta bilgileri farklı platformlara dağılmıştı.",
-        "solution": "Axiogen, tüm operasyonları tek bir entegre sistemde birleştiren kapsamlı bir klinik yönetim SaaS platformu tasarlayıp geliştirdi. Platform; hasta kayıt yönetimi, randevu planlama, faturalandırma entegrasyonu, personel yönetimi ve raporlama yeteneklerini içerir. Çözüm şunları sunar:",
+      "digitalIntake": {
+        "intro": "Bir dermatoloji kliniğine her hafta 7+ saat ön büro zamanı kazandıran ve bekleme odası sürelerini yarıya indiren mobil öncelikli dijital kayıt akışı.",
+        "problem": "Ön büro personeli her yeni hasta için kayıt evrakları ve manuel veri girişiyle 20+ dakika harcıyordu — bu da bekleme odasında birikmelere, veri giriş hatalarına ve tükenmişliğe yol açıyordu. Kağıt formlar ayrıca sigorta doğrulamasını yavaşlatıyor ve hekim hazırlık süresini geciktiriyordu.",
+        "solution": "Axiogen, randevularından 24 saat önce hastalara güvenli bir bağlantı gönderen mobil öncelikli bir dijital kayıt akışı geliştirdi. Hastalar tıbbi geçmişi, onam formlarını, sigorta bilgilerini ve e-imzaları telefonlarında tamamlıyor — ve her şey onlar kliniğe ulaşmadan önce doğrudan EHR'ye senkronize oluyor. Temel özellikler şunları içerir:",
         "solutionBullets": {
-          "1": "Güvenli veri depolama ile birleşik hasta kayıt sistemi",
-          "2": "Entegre randevu alma ve takvim yönetimi",
-          "3": "Otomatik faturalandırma ve ödeme işleme",
-          "4": "Personel planlaması ve görev yönetimi",
-          "5": "Kapsamlı raporlama ve analiz",
-          "6": "Mobil uyumlu tasarım ile hareket halindeyken erişim",
-          "7": "Üçüncü taraf hizmetleriyle API entegrasyonları",
-          "8": "Güvenlik için role dayalı erişim kontrolü"
+          "1": "Randevudan 24 saat önce SMS ve e-posta ile gönderilen ziyaret öncesi bağlantı",
+          "2": "Koşullu mantık ve otomatik kayıt içeren mobil öncelikli formlar",
+          "3": "Onam ve HIPAA belgeleri için e-imza",
+          "4": "Otomatik doğrulama ile sigorta kartı fotoğrafı çekimi",
+          "5": "Hasta kapıdan girmeden hekimler hazırlanabilsin diye doğrudan EHR senkronizasyonu"
         },
         "results": {
-          "1": "Uçtan uca sistem entegrasyonu",
-          "2": "Veri giriş süresinde %60 azalma",
-          "3": "Tüm hasta verileri için tek doğru kaynak",
-          "4": "Personel üretkenliğinde ve memnuniyetinde iyileşme"
-        },
-        "testimonial": {
-          "text": "Her şeyin tek bir yerde olması operasyonlarımızı devrim niteliğinde değiştirdi. Artık sistemler arasında geçiş yaparak veya hasta bilgilerini arayarak zaman kaybetmiyoruz. Platform sezgisel, hızlı ve verimliliğimizi önemli ölçüde artırdı.",
-          "author": "Robert Kim",
-          "role": "Operasyon Direktörü"
+          "1": "Haftada 7+ saat ön büro zamanı tasarrufu",
+          "2": "Ziyaret öncesi %95 form tamamlama oranı",
+          "3": "Bekleme odası süreleri ortalama 18 dakika azaldı"
         }
       }
     }

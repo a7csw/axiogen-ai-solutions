@@ -1,12 +1,7 @@
 import { useTranslation } from "react-i18next";
 import CTABlock from "@/components/CTABlock";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
-import { MessageSquare, Calendar, Bell, FileText, BarChart3, Check, LucideIcon } from "lucide-react";
-import whatsappMockup from "@/assets/whatsapp-ai-mockup.jpg";
-import bookingMockup from "@/assets/booking-system-mockup.jpg";
-import followUpSystem from "@/assets/follow-up-system.jpg";
-import patientIntake from "@/assets/patient-intake-mockup.jpg";
-import analyticsDashboard from "@/assets/analytics-dashboard.jpg";
+import { Phone, CalendarCheck, Users, Star, ClipboardList, TrendingUp, LucideIcon } from "lucide-react";
 
 const Services = () => {
   const { t } = useTranslation();
@@ -14,74 +9,34 @@ const Services = () => {
 
   const services = [
     {
-      icon: MessageSquare,
-      title: t("services.communication.title"),
-      description: t("services.communication.description"),
-      features: [
-        t("services.communication.features.1"),
-        t("services.communication.features.2"),
-        t("services.communication.features.3"),
-        t("services.communication.features.4"),
-        t("services.communication.features.5"),
-      ],
-      image: whatsappMockup,
-      imageAlt: "WhatsApp AI receptionist interface",
+      icon: Phone,
+      title: t("services.voiceReceptionist.title"),
+      description: t("services.voiceReceptionist.description"),
+      stat: t("services.voiceReceptionist.stat"),
     },
     {
-      icon: Calendar,
-      title: t("services.appointment.title"),
-      description: t("services.appointment.description"),
-      features: [
-        t("services.appointment.features.1"),
-        t("services.appointment.features.2"),
-        t("services.appointment.features.3"),
-        t("services.appointment.features.4"),
-        t("services.appointment.features.5"),
-      ],
-      image: bookingMockup,
-      imageAlt: "Appointment booking system",
+      icon: CalendarCheck,
+      title: t("services.reminders.title"),
+      description: t("services.reminders.description"),
+      stat: t("services.reminders.stat"),
     },
     {
-      icon: Bell,
-      title: t("services.engagement.title"),
-      description: t("services.engagement.description"),
-      features: [
-        t("services.engagement.features.1"),
-        t("services.engagement.features.2"),
-        t("services.engagement.features.3"),
-        t("services.engagement.features.4"),
-        t("services.engagement.features.5"),
-      ],
-      image: followUpSystem,
-      imageAlt: "Patient follow-up system",
+      icon: Users,
+      title: t("services.reactivation.title"),
+      description: t("services.reactivation.description"),
+      stat: t("services.reactivation.stat"),
     },
     {
-      icon: FileText,
+      icon: Star,
+      title: t("services.reputation.title"),
+      description: t("services.reputation.description"),
+      stat: t("services.reputation.stat"),
+    },
+    {
+      icon: ClipboardList,
       title: t("services.intake.title"),
       description: t("services.intake.description"),
-      features: [
-        t("services.intake.features.1"),
-        t("services.intake.features.2"),
-        t("services.intake.features.3"),
-        t("services.intake.features.4"),
-        t("services.intake.features.5"),
-      ],
-      image: patientIntake,
-      imageAlt: "Patient intake form interface",
-    },
-    {
-      icon: BarChart3,
-      title: t("services.analytics.title"),
-      description: t("services.analytics.description"),
-      features: [
-        t("services.analytics.features.1"),
-        t("services.analytics.features.2"),
-        t("services.analytics.features.3"),
-        t("services.analytics.features.4"),
-        t("services.analytics.features.5"),
-      ],
-      image: analyticsDashboard,
-      imageAlt: "Healthcare analytics dashboard",
+      stat: t("services.intake.stat"),
     },
   ];
 
@@ -102,17 +57,10 @@ const Services = () => {
       {/* Services */}
       <section className="py-12 md:py-20 px-4 md:px-6 lg:px-8">
         <div className="container mx-auto max-w-6xl">
-          <div className="space-y-16 md:space-y-28">
-            {services.map((service, index) => {
-              const isReversed = index % 2 === 1;
-              return (
-                <ServiceRow
-                  key={index}
-                  service={service}
-                  reversed={isReversed}
-                />
-              );
-            })}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+            {services.map((service, index) => (
+              <ServiceCardItem key={index} service={service} index={index} />
+            ))}
           </div>
         </div>
       </section>
@@ -122,60 +70,38 @@ const Services = () => {
   );
 };
 
-interface ServiceRowProps {
+interface ServiceCardItemProps {
   service: {
     icon: LucideIcon;
     title: string;
     description: string;
-    features: string[];
-    image: string;
-    imageAlt: string;
+    stat: string;
   };
-  reversed: boolean;
+  index: number;
 }
 
-const ServiceRow = ({ service, reversed }: ServiceRowProps) => {
-  const contentRef = useScrollReveal<HTMLDivElement>();
-  const imageRef = useScrollReveal<HTMLDivElement>();
+const ServiceCardItem = ({ service, index }: ServiceCardItemProps) => {
+  const cardRef = useScrollReveal<HTMLDivElement>();
+  const isLastOdd = index === 4;
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-      {/* Content */}
-      <div
-        ref={contentRef}
-        className={`reveal ${reversed ? "lg:order-2" : ""}`}
-      >
-        <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-6">
-          <service.icon className="w-7 h-7 text-primary" />
-        </div>
-        <h2 className="text-xl md:text-3xl lg:text-4xl font-bold mb-4 tracking-tight">{service.title}</h2>
-        <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-          {service.description}
-        </p>
-        <ul className="space-y-3">
-          {service.features.map((feature, i) => (
-            <li key={i} className="flex items-start gap-3">
-              <span className="w-5 h-5 rounded-full bg-accent/15 flex items-center justify-center flex-shrink-0 mt-0.5">
-                <Check className="w-3 h-3 text-accent" />
-              </span>
-              <span className="text-muted-foreground">{feature}</span>
-            </li>
-          ))}
-        </ul>
+    <div
+      ref={cardRef}
+      className={`reveal h-full p-6 md:p-8 rounded-2xl border border-border bg-card shadow-sm hover-card transition-all ${
+        isLastOdd ? "md:col-span-2 md:max-w-xl md:mx-auto" : ""
+      }`}
+      style={{ transitionDelay: `${index * 80}ms` }}
+    >
+      <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-5">
+        <service.icon className="w-7 h-7 text-primary" />
       </div>
-
-      {/* Image */}
-      <div
-        ref={imageRef}
-        className={`reveal reveal-delay-2 ${reversed ? "lg:order-1" : ""}`}
-      >
-        <div className="hover-image-zoom rounded-2xl overflow-hidden shadow-xl border border-border/50 max-h-[200px] md:max-h-none">
-          <img
-            src={service.image}
-            alt={service.imageAlt}
-            className="w-full h-full object-cover md:h-auto"
-          />
-        </div>
+      <h2 className="text-xl md:text-2xl font-bold mb-3 tracking-tight">{service.title}</h2>
+      <p className="text-base md:text-lg text-muted-foreground mb-6 leading-relaxed">
+        {service.description}
+      </p>
+      <div className="inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/10 px-4 py-2 text-sm md:text-base font-semibold text-accent">
+        <TrendingUp className="w-4 h-4" />
+        <span>{service.stat}</span>
       </div>
     </div>
   );
