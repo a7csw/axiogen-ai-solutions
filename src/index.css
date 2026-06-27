@@ -426,6 +426,35 @@ All colors MUST be HSL.
   to   { opacity: 1; transform: translateY(0); }
 }
 
+/* ── Hero floating cards ────────────────────────────────────────────────── */
+
+/* Each card wraps its float class so the float doesn't fight flex layout */
+.hf-1 { animation: hero-float 3.5s ease-in-out 0.0s  infinite; }
+.hf-2 { animation: hero-float 3.8s ease-in-out 0.65s infinite; }
+.hf-3 { animation: hero-float 4.1s ease-in-out 1.25s infinite; }
+.hf-4 { animation: hero-float 3.6s ease-in-out 1.85s infinite; }
+
+@keyframes hero-float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-8px); }
+}
+
+/* Live status dot — subtle radial pulse ring (no layout reflow, composited) */
+@keyframes hero-dot-pulse {
+  0%   { box-shadow: 0 0 0 0 rgba(34,197,94,0.55); }
+  70%  { box-shadow: 0 0 0 5px rgba(34,197,94,0); }
+  100% { box-shadow: 0 0 0 0 rgba(34,197,94,0); }
+}
+
+.hf-dot-pulse {
+  animation: hero-dot-pulse 2.2s ease-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hf-1, .hf-2, .hf-3, .hf-4 { animation: none; transform: none; }
+  .hf-dot-pulse                { animation: none; box-shadow: none; }
+}
+
 /* RTL Support */
 [dir="rtl"] {
   direction: rtl;

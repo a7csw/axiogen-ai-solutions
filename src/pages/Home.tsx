@@ -15,7 +15,7 @@ import {
   Plug,
   Mic,
 } from "lucide-react";
-import heroDashboard from "@/assets/hero-dashboard.jpg";
+import HeroVisual from "@/components/HeroVisual";
 import clinicStaff from "@/assets/clinic-staff-tablet.jpg";
 
 const HeroTitle = ({ text }: { text: string }) => {
@@ -69,12 +69,8 @@ const Home = () => {
                 </Button>
               </div>
             </div>
-            <div className="hidden md:block animate-fade-in hover-image-zoom rounded-2xl overflow-hidden shadow-2xl">
-              <img
-                src={heroDashboard}
-                alt={t("common.alt.dashboard")}
-                className="w-full h-auto rounded-2xl"
-              />
+            <div className="hidden md:block animate-fade-in">
+              <HeroVisual />
             </div>
           </div>
         </div>

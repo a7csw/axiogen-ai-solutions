@@ -9,6 +9,7 @@ import { useTranslation } from "react-i18next";
 import "./i18n";
 import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
+import ScrollToTop from "./components/ScrollToTop";
 import Home from "./pages/Home";
 import Services from "./pages/Services";
 import CaseStudies from "./pages/CaseStudies";
@@ -79,6 +80,7 @@ const AppContent = () => {
 
   return (
     <>
+      <ScrollToTop />
       <Navigation />
       <div ref={mainRef} className="page-enter">
         <Routes>
