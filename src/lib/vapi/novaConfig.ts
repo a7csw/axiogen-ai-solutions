@@ -160,26 +160,66 @@ export function buildNovaAssistant(language: NovaLanguage): CreateAssistantDTO {
     GOODBYE_INSTRUCTION[language] +
     SILENCE_INSTRUCTION[language];
 
+  const realtimeModel = {
+    provider: "openai" as const,
+    model: "gpt-4o-realtime-preview",
+    messages: [{ role: "system" as const, content: systemContent }],
+    tools: [saveBookingTool],
+  };
+
+  const realtimeVoice = {
+    provider: "openai" as const,
+    voiceId: "shimmer",
+  };
+
+  if (language === "ar") {
+    return {
+      firstMessage: FIRST_MESSAGE[language],
+      transcriber: TRANSCRIBER[language],
+      silenceTimeoutSeconds: 30,
+      maxDurationSeconds: 600,
+      model: {
+        provider: "openai",
+        model: "gpt-4o",
+        messages: [{ role: "system", content: systemContent }],
+        tools: [saveBookingTool],
+      },
+      voice: {
+        provider: "11labs",
+        voiceId: "21m00Tcm4TlvDq8ikWAM",
+        model: "eleven_turbo_v2_5",
+        stability: 0.5,
+        similarityBoost: 0.75,
+        style: 0.0,
+        useSpeakerBoost: true,
+      },
+      endCallFunctionEnabled: true,
+      endCallMessage: END_CALL_MESSAGE[language],
+      endCallPhrases: END_CALL_PHRASES[language],
+    } as CreateAssistantDTO;
+  }
+
+  if (language === "en") {
+    return {
+      firstMessage: FIRST_MESSAGE[language],
+      silenceTimeoutSeconds: 30,
+      maxDurationSeconds: 600,
+      model: realtimeModel,
+      voice: realtimeVoice,
+      endCallFunctionEnabled: true,
+      endCallMessage: END_CALL_MESSAGE[language],
+      endCallPhrases: END_CALL_PHRASES[language],
+    } as CreateAssistantDTO;
+  }
+
+  // Turkish: Realtime model + OpenAI voice, keep Deepgram transcriber
   return {
     firstMessage: FIRST_MESSAGE[language],
     transcriber: TRANSCRIBER[language],
     silenceTimeoutSeconds: 30,
     maxDurationSeconds: 600,
-    model: {
-      provider: "openai",
-      model: "gpt-4o",
-      messages: [{ role: "system", content: systemContent }],
-      tools: [saveBookingTool],
-    },
-    voice: {
-      provider: "11labs",
-      voiceId: "21m00Tcm4TlvDq8ikWAM",
-      model: "eleven_turbo_v2_5",
-      stability: 0.5,
-      similarityBoost: 0.75,
-      style: 0.0,
-      useSpeakerBoost: true,
-    },
+    model: realtimeModel,
+    voice: realtimeVoice,
     endCallFunctionEnabled: true,
     endCallMessage: END_CALL_MESSAGE[language],
     endCallPhrases: END_CALL_PHRASES[language],
