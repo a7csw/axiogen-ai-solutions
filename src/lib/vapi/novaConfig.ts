@@ -75,13 +75,16 @@ const SILENCE_INSTRUCTION: Record<NovaLanguage, string> = {
 };
 
 type NovaTranscriber =
-  | { provider: "deepgram"; model: "nova-2"; language: string }
+  | { provider: "deepgram"; model: "nova-2" | "nova-3"; language: string }
   | { provider: "azure"; language: string };
 
+// Deepgram language/model support: nova-2 covers en/tr, but Arabic is only
+// available on nova-3 (nova-2 does not support "ar"). See
+// https://developers.deepgram.com/docs/models-languages-overview
 const TRANSCRIBER: Record<NovaLanguage, NovaTranscriber> = {
   en: { provider: "deepgram", model: "nova-2", language: "en" },
   tr: { provider: "deepgram", model: "nova-2", language: "tr" },
-  ar: { provider: "deepgram", model: "nova-2", language: "ar" },
+  ar: { provider: "deepgram", model: "nova-3", language: "ar" },
 };
 
 const END_CALL_MESSAGE: Record<NovaLanguage, string> = {
@@ -166,9 +169,12 @@ export function buildNovaAssistant(language: NovaLanguage): CreateAssistantDTO {
     GOODBYE_INSTRUCTION[language] +
     SILENCE_INSTRUCTION[language];
 
+  // Vapi only accepts dated OpenAI Realtime model identifiers; the bare
+  // "gpt-4o-realtime-preview" alias is rejected at call start, which surfaced
+  // as the "Couldn't start the call" error for English and Turkish.
   const realtimeModel = {
     provider: "openai" as const,
-    model: "gpt-4o-realtime-preview",
+    model: "gpt-4o-realtime-preview-2024-12-17",
     messages: [{ role: "system" as const, content: systemContent }],
     tools: [saveBookingTool],
   };
