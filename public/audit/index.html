@@ -1,0 +1,1091 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Patient Revenue Audit — [CLINIC NAME] | Axiogen</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap');
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:       #0d1f3c;
+      --navy-mid:   #152b52;
+      --navy-light: #1e3a6e;
+      --gold:       #b8962a;
+      --gold-light: #d4af47;
+      --red:        #c0392b;
+      --red-bright: #e74c3c;
+      --white:      #ffffff;
+      --gray-50:    #f8f9fb;
+      --gray-100:   #f0f3f8;
+      --gray-200:   #e2e8f0;
+      --gray-400:   #94a3b8;
+      --gray-600:   #64748b;
+      --gray-700:   #475569;
+      --gray-900:   #0f172a;
+      --text:       #1e293b;
+      --font:       'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-serif: 'DM Serif Display', Georgia, serif;
+      --font-mono:  'DM Mono', 'SF Mono', Menlo, monospace;
+    }
+
+    html { font-size: 15px; }
+
+    body {
+      font-family: var(--font);
+      background: #e8edf5;
+      color: var(--text);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* ── TYPOGRAPHY ── */
+    h1, h2, h3,
+    .header-clinic-name, .section-title, .solution-box-title, .cta-title {
+      font-family: var(--font-serif);
+    }
+
+    .eyebrow, .hero-eyebrow, .cta-eyebrow, .header-doc-label,
+    .hero-number, .calc-num, .stat-num, .slider-readout,
+    .comparison-table td.col-without, .comparison-table td.col-with,
+    .footer-brand {
+      font-family: var(--font-mono);
+    }
+
+    .page {
+      max-width: 980px;
+      margin: 32px auto;
+      background: white;
+      box-shadow: 0 4px 80px rgba(0,0,0,0.18);
+    }
+
+    /* ── HEADER ── */
+    @keyframes headerSlideIn {
+      from { transform: translateY(-40px); opacity: 0; }
+      to   { transform: translateY(0);     opacity: 1; }
+    }
+
+    .header {
+      background: var(--navy);
+      padding: 40px 56px 36px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      border-bottom: 3px solid var(--gold);
+      animation: headerSlideIn 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+    }
+
+    .header-clinic-name {
+      font-size: 28px;
+      font-weight: 800;
+      color: white;
+      letter-spacing: -0.6px;
+      line-height: 1.15;
+    }
+
+    .header-doc-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 3.5px;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      margin-top: 8px;
+    }
+
+    .header-right { text-align: right; }
+
+    .header-logo { display: block; margin-left: auto; }
+
+    .header-meta {
+      font-size: 10.5px;
+      color: rgba(255,255,255,0.38);
+      margin-top: 8px;
+      letter-spacing: 0.4px;
+    }
+
+    .confidential-badge {
+      display: inline-block;
+      background: rgba(184,150,42,0.15);
+      border: 1px solid rgba(184,150,42,0.35);
+      color: var(--gold-light);
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      padding: 3px 10px;
+      border-radius: 3px;
+      margin-top: 10px;
+    }
+
+    /* ── REVENUE HERO ── */
+    @keyframes heroReveal {
+      from { opacity: 0; transform: translateY(14px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .revenue-hero {
+      background: var(--gray-900);
+      padding: 64px 56px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      animation: heroReveal 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.35s both;
+    }
+
+    .revenue-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 60% at 50% 50%, rgba(192,57,43,0.12) 0%, transparent 70%),
+        repeating-linear-gradient(
+          -45deg,
+          transparent,
+          transparent 40px,
+          rgba(255,255,255,0.013) 40px,
+          rgba(255,255,255,0.013) 41px
+        );
+    }
+
+    .revenue-hero .hero-eyebrow {
+      position: relative;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+      margin-bottom: 20px;
+    }
+
+    .revenue-hero .hero-number {
+      position: relative;
+      font-size: 100px;
+      font-weight: 900;
+      color: var(--red-bright);
+      letter-spacing: -5px;
+      line-height: 1;
+      font-variant-numeric: tabular-nums;
+      text-shadow: 0 0 80px rgba(231,76,60,0.4);
+    }
+
+    .revenue-hero .hero-label {
+      position: relative;
+      font-size: 18px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.55);
+      margin-top: 20px;
+      letter-spacing: -0.2px;
+    }
+
+    .revenue-hero .hero-sub {
+      position: relative;
+      font-size: 12.5px;
+      color: rgba(255,255,255,0.25);
+      margin-top: 8px;
+      font-style: italic;
+    }
+
+    /* ── SECTIONS ── */
+    .section {
+      padding: 52px 56px;
+      border-bottom: 1px solid var(--gray-200);
+    }
+
+    .section:last-of-type { border-bottom: none; }
+    .section-alt { background: var(--gray-50); }
+
+    .eyebrow {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 8px;
+    }
+
+    .section-title {
+      font-size: 28px;
+      font-weight: 800;
+      color: var(--navy);
+      letter-spacing: -0.6px;
+      line-height: 1.2;
+      margin-bottom: 8px;
+    }
+
+    .section-subtitle {
+      font-size: 14px;
+      color: var(--gray-600);
+      max-width: 580px;
+      margin-bottom: 36px;
+    }
+
+    /* ── SLIDER ── */
+    .slider-wrap {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      margin-bottom: 8px;
+    }
+
+    .slider-label-text {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--navy);
+      white-space: nowrap;
+      min-width: 130px;
+    }
+
+    input[type="range"].revenue-slider {
+      flex: 1;
+      -webkit-appearance: none;
+      appearance: none;
+      height: 5px;
+      border-radius: 3px;
+      background: var(--gray-200);
+      outline: none;
+      cursor: pointer;
+    }
+
+    input[type="range"].revenue-slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: var(--navy);
+      cursor: pointer;
+      margin-top: -9.5px;
+      box-shadow: 0 2px 10px rgba(13,31,60,0.3);
+      transition: transform 0.1s, box-shadow 0.1s;
+    }
+
+    input[type="range"].revenue-slider::-webkit-slider-thumb:hover {
+      transform: scale(1.15);
+      box-shadow: 0 3px 14px rgba(13,31,60,0.45);
+    }
+
+    input[type="range"].revenue-slider::-moz-range-thumb {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: var(--navy);
+      cursor: pointer;
+      border: none;
+      box-shadow: 0 2px 10px rgba(13,31,60,0.3);
+    }
+
+    .slider-readout {
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--navy);
+      min-width: 130px;
+      text-align: right;
+      letter-spacing: -0.5px;
+      white-space: nowrap;
+    }
+
+    .slider-unit {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--gray-600);
+    }
+
+    .slider-reset {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--gray-400);
+      text-decoration: none;
+      padding: 4px 13px;
+      border: 1px solid var(--gray-200);
+      border-radius: 20px;
+      white-space: nowrap;
+      flex-shrink: 0;
+      transition: color 0.15s, border-color 0.15s;
+    }
+
+    .slider-reset:hover {
+      color: var(--navy);
+      border-color: var(--gray-400);
+    }
+
+    .slider-hint {
+      font-size: 11.5px;
+      color: var(--gray-400);
+      margin-bottom: 32px;
+      padding-left: 150px;
+    }
+
+    /* ── CALC GRID ── */
+    .calc-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .calc-card {
+      background: white;
+      border: 1px solid var(--gray-200);
+      border-top: 3px solid var(--red);
+      border-radius: 6px;
+      padding: 24px 22px;
+      text-align: center;
+    }
+
+    .calc-card .calc-num {
+      font-size: 38px;
+      font-weight: 900;
+      color: var(--red);
+      letter-spacing: -1.5px;
+      line-height: 1;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .calc-card .calc-desc {
+      font-size: 12px;
+      color: var(--gray-600);
+      margin-top: 8px;
+      line-height: 1.5;
+    }
+
+    .calc-card .calc-desc strong {
+      display: block;
+      font-size: 10.5px;
+      font-weight: 700;
+      color: var(--gray-400);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 2px;
+    }
+
+    /* ── STATS ── */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
+
+    .stat-card {
+      border-left: 3px solid var(--gold);
+      padding-left: 20px;
+    }
+
+    .stat-num {
+      font-size: 46px;
+      font-weight: 900;
+      color: var(--navy);
+      letter-spacing: -2px;
+      line-height: 1;
+    }
+
+    .stat-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-top: 10px;
+      margin-bottom: 6px;
+    }
+
+    .stat-desc {
+      font-size: 12.5px;
+      color: var(--gray-600);
+      line-height: 1.55;
+    }
+
+    /* ── COMPARISON TABLE ── */
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 1px 24px rgba(0,0,0,0.07);
+    }
+
+    .comparison-table thead th {
+      padding: 16px 22px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .comparison-table thead th.col-metric {
+      background: var(--gray-900);
+      color: rgba(255,255,255,0.5);
+      text-align: left;
+      width: 28%;
+    }
+
+    .comparison-table thead th.col-without {
+      background: #4b5563;
+      color: rgba(255,255,255,0.85);
+      text-align: center;
+    }
+
+    .comparison-table thead th.col-with {
+      background: var(--navy);
+      color: white;
+      text-align: center;
+    }
+
+    .comparison-table tbody tr td {
+      padding: 14px 22px;
+      font-size: 13.5px;
+      border-bottom: 1px solid var(--gray-200);
+      vertical-align: middle;
+    }
+
+    .comparison-table tbody tr:last-child td { border-bottom: none; }
+
+    .comparison-table tbody tr td.col-metric {
+      font-weight: 600;
+      color: var(--navy);
+      background: white;
+    }
+
+    .comparison-table tbody tr td.col-without {
+      background: #f9fafb;
+      color: #6b7280;
+      font-size: 13px;
+    }
+
+    .comparison-table tbody tr td.col-with {
+      background: #eef2ff;
+      color: var(--navy);
+      font-size: 13px;
+      font-weight: 500;
+    }
+
+    .comparison-table tbody tr:hover td { opacity: 0.92; }
+
+    .x   { color: #ef4444; font-weight: 700; margin-right: 4px; }
+    .chk { color: #10b981; font-weight: 700; margin-right: 4px; }
+
+    /* ── SOLUTION BOX ── */
+    @keyframes solutionGlow {
+      0%, 100% { box-shadow: 0 8px 48px rgba(0,0,0,0.3),  0 0 0   0   rgba(184,150,42,0);    }
+      50%       { box-shadow: 0 8px 48px rgba(0,0,0,0.25), 0 0 36px 6px rgba(184,150,42,0.22); }
+    }
+
+    .solution-box {
+      background: linear-gradient(145deg, var(--navy) 0%, var(--navy-mid) 100%);
+      border-radius: 10px;
+      padding: 44px;
+      animation: solutionGlow 3s ease-in-out infinite;
+    }
+
+    .solution-box-title {
+      font-size: 22px;
+      font-weight: 800;
+      color: white;
+      letter-spacing: -0.4px;
+      margin-bottom: 8px;
+    }
+
+    .solution-box-desc {
+      font-size: 14px;
+      color: rgba(255,255,255,0.55);
+      max-width: 500px;
+      line-height: 1.65;
+      margin-bottom: 36px;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+
+    .feature-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .feature-dot {
+      width: 20px;
+      height: 20px;
+      background: var(--gold);
+      border-radius: 4px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 1px;
+      font-size: 11px;
+      color: white;
+      font-weight: 700;
+    }
+
+    .feature-text {
+      font-size: 13.5px;
+      color: rgba(255,255,255,0.82);
+      font-weight: 500;
+      line-height: 1.4;
+    }
+
+    /* ── CTA ── */
+    .cta-section {
+      background: linear-gradient(150deg, var(--navy) 0%, #0d2650 60%, #091a38 100%);
+      padding: 64px 56px;
+      text-align: center;
+    }
+
+    .cta-eyebrow {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      margin-bottom: 14px;
+    }
+
+    .cta-title {
+      font-size: 36px;
+      font-weight: 900;
+      color: white;
+      letter-spacing: -1px;
+      line-height: 1.15;
+      margin-bottom: 10px;
+    }
+
+    .cta-sub {
+      font-size: 15px;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 44px;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 52px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 30px;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+      text-decoration: none;
+      transition: transform 0.12s, opacity 0.12s;
+    }
+
+    .btn:hover { transform: translateY(-1px); opacity: 0.9; }
+
+    .btn-gold {
+      background: var(--gold);
+      color: white;
+      box-shadow: 0 4px 18px rgba(184,150,42,0.35);
+    }
+
+    .btn-ghost {
+      background: rgba(255,255,255,0.07);
+      color: rgba(255,255,255,0.85);
+      border: 1px solid rgba(255,255,255,0.15);
+    }
+
+    .contact-card {
+      display: inline-block;
+      text-align: left;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 10px;
+      padding: 28px 36px;
+    }
+
+    .contact-name {
+      font-size: 17px;
+      font-weight: 700;
+      color: white;
+      letter-spacing: -0.2px;
+    }
+
+    .contact-role {
+      font-size: 12.5px;
+      color: var(--gold-light);
+      margin-top: 3px;
+      margin-bottom: 20px;
+      font-weight: 500;
+    }
+
+    .contact-row {
+      display: flex;
+      align-items: center;
+      margin-bottom: 9px;
+      font-size: 12.5px;
+    }
+
+    .contact-row:last-child { margin-bottom: 0; }
+
+    .contact-row-label {
+      font-weight: 700;
+      color: rgba(255,255,255,0.28);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 10px;
+      min-width: 52px;
+    }
+
+    .contact-row-value { color: rgba(255,255,255,0.65); }
+
+    /* ── FOOTER ── */
+    .footer {
+      background: var(--gray-900);
+      padding: 18px 56px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-text {
+      font-size: 10.5px;
+      color: rgba(255,255,255,0.22);
+      letter-spacing: 0.3px;
+    }
+
+    .footer-brand {
+      font-size: 11px;
+      font-weight: 800;
+      color: rgba(255,255,255,0.15);
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    /* ── SCROLL-REVEAL (applied by JS) ── */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+                  transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .slide-left {
+      opacity: 0;
+      transform: translateX(-26px);
+      transition: opacity 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+                  transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .fade-up.in-view,
+    .slide-left.in-view {
+      opacity: 1;
+      transform: translate(0, 0);
+    }
+
+    /* ── PRINT ── */
+    @media print {
+      *, *::before, *::after {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+        animation: none !important;
+        transition: none !important;
+      }
+
+      body { background: white; }
+
+      .page { margin: 0; box-shadow: none; max-width: 100%; }
+
+      .header { padding: 28px 40px 24px; }
+      .revenue-hero { padding: 44px 40px; }
+      .revenue-hero .hero-number { font-size: 80px; }
+      .section { padding: 36px 40px; }
+      .cta-section { padding: 44px 40px; }
+      .footer { padding: 14px 40px; }
+
+      .slider-wrap, .slider-hint, .cta-buttons, .btn { display: none !important; }
+
+      .fade-up, .slide-left {
+        opacity: 1 !important;
+        transform: none !important;
+      }
+
+      .solution-box { animation: none !important; }
+      .comparison-section { page-break-before: always; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header-left">
+      <div class="header-clinic-name">[CLINIC NAME]</div>
+      <div class="header-doc-label">Patient Revenue Audit</div>
+    </div>
+    <div class="header-right">
+      <img src="./axiogen-logo.png" height="28" alt="Axiogen" class="header-logo"
+           style="filter: brightness(0) invert(1); opacity: 0.85;">
+      <div class="header-meta">Prepared by Axiogen &nbsp;·&nbsp; CONFIDENTIAL &nbsp;·&nbsp; [MONTH YEAR] &nbsp;·&nbsp; NOT FOR DISTRIBUTION</div>
+      <div class="confidential-badge">Confidential</div>
+    </div>
+  </header>
+
+  <!-- REVENUE HERO -->
+  <section class="revenue-hero">
+    <div class="hero-eyebrow">Annual Revenue at Risk</div>
+    <div class="hero-number" id="hero-number">$0</div>
+    <div class="hero-label">Estimated annual revenue leaving your practice</div>
+    <div class="hero-sub">Based on industry-average missed call rates &amp; $850 patient lifetime value. Adjust the slider below.</div>
+  </section>
+
+  <!-- CALCULATOR -->
+  <section class="section section-alt">
+    <div class="eyebrow">Interactive Calculator</div>
+    <div class="section-title">Adjust Your Monthly Call Volume</div>
+    <div class="section-subtitle">Move the slider to match your clinic's volume. All four figures update live with a smooth count-up animation.</div>
+
+    <div class="slider-wrap">
+      <div class="slider-label-text">Monthly Calls</div>
+      <input type="range" class="revenue-slider" id="calls-slider"
+             min="100" max="2000" step="10" value="250">
+      <div class="slider-readout">
+        <span id="calls-val">250</span><span class="slider-unit"> calls/mo</span>
+      </div>
+      <a href="#" class="slider-reset" id="slider-reset">Reset</a>
+    </div>
+    <div class="slider-hint">Drag left or right &nbsp;·&nbsp; Industry range: 200–2,000 calls/month for a single-location practice</div>
+
+    <div class="calc-grid">
+      <div class="calc-card">
+        <div class="calc-num" id="c-missed">0</div>
+        <div class="calc-desc">
+          <strong>Missed Calls / Month</strong>
+          29% industry-average miss rate
+        </div>
+      </div>
+      <div class="calc-card">
+        <div class="calc-num" id="c-lost-pts">0</div>
+        <div class="calc-desc">
+          <strong>Lost Patients / Month</strong>
+          67% immediately call a competitor
+        </div>
+      </div>
+      <div class="calc-card">
+        <div class="calc-num" id="c-monthly">$0</div>
+        <div class="calc-desc">
+          <strong>Lost Revenue / Month</strong>
+          $850 avg. new patient lifetime value
+        </div>
+      </div>
+      <div class="calc-card">
+        <div class="calc-num" id="c-annual">$0</div>
+        <div class="calc-desc">
+          <strong>Annual Revenue at Risk</strong>
+          Compounds every month unaddressed
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="section">
+    <div class="eyebrow">Industry Benchmarks</div>
+    <div class="section-title">The Data Doesn't Lie</div>
+    <div class="section-subtitle">These figures reflect real-world performance across thousands of dental practices. Your clinic is almost certainly not the exception.</div>
+
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-num">20–38%</div>
+        <div class="stat-title">Of Calls Go Unanswered</div>
+        <div class="stat-desc">The average practice misses nearly 1 in 3 incoming calls — including during business hours, while staff are with patients.</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">67%</div>
+        <div class="stat-title">Call a Competitor Next</div>
+        <div class="stat-desc">Of callers who can't reach your clinic, the majority will immediately call the next dentist on their list. They don't leave a voicemail.</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">$850</div>
+        <div class="stat-title">Average New Patient LTV</div>
+        <div class="stat-desc">Conservative lifetime value estimate. Premium cases — implants, clear aligners, full-mouth rehab — routinely exceed $5,000 per patient.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPARISON TABLE -->
+  <section class="section section-alt comparison-section">
+    <div class="eyebrow">Side-by-Side Analysis</div>
+    <div class="section-title">Without Nova vs. With Nova</div>
+    <div class="section-subtitle">A direct operational comparison. Every row is a place where your clinic either loses revenue or recovers it.</div>
+
+    <table class="comparison-table">
+      <thead>
+        <tr>
+          <th class="col-metric">Metric</th>
+          <th class="col-without">Without Nova</th>
+          <th class="col-with">With Nova</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="col-metric">Call Answer Rate</td>
+          <td class="col-without"><span class="x">✕</span>62–80% — missed calls are lost</td>
+          <td class="col-with"><span class="chk">✓</span>98%+ answered, every call</td>
+        </tr>
+        <tr>
+          <td class="col-metric">After-Hours Coverage</td>
+          <td class="col-without"><span class="x">✕</span>Voicemail — callers hang up</td>
+          <td class="col-with"><span class="chk">✓</span>24/7 live AI receptionist</td>
+        </tr>
+        <tr>
+          <td class="col-metric">Appointment Booking</td>
+          <td class="col-without"><span class="x">✕</span>Staff required — delays are common</td>
+          <td class="col-with"><span class="chk">✓</span>Instant booking, any hour</td>
+        </tr>
+        <tr>
+          <td class="col-metric">Missed Call Follow-Up</td>
+          <td class="col-without"><span class="x">✕</span>Rarely happens consistently</td>
+          <td class="col-with"><span class="chk">✓</span>Automatic text + callback</td>
+        </tr>
+        <tr>
+          <td class="col-metric">Competitor Loss Rate</td>
+          <td class="col-without"><span class="x">✕</span>67% of missed callers leave</td>
+          <td class="col-with"><span class="chk">✓</span>Near-zero patient leakage</td>
+        </tr>
+        <tr>
+          <td class="col-metric">Staff Workload</td>
+          <td class="col-without"><span class="x">✕</span>Overwhelmed at peak hours</td>
+          <td class="col-with"><span class="chk">✓</span>Freed for in-chair care</td>
+        </tr>
+        <tr>
+          <td class="col-metric">Revenue Visibility</td>
+          <td class="col-without"><span class="x">✕</span>Leaks silently — untracked</td>
+          <td class="col-with"><span class="chk">✓</span>Measured &amp; maximized</td>
+        </tr>
+        <tr>
+          <td class="col-metric">Patient Experience</td>
+          <td class="col-without"><span class="x">✕</span>Hold times, voicemail, dropped</td>
+          <td class="col-with"><span class="chk">✓</span>Answered in under 2 rings</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- SOLUTION -->
+  <section class="section solution-section">
+    <div class="eyebrow">The Solution</div>
+    <div class="section-title">Nova by Axiogen</div>
+    <div class="section-subtitle">An AI receptionist built exclusively for dental and medical practices. Nova answers every call, books every appointment, and follows up every lead — around the clock, automatically.</div>
+
+    <div class="solution-box">
+      <div class="solution-box-title">What Nova Does For [CLINIC NAME]</div>
+      <div class="solution-box-desc">Nova handles your front desk so your team can focus on patients. From the first ring to the confirmed appointment — 24 hours a day, 7 days a week, no lunch breaks, no sick days.</div>
+
+      <div class="features-grid">
+        <div class="feature-item">
+          <div class="feature-dot">✓</div>
+          <div class="feature-text">24/7 AI Receptionist — answers every call within 2 rings</div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-dot">✓</div>
+          <div class="feature-text">Instant Appointment Booking &amp; Confirmation</div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-dot">✓</div>
+          <div class="feature-text">Insurance Verification at First Contact</div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-dot">✓</div>
+          <div class="feature-text">Automated Patient Recall &amp; Re-activation</div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-dot">✓</div>
+          <div class="feature-text">HIPAA-Compliant &amp; Fully Secure</div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-dot">✓</div>
+          <div class="feature-text">Integrates with Your Practice Management System</div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-dot">✓</div>
+          <div class="feature-text">Live Escalation to Staff When Needed</div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-dot">✓</div>
+          <div class="feature-text">Full Analytics Dashboard — track every lead &amp; call</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="cta-eyebrow">Next Step</div>
+    <div class="cta-title">Recover Your Revenue This Month</div>
+    <div class="cta-sub">Most clinics see positive ROI within 30 days. Setup takes under one week.</div>
+
+    <div class="cta-buttons">
+      <a href="https://axiogenai.com/demo/novadent" class="btn btn-gold">Watch the Demo</a>
+      <a href="https://cal.com/abdulrahman-alfaiadi-jrzs4m/30min" class="btn btn-ghost">Book a 30-Min Call</a>
+      <a href="https://axiogenai.com" class="btn btn-ghost">Visit Axiogen</a>
+    </div>
+
+    <div class="contact-card">
+      <div class="contact-name">Abdulrahman Al-Faiadi</div>
+      <div class="contact-role">Founder &amp; CEO · Axiogen</div>
+      <div class="contact-row">
+        <span class="contact-row-label">Demo</span>
+        <span class="contact-row-value">axiogenai.com/demo/novadent</span>
+      </div>
+      <div class="contact-row">
+        <span class="contact-row-label">Book</span>
+        <span class="contact-row-value">cal.com/abdulrahman-alfaiadi-jrzs4m/30min</span>
+      </div>
+      <div class="contact-row">
+        <span class="contact-row-label">Web</span>
+        <span class="contact-row-value">axiogenai.com</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-text">Prepared exclusively for [CLINIC NAME] &nbsp;·&nbsp; Confidential &nbsp;·&nbsp; Not for distribution</div>
+    <div class="footer-brand">Axiogen</div>
+  </footer>
+
+</div>
+<script>
+(function () {
+  'use strict';
+
+  /* ── CONFIG ── */
+  var MISS_RATE  = 0.29;
+  var COMP_RATE  = 0.67;
+  var LTV        = 850;
+  var DEFAULT    = 250;
+  var ANIM_INIT  = 1500;
+  var ANIM_SLIDE = 380;
+
+  /* ── ELEMENTS ── */
+  var slider    = document.getElementById('calls-slider');
+  var callsVal  = document.getElementById('calls-val');
+  var cMissed   = document.getElementById('c-missed');
+  var cLostPts  = document.getElementById('c-lost-pts');
+  var cMonthly  = document.getElementById('c-monthly');
+  var cAnnual   = document.getElementById('c-annual');
+  var heroNum   = document.getElementById('hero-number');
+  var resetLink = document.getElementById('slider-reset');
+
+  /* ── FORMATTERS ── */
+  function fmtNum(n) { return Math.round(n).toLocaleString('en-US'); }
+  function fmtUsd(n) { return '$' + fmtNum(n); }
+
+  /* ── COUNT-UP ── */
+  function animateTo(el, from, to, duration, fmt) {
+    if (el._raf) { cancelAnimationFrame(el._raf); el._raf = null; }
+    var startTime = performance.now();
+    function tick(now) {
+      var t    = Math.min((now - startTime) / duration, 1);
+      var ease = 1 - Math.pow(1 - t, 3);
+      var val  = from + (to - from) * ease;
+      el.textContent = fmt(val);
+      if (t < 1) {
+        el._raf = requestAnimationFrame(tick);
+      } else {
+        el.textContent = fmt(to);
+        el._raf = null;
+      }
+    }
+    el._raf = requestAnimationFrame(tick);
+  }
+
+  /* ── STATE ── */
+  var cur = { missed: 0, lostPts: 0, lostMonthly: 0, annual: 0 };
+  var isInit = true;
+
+  function calcValues(calls) {
+    var missed      = Math.round(calls * MISS_RATE);
+    var lostPts     = Math.round(missed * COMP_RATE);
+    var lostMonthly = lostPts * LTV;
+    var annual      = lostMonthly * 12;
+    return { missed: missed, lostPts: lostPts, lostMonthly: lostMonthly, annual: annual };
+  }
+
+  /* ── UPDATE ── */
+  function update() {
+    var calls    = parseInt(slider.value, 10);
+    var vals     = calcValues(calls);
+    var duration = isInit ? ANIM_INIT : ANIM_SLIDE;
+    isInit = false;
+
+    /* Slider fill */
+    var pct = ((calls - 100) / (2000 - 100)) * 100;
+    slider.style.background =
+      'linear-gradient(to right, #0d1f3c ' + pct + '%, #e2e8f0 ' + pct + '%)';
+    callsVal.textContent = calls.toLocaleString('en-US');
+
+    /* Animate numbers */
+    animateTo(cMissed,  cur.missed,      vals.missed,      duration, fmtNum);
+    animateTo(cLostPts, cur.lostPts,     vals.lostPts,     duration, fmtNum);
+    animateTo(cMonthly, cur.lostMonthly, vals.lostMonthly, duration, fmtUsd);
+    animateTo(cAnnual,  cur.annual,      vals.annual,      duration, fmtUsd);
+    animateTo(heroNum,  cur.annual,      vals.annual,      duration, fmtUsd);
+
+    cur = vals;
+  }
+
+  slider.addEventListener('input', update);
+
+  resetLink.addEventListener('click', function (e) {
+    e.preventDefault();
+    slider.value = DEFAULT;
+    update();
+  });
+
+  /* ── SCROLL ANIMATIONS ── */
+  function setupScrollAnimations() {
+    /* Sections without staggered children: fade up */
+    document.querySelectorAll('.section').forEach(function (el) {
+      if (!el.querySelector('.stat-card') && !el.querySelector('.calc-card')) {
+        el.classList.add('fade-up');
+      }
+    });
+
+    /* CTA: fade up */
+    var cta = document.querySelector('.cta-section');
+    if (cta) cta.classList.add('fade-up');
+
+    /* Stat cards: stagger fade up */
+    document.querySelectorAll('.stat-card').forEach(function (el, i) {
+      el.classList.add('fade-up');
+      el.style.transitionDelay = (i * 150) + 'ms';
+    });
+
+    /* Calc cards: stagger slide from left */
+    document.querySelectorAll('.calc-card').forEach(function (el, i) {
+      el.classList.add('slide-left');
+      el.style.transitionDelay = (i * 90) + 'ms';
+    });
+
+    /* Observer */
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -28px 0px' });
+
+    document.querySelectorAll('.fade-up, .slide-left').forEach(function (el) {
+      observer.observe(el);
+    });
+  }
+
+  /* ── INIT ── */
+  update();
+  setupScrollAnimations();
+
+})();
+</script>
+</body>
+</html>
