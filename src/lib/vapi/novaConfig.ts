@@ -174,7 +174,7 @@ export function buildNovaAssistant(language: NovaLanguage): CreateAssistantDTO {
   // as the "Couldn't start the call" error for English and Turkish.
   const realtimeModel = {
     provider: "openai" as const,
-    model: "gpt-4o-realtime-preview-2024-12-17",
+    model: "gpt-realtime-2025-08-28",
     messages: [{ role: "system" as const, content: systemContent }],
     tools: [saveBookingTool],
   };
