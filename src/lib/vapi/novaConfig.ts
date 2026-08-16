@@ -56,10 +56,50 @@ const DIALECT_CONTEXT: Record<NovaLanguage, string> = {
   ar: "أنت تفهم جميع اللهجات العربية: الخليجية، الشامية، المصرية، المغربية، والفصحى. تحدث دائماً بالعربية الفصحى المبسطة الواضحة. ",
 };
 
+// The session language is fixed when the call starts and must never change
+// mid-call. Each lock is phrased as an absolute, per-turn rule because the
+// speech-to-speech model infers language from the caller's audio on every turn
+// and will otherwise drift into the caller's language.
 const LANGUAGE_LOCK: Record<NovaLanguage, string> = {
-  en: "",
-  tr: "ÖNEMLİ: Her zaman Türkçe yanıt ver. Asla İngilizce veya başka bir dil kullanma. Kullanıcı başka dilde konuşsa bile sen Türkçe yanıtla. ",
-  ar: "مهم جداً: أجب دائماً باللغة العربية فقط. لا تستخدم الإنجليزية أو أي لغة أخرى أبداً. حتى لو تحدث المستخدم بلغة أخرى، أنت ترد بالعربية. ",
+  en: "CRITICAL LANGUAGE RULE: This call is an English call. Speak English and ONLY English for the entire call, in every single reply, from the first word to the last. If the caller speaks Turkish, Arabic, or any other language, you still understand them but you ALWAYS answer in English. Never switch languages, never mix another language into a sentence, and never repeat yourself in a second language, no matter what the caller says or asks. ",
+  tr: "KRİTİK DİL KURALI: Bu görüşme Türkçe bir görüşmedir. Tüm görüşme boyunca, her yanıtta, ilk kelimeden son kelimeye kadar SADECE Türkçe konuş. Arayan İngilizce, Arapça veya başka bir dilde konuşsa bile onu anlarsın ama HER ZAMAN Türkçe yanıt verirsin. Asla dil değiştirme, bir cümlenin içine başka bir dil karıştırma ve söylediğini ikinci bir dilde tekrarlama — arayan ne söylerse söylesin, ne isterse istesin. ",
+  ar: "قاعدة اللغة الحاسمة: هذه مكالمة بالعربية. تحدثي بالعربية وبالعربية فقط طوال المكالمة، في كل رد، من أول كلمة إلى آخر كلمة. إذا تحدث المتصل بالإنجليزية أو التركية أو أي لغة أخرى فأنتِ تفهمينه لكنكِ ترّدين دائماً بالعربية. لا تبدّلي اللغة أبداً، ولا تخلطي لغة أخرى داخل الجملة، ولا تعيدي كلامك بلغة ثانية، مهما قال المتصل أو طلب. ",
+};
+
+// Grounding rules. Nova may only state clinic facts that appear verbatim in her
+// own system prompt; anything else must be deflected to a human callback rather
+// than invented.
+const GROUNDING_RULES: Record<NovaLanguage, string> = {
+  en: `
+
+STRICT GROUNDING — NEVER INVENT CLINIC INFORMATION:
+The only clinic facts you know are the services, prices, opening hours, and address written above. That list is complete. Treat anything not on it as something you do not know.
+- Never invent or estimate prices, discounts, or package deals. Never guess a price for a service that is not listed.
+- Never invent dentist or staff names, credentials, or specialties. You do not know which dentist a patient will see.
+- Never state which insurance plans, payment plans, or financing the clinic accepts. You do not have that information.
+- Never invent hours, holiday closures, parking, equipment, treatment details, recovery times, or medical advice.
+- Never confirm that a specific time slot is free. You are not looking at a live calendar; you are only taking down a requested time for the clinic to confirm.
+When you are asked something outside your known facts, say plainly that you don't have that in front of you, and offer to have the clinic follow up — take their name and number for a callback, or note the question with their booking. Something like: "that's not something I've got in front of me, but I can have the clinic call you back about it." Never fill the gap with a plausible guess. It is always better to say you'll check than to be wrong.`,
+  tr: `
+
+KATI BİLGİ SINIRI — KLİNİK BİLGİSİ ASLA UYDURMA:
+Bildiğin tek klinik bilgisi yukarıda yazılı hizmetler, fiyatlar, çalışma saatleri ve adrestir. Bu liste eksiksizdir. Listede olmayan her şeyi bilmediğin bir şey olarak kabul et.
+- Fiyat, indirim veya paket kampanya uydurma ya da tahmin etme. Listede olmayan bir hizmete asla fiyat söyleme.
+- Diş hekimi veya personel ismi, unvanı ya da uzmanlık alanı uydurma. Hastanın hangi hekime geleceğini bilmiyorsun.
+- Kliniğin hangi sigortaları, taksit veya ödeme planlarını kabul ettiğini asla söyleme. Bu bilgi sende yok.
+- Çalışma saati, tatil kapanışı, otopark, cihaz, tedavi detayı, iyileşme süresi veya tıbbi tavsiye uydurma.
+- Belirli bir saatin boş olduğunu asla onaylama. Canlı bir takvime bakmıyorsun; sadece kliniğin teyit etmesi için talep edilen saati not alıyorsun.
+Bildiklerinin dışında bir şey sorulduğunda, elinde o bilginin olmadığını açıkça söyle ve kliniğin dönüş yapmasını öner — geri arama için adını ve numarasını al ya da soruyu randevu notuna ekle. Örneğin: "onu şu an önümde göremiyorum ama klinikten sizi arayıp bilgi vermelerini sağlayabilirim." Boşluğu asla kulağa mantıklı gelen bir tahminle doldurma. Yanlış bilgi vermektense bakıp döneceğini söylemek her zaman daha iyidir.`,
+  ar: `
+
+التزام صارم بالمعلومات — لا تختلقي أي معلومة عن العيادة أبداً:
+المعلومات الوحيدة التي تعرفينها عن العيادة هي الخدمات والأسعار وساعات العمل والعنوان المذكورة أعلاه. هذه القائمة كاملة. أي شيء خارجها اعتبريه شيئاً لا تعرفينه.
+- لا تختلقي أو تقدّري أسعاراً أو خصومات أو عروضاً. لا تذكري سعراً لخدمة غير مدرجة.
+- لا تختلقي أسماء أطباء أو موظفين أو مؤهلاتهم أو تخصصاتهم. أنتِ لا تعرفين أي طبيب سيستقبل المريض.
+- لا تذكري أبداً أي تأمين أو تقسيط أو وسيلة دفع تقبلها العيادة. هذه المعلومة ليست لديكِ.
+- لا تختلقي ساعات عمل أو إجازات أو مواقف سيارات أو أجهزة أو تفاصيل علاج أو مدة تعافٍ أو نصائح طبية.
+- لا تؤكدي أبداً أن موعداً معيناً متاح. أنتِ لا تنظرين إلى تقويم مباشر، بل تسجلين الوقت المطلوب فقط لتؤكده العيادة.
+إذا سُئلتِ عن شيء خارج ما تعرفينه، قولي بوضوح إن هذه المعلومة ليست أمامك، واعرضي أن تتواصل العيادة معه — خذي اسمه ورقمه لمعاودة الاتصال، أو دوّني سؤاله مع الحجز. مثلاً: "هذي المعلومة مو موجودة عندي الحين، بس أقدر أخلي العيادة تتصل فيك وتفيدك." لا تملئي الفراغ بتخمين يبدو منطقياً أبداً. أن تقولي إنك ستتحققين أفضل دائماً من أن تعطي معلومة خاطئة.`,
 };
 
 const GOODBYE_INSTRUCTION: Record<NovaLanguage, string> = {
@@ -75,16 +115,77 @@ const SILENCE_INSTRUCTION: Record<NovaLanguage, string> = {
 };
 
 type NovaTranscriber =
-  | { provider: "deepgram"; model: "nova-2" | "nova-3"; language: string }
+  | {
+      provider: "deepgram";
+      model: "nova-2" | "nova-3";
+      language: string;
+      endpointing?: number;
+    }
   | { provider: "azure"; language: string };
 
 // Deepgram language/model support: nova-2 covers en/tr, but Arabic is only
 // available on nova-3 (nova-2 does not support "ar"). See
 // https://developers.deepgram.com/docs/models-languages-overview
+//
+// `language` is pinned to one explicit code per session and must stay that way.
+// Deepgram's auto-detect / code-switching mode is the value "multi" — never use
+// it here. Auto-detect re-decides the language on each utterance, which is what
+// lets a call drift from one language into another mid-conversation.
+//
+// `endpointing` is the silence (ms) Deepgram waits before declaring the caller
+// done. Vapi's default of 10ms is what makes Nova cut people off mid-sentence;
+// 300ms is Deepgram's own recommendation when reliability matters more than
+// shaving latency.
 const TRANSCRIBER: Record<NovaLanguage, NovaTranscriber> = {
-  en: { provider: "deepgram", model: "nova-2", language: "en" },
-  tr: { provider: "deepgram", model: "nova-2", language: "tr" },
-  ar: { provider: "deepgram", model: "nova-3", language: "ar" },
+  en: { provider: "deepgram", model: "nova-2", language: "en", endpointing: 300 },
+  tr: { provider: "deepgram", model: "nova-2", language: "tr", endpointing: 300 },
+  ar: { provider: "deepgram", model: "nova-3", language: "ar", endpointing: 300 },
+};
+
+// Turn-taking. Vapi's defaults are tuned for snappy demos and cut callers off
+// mid-sentence; every value below is deliberately more patient than the default
+// it replaces. Vapi applies these in its orchestration layer, so they govern the
+// speech-to-speech (realtime) assistants too, not just the Arabic pipeline.
+const START_SPEAKING_PLAN = {
+  // Default 0.4s. Minimum pause before Nova begins her reply.
+  waitSeconds: 0.8,
+  transcriptionEndpointingPlan: {
+    // Default 0.1s. The transcriber punctuates as soon as it thinks a thought
+    // ended, so this default is the single biggest cause of interruptions —
+    // a comma-shaped pause was enough to hand the turn over.
+    onPunctuationSeconds: 0.5,
+    // Default 1.5s. Applies when the caller trails off without punctuation.
+    onNoPunctuationSeconds: 2.2,
+    // Default 0.5s. Callers read phone numbers in chunks ("0532... 44... 18"),
+    // and Nova collects a phone number on every booking, so this needs the most
+    // headroom of the three.
+    onNumberSeconds: 1.2,
+  },
+} as const;
+
+const STOP_SPEAKING_PLAN = {
+  // Default 0. At 0, Vapi falls back to voiceSeconds and any ~0.2s of sound —
+  // a cough, a "mhm", background noise — stops Nova mid-response. Requiring 3
+  // real words means only a genuine attempt to speak takes the floor.
+  numWords: 3,
+  // Default 1s. Slightly longer settle before she resumes after a real
+  // interruption, so the caller isn't immediately talked over again.
+  backoffSeconds: 1.5,
+} as const;
+
+// Vapi's default acknowledgement list (words that must never count as an
+// interruption) is English-only, so Turkish and Arabic backchannelling would
+// otherwise count toward numWords and cut Nova off.
+const ACKNOWLEDGEMENT_PHRASES: Record<NovaLanguage, string[] | undefined> = {
+  en: undefined, // Vapi's English defaults already cover this.
+  tr: [
+    "tamam", "evet", "peki", "anladım", "hı hı", "hıhı", "aynen",
+    "tabii", "olur", "doğru", "he", "hı", "eyvallah", "tamamdır",
+  ],
+  ar: [
+    "طيب", "نعم", "أيوه", "ايوه", "تمام", "أوكي", "اوكي", "ماشي",
+    "فهمت", "أكيد", "اها", "آها", "صح", "زين",
+  ],
 };
 
 const END_CALL_MESSAGE: Record<NovaLanguage, string> = {
@@ -184,13 +285,26 @@ const saveBookingTool = {
 };
 
 export function buildNovaAssistant(language: NovaLanguage): CreateAssistantDTO {
+  // GROUNDING_RULES follows SYSTEM_PROMPT so that "the facts written above"
+  // refers to the service/price/hours block it is constraining.
   const systemContent =
     BOOKING_PROTOCOL[language] +
     DIALECT_CONTEXT[language] +
     LANGUAGE_LOCK[language] +
     SYSTEM_PROMPT[language] +
+    GROUNDING_RULES[language] +
     GOODBYE_INSTRUCTION[language] +
     SILENCE_INSTRUCTION[language];
+
+  const speakingPlans = {
+    startSpeakingPlan: START_SPEAKING_PLAN,
+    stopSpeakingPlan: {
+      ...STOP_SPEAKING_PLAN,
+      ...(ACKNOWLEDGEMENT_PHRASES[language]
+        ? { acknowledgementPhrases: ACKNOWLEDGEMENT_PHRASES[language] }
+        : {}),
+    },
+  };
 
   // Vapi only accepts dated OpenAI Realtime model identifiers; the bare
   // "gpt-4o-realtime-preview" alias is rejected at call start, which surfaced
@@ -229,6 +343,7 @@ export function buildNovaAssistant(language: NovaLanguage): CreateAssistantDTO {
         style: 0.0,
         useSpeakerBoost: true,
       },
+      ...speakingPlans,
       endCallFunctionEnabled: true,
       endCallMessage: END_CALL_MESSAGE[language],
       endCallPhrases: END_CALL_PHRASES[language],
@@ -242,6 +357,7 @@ export function buildNovaAssistant(language: NovaLanguage): CreateAssistantDTO {
       maxDurationSeconds: 600,
       model: realtimeModel,
       voice: realtimeVoice,
+      ...speakingPlans,
       endCallFunctionEnabled: true,
       endCallMessage: END_CALL_MESSAGE[language],
       endCallPhrases: END_CALL_PHRASES[language],
@@ -256,6 +372,7 @@ export function buildNovaAssistant(language: NovaLanguage): CreateAssistantDTO {
     maxDurationSeconds: 600,
     model: realtimeModel,
     voice: realtimeVoice,
+    ...speakingPlans,
     endCallFunctionEnabled: true,
     endCallMessage: END_CALL_MESSAGE[language],
     endCallPhrases: END_CALL_PHRASES[language],
