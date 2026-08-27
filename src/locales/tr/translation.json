@@ -67,22 +67,25 @@
     "voiceReceptionist": {
       "title": "Yapay Zeka Sesli Resepsiyonist",
       "description": "Her aramayı doğal bir sohbetle yanıtlayan, randevu alan, sık sorulan soruları cevaplayan ve acil durumları yönlendiren 7/24 aktif yapay zeka telefon asistanı — kliniğiniz bir daha asla hasta kaçırmaz.",
-      "stat": "Kaçan aramaların %67'si bir daha aramıyor"
+      "stat": "Sektör verisi: küçük işletme aramalarının %62'si yanıtsız kalıyor",
+      "statSource": "Kaynak: 411 Locals'ın 58 sektörden 85 işletmeyle yaptığı araştırma"
     },
     "reminders": {
       "title": "Randevu Hatırlatma Sistemi",
       "description": "SMS, WhatsApp ve e-posta üzerinden klinik açıdan optimal zamanlarda gönderilen otomatik çok kanallı hatırlatmalar — takviminizi dolu tutar ve son dakika iptallerinden gelirinizi korur.",
-      "stat": "Randevuya gelmeme oranını %28'den %10'un altına düşürür"
+      "stat": "Sektör verisi: otomatik hatırlatmalar randevuya gelmemeyi ~%23 azaltıyor",
+      "statSource": "Kaynak: Sesame Communications'ın 1,6 milyon diş randevusu üzerindeki araştırması"
     },
     "reactivation": {
       "title": "Hasta Yeniden Aktivasyon Kampanyaları",
       "description": "Kişiselleştirilmiş takip dizileriyle kayıp ve uyuyan hastaları otomatik olarak yeniden etkileşime sokar; onları gecikmiş kontroller, çağrılar ve bekleyen tedaviler için geri getirir.",
-      "stat": "Uyuyan hastaların %20–30'unu yeniden kazanır"
+      "stat": "Uyuyan hastaları otomatik olarak takvime geri getirir"
     },
     "reputation": {
       "title": "İtibar ve Yorum Sistemi",
       "description": "Ziyaret sonrası tam zamanında gönderilen otomatik yorum istekleri — mutlu hastaları yeni hastalar çeken Google ve Yelp yorumlarına dönüştürür, olumsuz geri bildirimleri ise sessizce klinik yöneticisine yönlendirir.",
-      "stat": "Puanı 3.8'den 4.7 yıldıza yükseltir"
+      "stat": "Sektör verisi: tüketicilerin %68'i 4 yıldızın altındaki bir işletmeyi tercih etmiyor",
+      "statSource": "Kaynak: BrightLocal Yerel Tüketici Değerlendirme Araştırması"
     },
     "intake": {
       "title": "Dijital Hasta Kaydı",
@@ -341,6 +344,39 @@
         "callActive": "Görüşme aktif"
       }
     }
+  },
+  "novadentOnePager": {
+    "label": "Axiogen AI",
+    "headline": "Never miss another patient call.",
+    "subheadline": "A multilingual AI voice receptionist for dental and medical clinics — answers, books, and follows up 24/7.",
+    "features": [
+      {
+        "title": "Speaks Arabic, English and Turkish natively",
+        "body": "Switches languages mid-call, so no patient gets dropped."
+      },
+      {
+        "title": "Answers every call, day or night",
+        "body": "No voicemail, no patients lost to a busy front desk."
+      },
+      {
+        "title": "Books directly into your calendar",
+        "body": "Live appointment booking during the call, not a callback promise."
+      },
+      {
+        "title": "Live in days, not months",
+        "body": "Deployed and taking real patient calls fast."
+      }
+    ],
+    "audience": {
+      "title": "Built for",
+      "items": [
+        "Dental & medical clinics",
+        "Multi-provider practices",
+        "DSOs in the GCC, US & Europe"
+      ]
+    },
+    "primaryCta": "Try the Live Demo",
+    "secondaryCta": "Contact Us"
   },
   "notFound": {
     "title": "404",

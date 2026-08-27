@@ -4,8 +4,10 @@ import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { Phone, CalendarCheck, Users, Star, ClipboardList, TrendingUp, LucideIcon } from "lucide-react";
 
 const Services = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const headerRef = useScrollReveal<HTMLDivElement>();
+
+  const statSource = (key: string) => (i18n.exists(key) ? t(key) : undefined);
 
   const services = [
     {
@@ -13,30 +15,35 @@ const Services = () => {
       title: t("services.voiceReceptionist.title"),
       description: t("services.voiceReceptionist.description"),
       stat: t("services.voiceReceptionist.stat"),
+      statSource: statSource("services.voiceReceptionist.statSource"),
     },
     {
       icon: CalendarCheck,
       title: t("services.reminders.title"),
       description: t("services.reminders.description"),
       stat: t("services.reminders.stat"),
+      statSource: statSource("services.reminders.statSource"),
     },
     {
       icon: Users,
       title: t("services.reactivation.title"),
       description: t("services.reactivation.description"),
       stat: t("services.reactivation.stat"),
+      statSource: statSource("services.reactivation.statSource"),
     },
     {
       icon: Star,
       title: t("services.reputation.title"),
       description: t("services.reputation.description"),
       stat: t("services.reputation.stat"),
+      statSource: statSource("services.reputation.statSource"),
     },
     {
       icon: ClipboardList,
       title: t("services.intake.title"),
       description: t("services.intake.description"),
       stat: t("services.intake.stat"),
+      statSource: statSource("services.intake.statSource"),
     },
   ];
 
@@ -76,6 +83,7 @@ interface ServiceCardItemProps {
     title: string;
     description: string;
     stat: string;
+    statSource?: string;
   };
   index: number;
 }
@@ -103,6 +111,9 @@ const ServiceCardItem = ({ service, index }: ServiceCardItemProps) => {
         <TrendingUp className="w-4 h-4" />
         <span>{service.stat}</span>
       </div>
+      {service.statSource && (
+        <p className="mt-2 text-xs text-muted-foreground/80">{service.statSource}</p>
+      )}
     </div>
   );
 };

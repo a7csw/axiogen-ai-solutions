@@ -67,22 +67,25 @@
     "voiceReceptionist": {
       "title": "AI Voice Receptionist",
       "description": "An always-on AI phone agent that answers calls in natural conversation, books appointments, handles common questions, and transfers urgent cases — so your practice never misses a patient again.",
-      "stat": "67% of missed calls never call back"
+      "stat": "Industry data: 62% of small-business calls go unanswered",
+      "statSource": "Source: 411 Locals study of 85 businesses across 58 industries"
     },
     "reminders": {
       "title": "Appointment Reminder System",
       "description": "Automated multi-channel reminders delivered via SMS, WhatsApp, and email at clinically-optimal intervals — keeping your schedule full and protecting revenue from last-minute cancellations.",
-      "stat": "Reduce no-shows from 28% to under 10%"
+      "stat": "Industry data: automated reminders cut no-shows by ~23%",
+      "statSource": "Source: Sesame Communications study of 1.6M dental appointments"
     },
     "reactivation": {
       "title": "Patient Reactivation Campaigns",
       "description": "Automatically re-engage lapsed and dormant patients with personalized follow-up sequences, bringing them back for overdue checkups, recalls, and pending treatments.",
-      "stat": "Reactivate 20–30% of dormant patients"
+      "stat": "Brings dormant patients back onto the schedule automatically"
     },
     "reputation": {
       "title": "Reputation & Review System",
       "description": "Automated post-visit review requests sent at the perfect moment — turning happy patients into Google and Yelp reviews that attract new ones, while quietly routing negative feedback to the practice manager.",
-      "stat": "Boost ratings from 3.8 to 4.7 stars"
+      "stat": "Industry data: 68% of consumers won't choose a business rated under 4 stars",
+      "statSource": "Source: BrightLocal Local Consumer Review Survey"
     },
     "intake": {
       "title": "Digital Patient Intake",
@@ -341,6 +344,39 @@
         "callActive": "Call active"
       }
     }
+  },
+  "novadentOnePager": {
+    "label": "Axiogen AI",
+    "headline": "Never miss another patient call.",
+    "subheadline": "A multilingual AI voice receptionist for dental and medical clinics — answers, books, and follows up 24/7.",
+    "features": [
+      {
+        "title": "Speaks Arabic, English and Turkish natively",
+        "body": "Switches languages mid-call, so no patient gets dropped."
+      },
+      {
+        "title": "Answers every call, day or night",
+        "body": "No voicemail, no patients lost to a busy front desk."
+      },
+      {
+        "title": "Books directly into your calendar",
+        "body": "Live appointment booking during the call, not a callback promise."
+      },
+      {
+        "title": "Live in days, not months",
+        "body": "Deployed and taking real patient calls fast."
+      }
+    ],
+    "audience": {
+      "title": "Built for",
+      "items": [
+        "Dental & medical clinics",
+        "Multi-provider practices",
+        "DSOs in the GCC, US & Europe"
+      ]
+    },
+    "primaryCta": "Try the Live Demo",
+    "secondaryCta": "Contact Us"
   },
   "notFound": {
     "title": "404",

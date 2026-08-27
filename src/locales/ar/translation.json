@@ -67,22 +67,25 @@
     "voiceReceptionist": {
       "title": "موظف استقبال صوتي بالذكاء الاصطناعي",
       "description": "وكيل هاتفي بالذكاء الاصطناعي يعمل على مدار الساعة، يرد على المكالمات بمحادثة طبيعية ويحجز المواعيد ويجيب على الأسئلة الشائعة ويحوّل الحالات العاجلة — حتى لا تفوت عيادتك أي مريض مجدداً.",
-      "stat": "67٪ من المكالمات الفائتة لا يعاودون الاتصال أبداً"
+      "stat": "بيانات الصناعة: 62٪ من مكالمات الشركات الصغيرة تبقى بلا رد",
+      "statSource": "المصدر: دراسة 411 Locals على 85 شركة في 58 قطاعاً"
     },
     "reminders": {
       "title": "نظام تذكيرات المواعيد",
       "description": "تذكيرات آلية متعددة القنوات تُرسل عبر الرسائل النصية والواتساب والبريد الإلكتروني في أوقات سريرية مثالية — تحافظ على جدولك ممتلئاً وتحمي إيراداتك من الإلغاءات اللحظية.",
-      "stat": "تقليل عدم الحضور من 28٪ إلى أقل من 10٪"
+      "stat": "بيانات الصناعة: التذكيرات الآلية تقلل التغيّب بنحو 23٪",
+      "statSource": "المصدر: دراسة Sesame Communications على 1.6 مليون موعد طبي"
     },
     "reactivation": {
       "title": "حملات إعادة تفعيل المرضى",
       "description": "تسلسلات متابعة مخصصة تعيد تفعيل المرضى المتوقفين والخاملين تلقائياً، وتعيدهم إلى العيادة للكشوفات المتأخرة والمراجعات والعلاجات المعلقة.",
-      "stat": "إعادة تفعيل 20–30٪ من المرضى الخاملين"
+      "stat": "يعيد المرضى الخاملين إلى الجدول تلقائياً"
     },
     "reputation": {
       "title": "نظام السمعة والتقييمات",
       "description": "طلبات تقييم آلية تُرسل بعد الزيارة في اللحظة المثالية — تحوّل المرضى السعداء إلى تقييمات على Google وYelp تجذب مرضى جدداً، بينما تُوجّه الملاحظات السلبية بهدوء إلى مدير العيادة.",
-      "stat": "رفع التقييم من 3.8 إلى 4.7 نجمة"
+      "stat": "بيانات الصناعة: 68٪ من المستهلكين لا يختارون نشاطاً تجارياً تقييمه أقل من 4 نجوم",
+      "statSource": "المصدر: استطلاع BrightLocal لمراجعات المستهلكين المحليين"
     },
     "intake": {
       "title": "الاستقبال الرقمي للمرضى",
@@ -341,6 +344,39 @@
         "callActive": "المكالمة نشطة"
       }
     }
+  },
+  "novadentOnePager": {
+    "label": "Axiogen AI",
+    "headline": "Never miss another patient call.",
+    "subheadline": "A multilingual AI voice receptionist for dental and medical clinics — answers, books, and follows up 24/7.",
+    "features": [
+      {
+        "title": "Speaks Arabic, English and Turkish natively",
+        "body": "Switches languages mid-call, so no patient gets dropped."
+      },
+      {
+        "title": "Answers every call, day or night",
+        "body": "No voicemail, no patients lost to a busy front desk."
+      },
+      {
+        "title": "Books directly into your calendar",
+        "body": "Live appointment booking during the call, not a callback promise."
+      },
+      {
+        "title": "Live in days, not months",
+        "body": "Deployed and taking real patient calls fast."
+      }
+    ],
+    "audience": {
+      "title": "Built for",
+      "items": [
+        "Dental & medical clinics",
+        "Multi-provider practices",
+        "DSOs in the GCC, US & Europe"
+      ]
+    },
+    "primaryCta": "Try the Live Demo",
+    "secondaryCta": "Contact Us"
   },
   "notFound": {
     "title": "404",
