@@ -90,7 +90,7 @@
     "intake": {
       "title": "Dijital Hasta Kaydı",
       "description": "E-imza, tıbbi geçmiş toplama, sigorta doğrulama ve doğrudan EHR senkronizasyonu ile modern ziyaret öncesi dijital formlar — kağıt işlerini ortadan kaldırır ve bekleme odasındaki darboğazları açar.",
-      "stat": "Manuel kayıt için haftada 7+ saat tasarruf"
+      "stat": "Ziyaret öncesi manuel veri girişini ortadan kaldırır"
     }
   },
   "caseStudies": {
