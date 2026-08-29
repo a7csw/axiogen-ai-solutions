@@ -34,7 +34,7 @@ const Contact = () => {
                 </CardHeader>
                 <CardContent>
                   <Button size="lg" variant="default" className="w-full" asChild>
-                    <a href="https://wa.me/905353296589" target="_blank" rel="noopener noreferrer">
+                    <a href="https://wa.me/905375809583" target="_blank" rel="noopener noreferrer">
                       <MessageCircle className="w-5 h-5 mr-2" />
                       {t("contact.whatsapp.button")}
                     </a>

@@ -44,7 +44,7 @@ const CTABlock = ({
               className="w-full sm:w-auto text-lg px-10 bg-white/10 hover:bg-white/20 border-white/30 text-white hover-scale btn-shimmer"
               asChild
             >
-              <a href="https://wa.me/905353296589" target="_blank" rel="noopener noreferrer">
+              <a href="https://wa.me/905375809583" target="_blank" rel="noopener noreferrer">
                 <MessageSquare className="mr-2 w-5 h-5" />
                 {t("cta.contactWhatsApp")}
               </a>

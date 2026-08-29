@@ -80,7 +80,7 @@ const Footer = () => {
               </li>
               <li className="flex items-center justify-center md:justify-start space-x-2 text-gray-300">
                 <Phone className="w-4 h-4 flex-shrink-0" />
-                <span className="text-sm">+90 535 329 6589</span>
+                <span className="text-sm">+90 537 580 9583</span>
               </li>
             </ul>
           </div>
