@@ -342,6 +342,20 @@
       "microcopy": {
         "micHint": "Görüşmek için 'Nova'yı Ara'ya dokunun ve mikrofon erişimine izin verin",
         "callActive": "Görüşme aktif"
+      },
+      "inAction": {
+        "title": "Uygulamada Görün",
+        "subheading": "Nova'nın tam hasta yaşam döngüsü sisteminden bir önizleme.",
+        "sampleDataNote": "Örnek gösterim — sahte veri",
+        "reactivation": {
+          "caption": "Hasta Yeniden Aktivasyonu — WhatsApp üzerinden otomatik hatırlatma"
+        },
+        "review": {
+          "caption": "İtibar ve Yorum Sistemi — otomatik yorum istekleri"
+        },
+        "intake": {
+          "caption": "Dijital Hasta Kaydı — ziyaret öncesi formlar ve e-imza"
+        }
       }
     }
   },

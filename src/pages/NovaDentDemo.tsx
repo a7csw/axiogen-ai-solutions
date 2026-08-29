@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { Sparkles, Stethoscope } from "lucide-react";
+import { Info, Sparkles, Stethoscope } from "lucide-react";
 import CTABlock from "@/components/CTABlock";
 import CallPanel from "@/components/novadent/CallPanel";
 import TranscriptPanel from "@/components/novadent/TranscriptPanel";
@@ -9,6 +9,15 @@ import { useNovaCall } from "@/hooks/useNovaCall";
 import type { NovaLanguage } from "@/lib/vapi/novaConfig";
 import { useToast } from "@/hooks/use-toast";
 import { cn } from "@/lib/utils";
+import patientReactivationMockup from "@/assets/patient-reactivation-mockup.png";
+import reviewRequestMockup from "@/assets/review-request-mockup.png";
+import digitalIntakeMockup from "@/assets/digital-intake-mockup.png";
+
+const IN_ACTION_MOCKUPS = [
+  { image: patientReactivationMockup, captionKey: "demo.novaDent.inAction.reactivation.caption" },
+  { image: reviewRequestMockup, captionKey: "demo.novaDent.inAction.review.caption" },
+  { image: digitalIntakeMockup, captionKey: "demo.novaDent.inAction.intake.caption" },
+] as const;
 
 const LANGUAGES: { code: NovaLanguage; flag: string; labelKey: string }[] = [
   { code: "en", flag: "🇬🇧", labelKey: "demo.novaDent.languageSelector.english" },
@@ -121,6 +130,45 @@ const NovaDentDemo = () => {
               <TranscriptPanel transcript={transcript} language={language} />
               <BookingsPanel bookings={bookings} />
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* See It In Action */}
+      <section className="reveal px-4 pb-12 md:px-6 md:pb-20 lg:px-8">
+        <div className="container mx-auto max-w-6xl">
+          <div className="mb-10 text-center md:mb-14">
+            <h2 className="mb-3 text-2xl font-bold tracking-tight text-foreground md:text-4xl">
+              {t("demo.novaDent.inAction.title")}
+            </h2>
+            <p className="mx-auto max-w-2xl text-base text-muted-foreground md:text-lg">
+              {t("demo.novaDent.inAction.subheading")}
+            </p>
+          </div>
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-3 md:gap-8">
+            {IN_ACTION_MOCKUPS.map((mockup) => (
+              <div
+                key={mockup.captionKey}
+                className="overflow-hidden rounded-2xl border border-border bg-card shadow-card"
+              >
+                <div className="relative">
+                  <img
+                    src={mockup.image}
+                    alt={t(mockup.captionKey)}
+                    className="h-auto w-full"
+                  />
+                  <div className="absolute inset-x-0 bottom-0 flex items-center justify-center gap-1.5 bg-background/80 px-3 py-1.5 backdrop-blur-sm">
+                    <Info className="h-3 w-3 flex-shrink-0 text-muted-foreground" />
+                    <span className="text-[11px] font-medium text-muted-foreground">
+                      {t("demo.novaDent.inAction.sampleDataNote")}
+                    </span>
+                  </div>
+                </div>
+                <div className="p-4">
+                  <p className="text-sm font-medium text-foreground">{t(mockup.captionKey)}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>

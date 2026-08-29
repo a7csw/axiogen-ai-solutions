@@ -342,6 +342,20 @@
       "microcopy": {
         "micHint": "Tap 'Call Nova' and allow microphone access to talk",
         "callActive": "Call active"
+      },
+      "inAction": {
+        "title": "See It In Action",
+        "subheading": "A preview of Nova's full patient lifecycle system.",
+        "sampleDataNote": "Illustrative example — sample data",
+        "reactivation": {
+          "caption": "Patient Reactivation — automated recall via WhatsApp"
+        },
+        "review": {
+          "caption": "Reputation & Review System — automated review requests"
+        },
+        "intake": {
+          "caption": "Digital Patient Intake — pre-visit forms and e-signature"
+        }
       }
     }
   },
