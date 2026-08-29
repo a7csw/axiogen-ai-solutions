@@ -18,6 +18,7 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import NovaDentDemo from "./pages/NovaDentDemo";
+import NovaDentOnePager from "./pages/NovaDentOnePager";
 
 const RTL_LANGS = new Set(["ar"]);
 
@@ -91,6 +92,7 @@ const AppContent = () => {
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/demo/novadent" element={<NovaDentDemo />} />
+          <Route path="/novadent" element={<NovaDentOnePager />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </div>
