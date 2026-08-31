@@ -10,8 +10,14 @@ const FEATURE_ICONS: LucideIcon[] = [Languages, PhoneCall, CalendarCheck2, Rocke
 const NovaDentOnePager = () => {
   const { t } = useTranslation();
   const heroRef = useScrollReveal<HTMLDivElement>();
+  const howItWorksRef = useScrollReveal<HTMLDivElement>();
   const featuresRef = useScrollReveal<HTMLDivElement>();
   const audienceRef = useScrollReveal<HTMLDivElement>();
+
+  const howItWorksSteps = t("novadentOnePager.howItWorks.steps", { returnObjects: true }) as {
+    title: string;
+    body: string;
+  }[];
 
   const features = t("novadentOnePager.features", { returnObjects: true }) as {
     title: string;
@@ -50,6 +56,31 @@ const NovaDentOnePager = () => {
                 {t("novadentOnePager.secondaryCta")}
               </Link>
             </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* How It Works */}
+      <section className="px-4 pb-12 md:px-6 md:pb-20 lg:px-8">
+        <div ref={howItWorksRef} className="reveal container mx-auto max-w-5xl">
+          <h2 className="mb-8 text-center text-xl font-bold text-foreground md:mb-12 md:text-2xl">
+            {t("novadentOnePager.howItWorks.title")}
+          </h2>
+          <div className="grid grid-cols-1 gap-5 md:grid-cols-3 md:gap-6">
+            {howItWorksSteps.map((step, index) => (
+              <div
+                key={step.title}
+                className="rounded-2xl border border-border bg-card p-5 shadow-sm hover-card transition-all md:p-6"
+              >
+                <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-primary/10">
+                  <span className="text-lg font-bold text-primary">{index + 1}</span>
+                </div>
+                <h3 className="mb-1 text-base font-bold text-foreground md:text-lg">
+                  {step.title}
+                </h3>
+                <p className="text-sm text-muted-foreground md:text-base">{step.body}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>

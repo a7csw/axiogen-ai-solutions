@@ -363,6 +363,23 @@
     "label": "Axiogen AI",
     "headline": "Never miss another patient call.",
     "subheadline": "A multilingual AI voice receptionist for dental and medical clinics — answers, books, and follows up 24/7.",
+    "howItWorks": {
+      "title": "كيف يعمل",
+      "steps": [
+        {
+          "title": "تصل المكالمة",
+          "body": "يتصل المريض بالعيادة — سواء في أوقات الدوام، بعد الدوام، أو عندما يكون الخط مشغولاً. نوفا يرد فوراً، في كل مرة. لا بريد صوتي، لا إشارة انشغال، ولا انتظار."
+        },
+        {
+          "title": "نوفا يتولى الأمر، بلغة المريض",
+          "body": "يتحدث نوفا مع المريض بشكل طبيعي — بالعربية أو الإنجليزية أو التركية، أياً كانت لغته — يجيب على أسئلته، ويتحقق من المواعيد المتاحة فعلياً."
+        },
+        {
+          "title": "الموعد يُسجَّل في التقويم",
+          "body": "يحجز نوفا الموعد مباشرة في جدول العيادة، في نفس اللحظة. تعود العيادة لتجد تقويماً ممتلئاً، لا كومة من المكالمات الفائتة."
+        }
+      ]
+    },
     "features": [
       {
         "title": "Speaks Arabic, English and Turkish natively",

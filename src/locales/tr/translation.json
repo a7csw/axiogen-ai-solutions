@@ -363,6 +363,23 @@
     "label": "Axiogen AI",
     "headline": "Never miss another patient call.",
     "subheadline": "A multilingual AI voice receptionist for dental and medical clinics — answers, books, and follows up 24/7.",
+    "howItWorks": {
+      "title": "Nasıl Çalışır",
+      "steps": [
+        {
+          "title": "Arama gelir",
+          "body": "Bir hasta kliniği arar — mesai saatlerinde, mesai dışında ya da hat meşgulken. Nova her seferinde anında yanıt verir. Sesli mesaj yok, meşgul sinyali yok, bekleme yok."
+        },
+        {
+          "title": "Nova, hastanın diliyle ilgilenir",
+          "body": "Nova hastayla doğal bir şekilde konuşur — Arapça, İngilizce veya Türkçe, hangisini konuşuyorsa — sorularını yanıtlar ve gerçek uygunluk durumunu kontrol eder."
+        },
+        {
+          "title": "Randevu takvime işlenir",
+          "body": "Nova randevuyu doğrudan kliniğin programına, o anda kaydeder. Klinik, kaçırılan aramalar yığını yerine dolu bir takvimle karşılaşır."
+        }
+      ]
+    },
     "features": [
       {
         "title": "Speaks Arabic, English and Turkish natively",
