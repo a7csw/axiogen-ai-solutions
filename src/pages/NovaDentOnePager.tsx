@@ -121,7 +121,7 @@ const NovaDentOnePager = () => {
           <h2 className="mb-4 text-xl font-bold text-foreground md:text-2xl">
             {t("novadentOnePager.audience.title")}
           </h2>
-          <div className="flex flex-wrap justify-center gap-2">
+          <div className="flex flex-wrap justify-center gap-3">
             {audienceItems.map((item) => (
               <span
                 key={item}
